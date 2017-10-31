@@ -1,0 +1,179 @@
+.set_password {
+    padding: .5rem;
+    padding-top: 0;
+}
+
+.item {
+    margin-bottom: .25rem;
+    position: relative;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.mobile_id {
+    margin: .5rem;
+}
+
+.mobile_id .item {
+    font-size: .75rem;
+    /*font-weight: bold;*/
+    /*padding-left: 3.875rem;*/
+    height: 2.75rem;
+    line-height: 2.75rem;
+    color: #050505;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.mobile_id .item>label {
+    display: inline-block;
+    width: 4rem;
+}
+
+.mobile_id .item>input {
+    font-size: .9rem;
+}
+
+.mobile_id .item:nth-child(3)>input {
+    width: 8.75rem;
+}
+
+.mobile_id .item .sms-bg {
+    display: inline-block;
+    font-size: .6rem;
+    width: 4.625rem;
+    height: 1.5rem;
+    background: #ef6f00;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: auto auto;
+    border-radius: 1.5rem;
+    color: #fff;
+    margin-right: 0;
+}
+
+.swap_eye {
+    display: inline-block;
+    margin: auto auto;
+    margin-right: 0;
+}
+
+.swap_eye .eye_img {
+    display: block;
+    width: 1.5rem;
+    height: .875rem;
+}
+
+.pink {
+    color: #fff;
+    /*background: #ff8b69;*/
+    background: -webkit-linear-gradient(top left,#F06B01,#E22D1A);
+    background: linear-gradient(to bottom right,#F06B01,#E22D1A);
+}
+
+.mobile_id>.item {
+    color: #152323;
+    font-weight: 500;
+}
+
+.mobile_id>.item>select {
+    border: none;
+    outline: none;
+    width: 10rem;
+    padding: 0 10%;
+}
+
+.mobile_id>.item>select option {
+    text-align: center;
+}
+
+.proList {
+    margin-right: .5rem;
+}
+
+.register-get-code {
+    width: 4.45rem;
+    height: 1.5rem;
+    background: #ebc023;
+    color: #fff;
+    border-radius: 0.75rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 0.6rem;
+    margin-top: .4rem;
+}
+
+#getCode-button,
+.register-get-code {
+    width: 4.45rem;
+    height: 1.5rem;
+    background: #ebc023;
+    border-radius: .75rem;
+    line-height: 1.5rem;
+    font-size: .6rem;
+    text-align: center;
+    color: #fff;
+}
+
+.getCode-button,
+.register-get-code {
+    width: 4.45rem;
+    height: 1.5rem;
+    background: #ebc023;
+    border-radius: .75rem;
+    line-height: 1.5rem;
+    font-size: .6rem;
+    text-align: center;
+    color: #fff;
+}
+
+.account_banding_btns .btn {
+    display: inline-block;
+    width: 100%;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    text-align: center;
+    font-size: 1rem;
+    outline: 0;
+    border-radius: .25em;
+    border: none;
+}
+
+.gray {
+    background: #9D9D9D;
+    color: #fff;
+}
+
+.account_banding_btns {
+    position: relative;
+    margin: 2.875rem 10px 15px;
+    text-align: center;
+}
+
+
+.prompt {
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+.basic_msm {
+    width: 5.5rem;
+}
+
+
+::-webkit-input-placeholder{font-size:.65rem;}
+::-moz-placeholder{font-size:.65rem;}
+:-ms-input-placeholder{font-size:.65rem;}
+
+input:-moz-placeholder{font-size:.65rem;}
+
+
+
+

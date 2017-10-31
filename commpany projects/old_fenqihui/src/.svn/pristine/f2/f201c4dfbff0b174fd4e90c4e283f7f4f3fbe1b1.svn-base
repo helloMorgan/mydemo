@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情</title>
+		@@include("../../templates/head.inc")
+	<link rel="stylesheet" type="text/css" href="../../static/css/travel/orderDetail.css"/>
+	<link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+
+	</head>
+	<body ng-app="orderDetailApp" ng-controller="orderDetailCtrl">
+		<div id="header">
+			<i class="iconfont-back_ss iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+			<h1>订单详情</h1>
+		</div>
+		<div id="main">
+			<div class="order_detail_banner"></div>
+			<div class="order_detail_info">
+			  <i class="leftLine"></i><p class="title">{{data.shopName }}</p><i class="rightLine"></i>
+				<li class="order_detail_li ">
+					  
+					<label class="order_detail_label "><span class="iconfont">&#xe66c;</span>首付款</label>
+					<span class="order_detail_span ">{{data.dataArr.oTotalFirstPrice}}</span>
+				</li>
+				<li class="order_detail_li ">
+					  
+					<label class="order_detail_label "><span class="iconfont">&#xe66c;</span>预付款</label>
+					<span class="order_detail_span ">{{data.dataArr.oPrepayMoney}}</span>
+				</li>
+				<li class="order_detail_li ">
+					 
+					<label class="order_detail_label "> <span class="iconfont">&#xe66c;</span>分期惠</label>
+					<span class="order_detail_span ">￥{{data.dataArr.oDurationMoney}}×{{data.dataArr.oTotalDuration}}期</span>
+				</li>
+				<li class="order_detail_li ">
+					  
+					<label class="order_detail_label "><span class="iconfont">&#xe66c;</span>分期期数</label>
+					<span class="order_detail_span ">{{data.dataArr.oTotalDuration}}</span>
+				</li>
+				<li class="order_detail_li ">
+					  
+					<label class="order_detail_label "><span class="iconfont">&#xe66c;</span>每月应还</label>
+					<span class="order_detail_span ">￥{{data.dataArr.oDurationMoney}}</span>
+				</li>
+			</div>
+			<div class="order_detail_detail">
+				
+				<span class="order_detail_price">价格明细</span>
+				<li class="order_detail_li ">
+					  
+					<p>
+						<label class="order_detail_label "><span class="iconfont">&#xe66c;</span>首付:</label>
+						<span class="order_detail_span ">￥{{data.dataArr.oTotalFirstPrice}}</span>
+					</p>
+					<p>
+						<span class="order_detail_span ">￥{{data.dataArr.oDurationMoney}}×{{data.dataArr.oTotalDuration}}期</span>
+					</p>
+					
+				</li>
+			</div>
+			<div class="order_detail_radio">
+                <i class="iconfont reader" style=""  ng-class="{'read-deal':!isReadDeal}" ng-click="agreeDeal()">&#xe66d;</i>
+				<p>我已阅读并同意<a  href="javascript:location.href='../travel/travel_contract_text.html'">《分期惠-分期购买协议》</a></p>
+			</div>
+		</div>
+		<div id="footer" ng-click="orderPay()">提交预定</div>
+		<div id="popup" ng-if="data.layer"></div>
+		<div class="layer" ng-if="data.layer">
+			 <p ng-if="data.bange">您的预订已提交，请保持电话畅通</p>
+       		 <p ng-if="data.bange">我们的客服将在两个工作日内与您联系</p>
+       		 <p ng-if="data.info">提交订单失败，请重试</p>
+       		 <span class="button" ng-click="layer()">确定</span>
+		</div>
+	</body>
+	<script src="../../static/js/travel/orderDetail.js" type="text/javascript" charset="utf-8"></script>
+	
+</html>

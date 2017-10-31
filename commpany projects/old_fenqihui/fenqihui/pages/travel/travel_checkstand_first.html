@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>收银台</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/travel/travel_home_order_detail.css">
+    <link rel="stylesheet" href="../../static/css/travel/travel_checkstand.css">
+
+</head>
+
+<body ng-app="checkStandApp" ng-controller="checkStandCtrl">
+<!--<header class="travel-head-nav">-->
+    <!--<h1>收银台</h1>-->
+    <!--<i class="iconfont-back iconfont" ng-click='goBack()'>&#xe603;</i>-->
+<!--</header>-->
+<!--<div class="travel-pay-time">-->
+    <!--&lt;!&ndash;请在<span ng-bind="min">59</span>分<span ng-bind="second">59</span>秒内完成支付&ndash;&gt;-->
+<!--</div>-->
+
+<div class="travel-user-name">
+    <label style="margin-left: 1rem;">刘军</label>
+    <p>
+        支付：¥<span class="travel-user-name-price">10.00</span>
+    </p>
+</div>
+
+<div class="travel-pay-show">
+    <span class="iconfont">&#xe669;</span><span class="">支付银行卡</span>
+</div>
+<div class="travel-pay-card">
+    <ul>
+        <li>
+            <div class="">
+                <img src="../../../src/static/bitmap/account/bank_icon/0102.png">
+            </div>
+            <div class="travel-pay-card-des">
+                <span ng-bind="bankName">招商银行</span>（<span >3287</span>）
+            </div>
+            <div class="travel-icon-wrap">
+                <!--<input type="radio" name="pay" checked="checked"/>-->
+                <span class="iconfont">&#xe7c8;</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="month_pay">
+    <div class="first_background">
+        首付: ￥ <span>10000</span>
+    </div>
+
+    <div class="stage_display">
+        <i class="iconfont">&#xe666;</i>
+        <span>分期</span>
+
+        <div class="stage_display_right">
+            ￥ <span>31.00</span> × <span ng-bind="firstPay.oTotalDuration">3</span> 期
+        </div>
+    </div>
+</div>
+<!--立即支付-->
+<div class="tra-detail-submit" ng-click="orderPay()">
+    <!--<div>-->
+    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+    <!--&lt;!&ndash;支付：¥<span ng-bind="showPrice(firstPay.amt)">0</span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+    <!--&lt;!&ndash;分期¥<span ng-bind="oDurationMoney">0</span><i id="chengIcon">×</i><span ng-bind="firstPay.oTotalDuration">0</span>期&ndash;&gt;-->
+    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<a  class="tra-order-submit" ng-click="orderPay()">-->
+    <!--立即支付-->
+    <!--</a>-->
+    立即支付
+</div>
+
+<!--订单过期遮罩层-->
+<section class="pays-container" ng-style="shelterShow">
+    <div class="pays-inner">
+        <div class="pays-title">
+            <div class="iconfont iconfont-failicon">&#xe636;</div>
+            <div>抱歉，由于支付已超时，您的订单已过期，请重新下单进行支付！</div>
+        </div>
+        <div class="pays-content">
+            <div class="pays-back" ng-click="backIndex()">去 首 页</div>
+            <div class="pays-continue" ng-click="backTravel()">我的订单</div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="../../static/js/travel/travel_checkstand_first.js"></script>
+<script>
+
+</script>
+</html>

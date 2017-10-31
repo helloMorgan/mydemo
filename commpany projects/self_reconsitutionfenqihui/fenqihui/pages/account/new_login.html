@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+
+    <link rel="stylesheet" href="../../static/css/account/new_login.css">
+</head>
+<body ng-app="newLoginApp" ng-controller="newLoginCtrl">
+    <div class="container">
+
+        <div class="login_form">
+            <div class="user_phone">
+                <label></label>
+                <input type="tel" class="tel_input" maxlength="11" placeholder="请输入手机号" ng-model="phoneNum">
+                <i class="iconfont close_btn" ng-click="clearInput()">&#xe65b;</i>
+            </div>
+
+            <div class="user_code">
+                <label></label>
+                <input type="tel" class="tel_input" maxlength="6" placeholder="请输入验证码" style="width:6.8rem" ng-model="userCode">
+                <i class="iconfont line_font">&#xe668;</i>
+                <div class="get_code" ng-click="getCode()" ng-model="msText" ng-style="msStyle">
+                    {{msText}}
+                </div>
+            </div>
+
+            <div class="register-agree register-same" id="register-only">
+                <i class="iconfont" ng-class="{'read-deal':!isReadDeal}" ng-click="agreeDeal()" style="margin-left: 1rem">&#xe665;</i>
+                <a href="javascript:location.href='../travel/travel_contract_text.html'">&lt;分期惠注册协议&gt;</a>
+            </div>
+            <div class="login_submit" ng-click="login()">
+                登录
+            </div>
+        </div>
+
+    </div>
+
+    <div id="code-state"  ng-style="codestate" style="display: none">
+        <span ng-bind="state" class="send-status"></span>
+    </div>
+
+    <div class="register-shelter bounceInDown" ng-style="register" ng-click="shelterHidden()">
+        <div id="register-button">
+            <div class="register-in">
+                <a ng-click="toRealName()">进入实名验证</a>
+            </div>
+            <div class="register-out">
+                <a href="javascript:void(0)"  ng-click="registerSuccess()">跳过实名，完成注册</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <script src="../../static/js/account/new_login.js"></script>
+</html>

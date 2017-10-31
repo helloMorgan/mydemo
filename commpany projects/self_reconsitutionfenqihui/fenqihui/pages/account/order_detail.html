@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单详情</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/account/order_detail.css">
+</head>
+
+<body>
+<header class="travel-head-nav">
+    <h1>订单详情</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+<img src="../../static/bitmap/account/order_detail_banner.png" class="order_detail_banner"/>
+<div class="order_detail_container">
+    <hr/>
+    <span class="order_detail_title">婚庆</span>
+    <hr/>
+    <ul class="order_details">
+        <li class="order_detail_item"><span>首付款金额(元)</span><span class="firstPrice"></span></li>
+        <li class="order_detail_item"><span>预付款金额(元)</span><span class="prepayMoney"></span></li>
+        <li class="order_detail_item "><span>分期金额</span><span class="durationMoney"></span></li>
+        <li class="order_detail_item"><span>分期期数</span><span class="duration">12</span></li>
+        <li class="order_detail_item"><span>每月应还</span><span class="durationMoney"></span></li>
+    </ul>
+</div>
+
+<div class="order_detail_container">
+    <ul>
+        <li class="order_detail_item viewContract"><span>查看合同</span><span class="iconfont">&#xe607;</span></li>
+    </ul>
+</div>
+
+<script src="../../static/js/account/order_detail.js"></script>
+</body>
+
+</html>

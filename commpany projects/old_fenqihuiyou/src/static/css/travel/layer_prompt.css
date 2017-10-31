@@ -1,0 +1,116 @@
+.prompt_box {
+    width: 13rem;
+    height: 5.5rem;
+    position: absolute;
+    z-index: 2;
+    color: Red;
+    background-color: White;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    border-radius: .4rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+
+}
+
+.prompt_box>p {
+    font-size: .7rem;
+    height: 1.5rem;
+    color: #606666;
+    line-height:1.5rem;
+    text-align: center;
+}
+/*.prompt_icon{*/
+    /*text-align: center;*/
+    /*margin-bottom: 0.5rem;*/
+/*}*/
+/*.prompt_icon i{*/
+    /*font-size:2rem;*/
+    /*color:#00a35a;*/
+/*}*/
+.close_btn span{
+    font-size: 0.85rem;
+    width: 4rem;
+    line-height: 1.8rem;
+    color: #fff;
+    display: inline-block;
+    background: -webkit-linear-gradient(left, #00b6dd, #00ad65);
+    background: -o-linear-gradient(right, #00b6dd, #00ad65);
+    background: -moz-linear-gradient(right, #00b6dd, #00ad65);
+    background: linear-gradient(to right, #00b6dd, #00ad65);
+    border-radius: .3rem;
+}
+.prompt_box .close_btn {
+    text-align: center;
+    width: 100%;
+    margin-top:0.5rem;
+
+}
+
+.layer {
+    background: rgba(102, 102, 102, 0.6);
+    /*filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#99666666', endColorstr='#99666666');*/
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+h3 {
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .85rem;
+    text-align: center;
+    color: #606666;
+
+}
+
+.basic_msm {
+    margin-right: 2rem;
+}
+
+.u-loader {
+    background: url('../../bitmap/account/loader.gif');
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -42px 0 0 -42px;
+    width: 85px;
+    height: 25px;
+    z-index: 15000;
+    color: #e9e9e9;
+    font: 12px/1.5 Arial;
+    text-align: center;
+    padding-top: 60px;
+    /* display: none; */
+}
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 99999;
+    margin: auto;
+    background: url('../../bitmap/account/bx_loader.gif') no-repeat center center;
+    background-size: 5% 5%;
+}
+
+.prompt_box>img {
+    position: absolute;
+    top:-3rem;
+    right: 0;
+}

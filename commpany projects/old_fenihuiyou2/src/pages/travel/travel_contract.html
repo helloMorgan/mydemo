@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看旅行合同</title>
+    <link rel="stylesheet" href="../../static/css/travel/travel_contract.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css"/>
+    @@include('../../templates/head.inc')
+</head>
+<body ng-app="contractApp" ng-controller="contractCtrl">
+<header class="travel-head-nav">
+    <h1 ng-bind="tit">查看旅行合同</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+
+<section class="contract-container">
+    <!--旅行合同-->
+    <section class="contract-inner">
+        <div class="contract-head">
+            <i class="contract-icon iconfont">&#xe62c;</i><span class="contract-title">旅游合同</span>
+        </div>
+        <div class="contract-img">
+            <ul>
+                <li ng-repeat="item in travelContract">
+                    <img src="{{item.fileUrl}}" alt="{{item.fileName}}" ng-click="scaleImg($event, $index)" ng-cloak>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--付款收据-->
+    <section class="contract-inner" ng-hide="payShow">
+        <div class="contract-head">
+            <i class="contract-icon iconfont">&#xe62f;</i><span class="contract-title">付款收据</span>
+        </div>
+        <div class="contract-img">
+            <ul>
+                <li ng-repeat="item in payContract">
+                    <img src="{{item.fileUrl}}" alt="{{item.fileName}}" ng-click="scaleImg($event, $index)">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--其他凭证-->
+    <section class="contract-inner" ng-hide="otherShow">
+        <div class="contract-head">
+            <i class="contract-icon iconfont">&#xe62e;</i><span class="contract-title">其他凭证</span>
+        </div>
+        <div class="contract-img">
+            <ul>
+                <li ng-repeat="item in otherContract">
+                    <img src="{{item.fileUrl}}" alt="{{item.fileName}}" ng-click="scaleImg($event, $index)">
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<!--图片展示层-->
+<section class="pays-container" ng-style="imgSelect?imgShow:imgHidden" ng-click="shelterHidden()">
+    <div class="pays-inner">
+        <img src="{{imgUrl}}" alt="">
+    </div>
+</section>
+<!--<section class="pays-container" ng-style="imgSelect?imgShow:imgHidden" ng-click="shelterHidden()">-->
+    <!--<div class="swiper-container">-->
+        <!--<div class="swiper-wrapper">-->
+            <!--<div class="swiper-slide" ng-repeat="item in travelContract" >-->
+                <!--<img src="{{item.fileUrl}}" ng-click="shelterHidden()" >-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
+
+</body>
+<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="../../static/js/travel/travel_contract.js"></script>
+</html>

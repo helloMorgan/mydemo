@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="paySuccess">
+<head>
+    <meta charset="UTF-8">
+    <title>支付成功</title>
+    
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+    <link rel="stylesheet" href="../../static/css/travel/layer_prompt.css"/>
+    <style>
+        body, html, .pays-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pays-container {
+            /*background: #000;*/
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .pays-inner {
+            width: 60%;
+            height: 7rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+            border: 1px solid #B7B7B7;
+            border-radius: 0.2rem;
+            padding: 1rem;
+            box-shadow: 0.2rem 0.2rem 0.2rem #ccc;
+            z-index: 100;
+        }
+
+        .pays-title {
+            width: 100%;
+            height: 5rem;
+            text-align: center;
+        }
+
+        .pays-title > div:first-child {
+            margin-bottom: 0.2rem;
+            height: 3rem;
+            font-size: 3rem;
+            color: #00ad64;
+        }
+
+        .pays-title img {
+            width: 50%;
+            height: 100%;
+        }
+
+        .pays-title > div:last-child {
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.9rem;
+            color: #4dc699;
+        }
+
+        .pays-content {
+            width: 100%;
+            height: 2rem;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+        }
+
+        .pays-content > div {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: center;
+            color: #fff;
+            line-height: 2rem;
+            height: 100%;
+            border-radius: 0.2rem;
+        }
+
+        .pays-content > div:first-child {
+            background: -webkit-linear-gradient(left top, #00b0df, #00ad64);
+            /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(bottom right, #00b0df, #00ad64);
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(bottom right, #00b0df, #00ad64);
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(to bottom right, #00b0df, #00ad64);
+            /* 标准的语法 */
+            margin-right: 0.2rem;
+        }
+
+        .pays-content > div:last-child {
+            background: -webkit-linear-gradient(left top, #f06e00, #e1281c);
+            /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(bottom right, #f06e00, #e1281c);
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(bottom right, #f06e00, #e1281c);
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(to bottom right, #f06e00, #e1281c);
+            margin-left: 0.2rem;
+        }
+
+        .prompt_box > p {
+            border-bottom: none;
+        }
+
+        .prompt_box .close_btn {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body ng-controller="paySuccessController">
+<!--<section class="pays-container">-->
+<!--<div class="pays-inner">-->
+<!--<div class="pays-title">-->
+
+<!--<div class="iconfont">&#xe6be;</div>-->
+<!--<div>恭喜您，成功支付！</div>-->
+<!--</div>-->
+<!--<div class="pays-content">-->
+<!--<div class="pays-back" onclick="backIndex()">首页</div>-->
+<!--<div class="pays" onclick="backTravel()">我的订单</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+
+
+<div class="layer" style="display: block">
+    <div class="prompt_box">
+        <!--<div class="prompt_icon"><i class="iconfont">&#xe660;</i></div>-->
+        <p>您的支付已成功，请保持电话畅通</p>
+        <!--<p>我们的客服将在两个工作日内与您联系</p>-->
+
+        <div class="close_btn ">
+            <!--<a class="close_btn">-->
+            <!--OK-->
+            <!--</a>-->
+            <span ng-click="prompt();">好的</span>
+        </div>
+
+        <!--<img src="../../static/bitmap/travel/close_order_pro.png" alt="关闭按钮" ng-click="promptClose()">-->
+    </div>
+</div>
+<!--<div id="layer">-->
+<!--<div class="prompt_box">-->
+<!--<p ng-bind="pro_text"></p>-->
+<!--<div class="close_btn">确定</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<script>
+
+    controllerFunc('paySuccess', 'paySuccessController', function ($scope, $http, $timeout) {
+        var flag = true;
+        var paid_type = localStorage.getItem('paid_type');
+        var params = {};
+
+        function init() {
+            if (paid_type == 1) {
+                $scope.id = localStorage.getItem('id');
+                params = {
+                    'paidType': 1,
+                    'rid': $scope.id
+                }
+            } else {
+                $scope.rId = localStorage.getItem('rId');
+                params = {
+                    'paidType': paid_type,
+                    'rId': $scope.rId
+                }
+            }
+        }
+
+        init();
+        $scope.prompt = function (str) {
+            $('.close_btn').click(function () {
+                $('#layer').css('display', 'none');
+                if (flag) {
+                    navive();
+                    flag = false;
+                }
+            });
+        };
+
+        function navive() {
+            $http({
+                method: 'POST',
+                url: BaseUrl + 'fqhrepaymentlog/saveFqhRepaymentPlanLog',
+                params: params
+            }).then(function (response) {
+                if (response.data.result == SUCCESS_CODE) {
+                    go_page('../travel/tracel_myStages.html');
+                }
+
+            }, function () {
+                alert("网络异常");
+                console.error('网络异常');
+            })
+
+
+            flag = true;
+        }
+
+
+        function backIndex() {
+            var typeNative = getTypeNative();
+            if (typeNative === 'ios') {
+                backHome();
+            } else if (typeNative === 'android') {
+                android.backHome();
+            } else {
+                go_page('../recommended/recommended_index.html');
+            }
+        }
+
+        function backTravel() {
+//           alert("支付成功");
+//        alert(typeNative);
+            var typeNative = getTypeNative();
+            if (typeNative == 'ios') {
+//                alert("支付成功");
+                payBackToAccount();
+            } else if (typeNative == 'android') {
+//            alert("支付成功");
+                android.backAccount();
+            } else {
+                alert("else");
+                go_page('../account/user_personal.html');
+
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

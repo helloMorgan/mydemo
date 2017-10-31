@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="ngScope">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/travel/travel_order_detail.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/layer_prompt.css"/>
+</head>
+
+<body ng-controller="ngController">
+<header class="travel-head-nav">
+    <h1>订单详情</h1>
+    <i class="iconfont-back iconfont" ng-click='goBack();'>&#xe603;</i>
+</header>
+
+<section class="travel-order-item">
+    <h2 ng-bind="pTitle">上海/北京/成都直飞普吉岛6-7天自由行</h2>
+    <p ng-bind="'（'+ subTitle + '）'">(入住五星级酒店，专车接送)</p>
+
+    <section class="travel-order-product">
+        <ul>
+            <!--<li>-->
+                <!--<label>分期惠游：</label><span>￥</span><span ng-bind="downPayment | formatNum"></span><span ng-bind="'+￥'+installment"></span></li>-->
+            <!--<li>-->
+                <!--<label>选择产品</label><span ng-bind="comboName"></span></li>-->
+            <li>
+                <label>出发日期：</label><span ng-bind="departureDate"></span></li>
+            <li>
+                <label>出发人数：</label><span ng-bind="shopNum"></span></li>
+        </ul>
+        <figure class="travel-order-detail-img">
+            <img id="myImg"  ng-src="{{OSS_IMG_URL+imgPath}}">
+        </figure>
+
+        <!-- The Modal -->
+        <figure id="myModal" class="modal">
+            <figcaption class="close">×</figcaption>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </figure>
+
+        <img src="" alt="">
+    </section>
+
+</section>
+
+<p class="travel-title-price"><span class="iconfont travel-order-icon-reset">&#xe65d;</span>价格明细</p>
+
+<section class="travel-price-detail-info">
+    <ul class="travel-detail-price">
+        <li><span class="travel-price-info">分期惠游</span>
+            <span>首付￥</span>
+            <i ng-bind="downPayment | formatNum"></i>
+            <span ng-if="durationMoney">
+                <span>+￥</span><i ng-bind="durationMoney | formatNum"></i>×<span ng-bind="oTotalDuration"></span>期
+            </span>
+            <!--<p class="iconfont trevel-issue-icon" ng-click="showDialog()">&#xe64d;</p>-->
+            <!--<section for="" class="travel-info-dialog travel-info-cover" ng-style="isDialog">-->
+                <!--<p>手续费说明</p>-->
+                <!--<p ng-bind="rateDescription"></p>-->
+            <!--</section>-->
+        </li>
+        <!--<li><span class="travel-price-info">分期惠游</span><span>首付$</span><i>10,1000</i>+$<i>599</i>*3期</li>-->
+        <!--<li><span class="travel-price-info">分期惠游</span><span ng-bind="installment"></span></li>-->
+        <!--<li><span class="travel-price-info">可用额度</span><span ng-bind="creditMoney | formatNum"></span><span>元</span></li>-->
+    </ul>
+    <section class="travel-order-bottom-wrap">
+        <p><i class="iconfont" ng-click="readDeal($event)">&#xe624;</i> <span>我已阅读并同意</span>
+            <a href="javascript:void(0)" ng-click="goInstallment()"> <span class="travel-book-name"> &lt;&lt; 分期惠游咨询服务协议 &gt;&gt;</span></a>
+        </p>
+    </section>
+</section>
+<!--    footer-->
+<footer class="travel-pay-foot">
+    <section>
+        <p class="travel-pay-calculate"><span>首付：￥</span><i ng-bind="downPayment | formatNum"></i></p>
+        <p class="travel-last-devide"><span>+</span> <i ng-bind="durationMoney"></i>元×<i ng-bind="oTotalDuration"></i>期</p>
+    </section>
+    <section ng-click="submitOrder()" ng-class="{'create-order':canCreate}">
+        提交预定
+    </section>
+</footer>
+
+<div class="layer">
+    <div class="prompt_box">
+        <!--<div class="prompt_icon"><i class="iconfont">&#xe660;</i></div>-->
+        <p>您的预订已提交，请保持电话畅通</p>
+        <p>我们的客服将在两个工作日内与您联系</p>
+
+        <div class="close_btn" >
+            <!--<a class="close_btn">-->
+                <!--OK-->
+            <!--</a>-->
+            <span ng-click="backAccount();">好的</span>
+        </div>
+
+        <!--<img src="../../static/bitmap/travel/close_order_pro.png" alt="关闭按钮" ng-click="promptClose()">-->
+    </div>
+</div>
+<script src='../../static/js/travel/travel_order_detail.js'></script>
+</body>
+
+</html>

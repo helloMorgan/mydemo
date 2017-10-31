@@ -1,0 +1,282 @@
+
+body,html {
+    background: #f4f4f4;
+    width: 100%;
+    height: 100%;
+}
+#header{
+	position: relative;
+	width: 100%;
+	height: 7.5rem;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.8rem;
+	color: black;
+	 background:url("../../bitmap/travel/titleBanner_01.jpg");
+    background-size: 100% 100%;
+}
+.header_title{
+	display: flex;
+	flex: 1;
+	justify-content:center;
+	align-items: center;
+	position: relative;
+}
+.header_info{
+	display: flex;
+	flex: 1;
+}
+.header_install{
+	width: 1rem;
+	height: 1rem;
+	background: url("../../bitmap/travel/install.gif") no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top:1.5rem;
+	right: 1rem;
+}
+.header_info{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items:flex-start;
+}
+.my_info{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.title_img img{
+	width: 2.6rem;
+	height: 2.6rem;
+	margin-right: 0.5rem;
+}
+.title_phone{
+	color: #FFFFFF;
+	font-size: 0.7rem;
+	display: flex;
+	align-items: center;
+	padding-bottom:0.4rem ;
+}
+.header_lift{
+	border-radius: 0.5rem;
+	height:0.8rem;
+	padding: 0.2rem 0.3rem;
+	line-height: 1rem;
+	background: #00ceb7;
+	display: flex;
+	align-self: center;
+	flex-direction:row;
+	justify-content:center;
+	align-items: center;
+	
+}
+.header_lift span{
+	width: 1rem;
+	height: 1rem;
+	background: #00e5cb;
+	border-radius: 0.5rem;
+}
+.header_lift p{
+	color: #FFFFFF;
+	font-size: 0.7rem;
+}
+.main_tab{
+	background: #FFFFFF;
+	height:2.8rem;
+	line-height: 2.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items: center;
+}
+.main_tab span{
+	display: flex;
+	font-size: 0.8rem;
+	flex: 1;
+	justify-content: center;
+	height: 2.8rem;
+	line-height: 2.8rem;
+	border-bottom: 1px solid #CCC7C7;
+	
+}
+.main_tab label{
+	font-size: 1rem;
+
+	
+}
+.main{
+	width: 17.25rem;
+	padding: 0.75rem;
+	
+}
+.mainPlace{
+	position: relative;
+	padding: 0 0.75rem;
+	margin: 0 auto;
+	background: #FFFFFF;
+	padding-bottom: 1.5rem; 
+	font-size: 0.8rem;
+	
+}
+.header_lift .iconfont{
+	font-size: 0.8rem;
+	text-align: center;
+}
+.badge{
+	position: absolute;
+	top: -1rem;left: -0.75rem;
+	background: #00ceb7;
+	padding: 0.3rem 0.7rem;
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	border-radius:0 0 1rem 0;
+	
+}
+.dataList_li{
+	position: relative;
+	margin:0 0 1rem 0;
+	
+}
+.dataList{
+	padding-top:1rem;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+}
+.dataListItem{
+	height: 2.6rem;
+	line-height: 2.6rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+.listText{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.iconfont{
+	color: #EEEEEE;
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+	
+}
+.itemState{
+	width: 30%;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	font-size: 0.8rem;
+	color: #ea3200;
+	margin-left:1rem;
+	float: left;
+}
+.border{
+	width: 18.75rem;
+	height: 0.5rem;
+	background: #f4f4f4;
+	position: relative;
+	left: -2rem;
+}
+/*.itemDetails{
+	
+	height: 2.25rem;
+	line-height: 2.25rem;
+	position: relative;
+	left: 9rem;
+	font-size: 0.9rem;
+	color: #ffc549;
+	border: 2px solid #ffe113;
+	border-radius: 1.2rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	
+}
+*/
+.itemDetalis{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 2.25rem;
+	margin-bottom: 1.5rem;
+	margin-top: .5rem;
+}
+.itemTab{
+	width: 7.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.9rem;
+	color: #ffc549;
+	border: 2px solid #ffe113;
+	border-radius: 1.2rem;
+
+}
+.goPay{
+	height: 2.25rem;
+	width: 7.25rem;
+	display: flex;
+	justify-content: center;
+	line-height: 2.25rem;
+	align-self: center;
+	font-size: 0.9rem;
+	color: #ffc549;
+	border: 2px solid #ffe113;
+	border-radius: 1.2rem;
+	margin-bottom: 1.5rem;
+	margin: 0 auto;
+	
+}
+.forwardPay{
+	display: flex;
+	align-self: center;
+	font-size: 0.8rem;
+	color: #555555;
+}
+
+
+
+.title_star>.iconfont {
+	float: left;
+}
+.green{
+	color:#00ceb7;
+}
+.gray{
+	
+	color: #999;
+}
+.overdueFee{
+	position: absolute;
+	top: 1.2rem;
+	right: 0;
+	color: #ea3200;
+}
+
+.item_pay {
+	display: inline-block;
+	width: 5rem;
+	height: 2rem;
+	border: 2px solid #ffe113;
+	border-radius: 1.2rem;
+	text-align: center;
+	line-height: 2rem;
+	color: #ff4500;
+	float: right;
+	margin-top: .4rem;
+}
+
+.dataListItemTop {
+	margin-top: 1rem;
+}
+
+
+
+
+

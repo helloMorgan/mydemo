@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userSet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/travel/detail.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_set.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+    <script>
+        sessionStorage.removeItem('save');
+    </script>
+</head>
+
+<body ng-controller="userSetController">
+
+<header class="travel-head-nav">
+    <h1>设置</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+<section class="userset-wrap">
+    <ul>
+
+
+        <li>
+            <a href="../account/user_account_set.html">
+                <i class="iconfont icon_left">&#xe666;</i>
+                <span>账号设置</span>
+            </a>
+        </li>
+        <li>
+            <a href="./user_about_us.html">
+                <i class="iconfont icon_left">&#xe666;</i>
+                <span>关于我们</span>
+            </a>
+        </li>
+
+
+        <!--<li>-->
+            <!--<a class="update_version">-->
+                <!--<p class="update_button" ng-click="noUpdate()"></p>-->
+                <!--<i class="iconfont icon_left">&lt;!&ndash;&#xe627;&ndash;&gt;&#xe666;</i>-->
+                <!--<span>版本更新</span>-->
+                <!--&lt;!&ndash;<i class="iconfont user_icon_reset">&#xe607;</i>&ndash;&gt;-->
+            <!--</a>-->
+        <!--</li>-->
+        <li>
+            <a class="hotline">
+
+                <i class="iconfont icon_left">&#xe666;</i>
+                <span>客服电话</span>
+                <p  class="update_button" ng-click="hotLine()">
+                    <i class="iconfont user-set-tel">400-898-6658</i>
+                    <i class="iconfont tel">&#xe6f9;</i>
+                </p>
+
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+<div class="popWindow2">
+
+</div>
+
+<div class="bomb_box">
+    <div class="phone_box">
+        <ul>
+            <li>客服电话</li>
+            <li>4008986658</li>
+            <li>(工作日9:00-18:00)</li>
+        </ul>
+        <div class="userset-button user-no-width" style=" margin: 0; margin-top: 1.125rem; ">
+            <div class="btn blue" id="phone">
+                <a href="tel:4008986658" class="a_phone">拨打</a>
+            </div>
+        </div>
+        <div class="userset-button  btn_top user-no-width">
+            <div class="btn btn_boder" id="cancel_phone">
+                <a href="javascript:void(0);" class="a_cancel">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popWindow">
+    <div class="prompt_for_no_updates">
+        <p>当前版本已为最新</p>
+        <div class="close_btn">
+            确定
+        </div>
+    </div>
+</div>
+
+
+<p class="userset-button" ng-click="lagout()">
+    注销登录
+</p>
+
+<!--<div class="confirm_list" ng-if="isDisplay" ng-cloak>-->
+    <!--<div class="confirm_box" >-->
+        <!--<dl class="confirm_01 ">-->
+            <!--<dt style=""></dt>-->
+            <!--<dd id="confirm_content">确认退出登录？</dd>-->
+        <!--</dl>-->
+        <!--<p id="confirm_cancelBtn" ng-click="cancel()">取消</p>-->
+        <!--<p id="confirm_okBtn" ng-click='confirm()'><span>确认</span></p>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="popWindow_al" ng-if="isDisplay" ng-cloak>
+    <div class="prompt_for_no_updates1" id="pop_div">
+        <p id="pop_title">确认退出登录？</p>
+        <div class="close_btn1" style="padding: 0.5rem 0;">
+                <span>
+                 <span class="mod_no"ng-click="cancel()">取消</span>
+                 <span class="mod_yes" ng-click='confirm()'>确认</span>
+                </span>
+        </div>
+    </div>
+</div>
+
+<div class="layer" ng-if="isDisplay">
+
+</div>
+
+<div id="layer">
+    <div class="prompt_box">
+        <p ng-bind="pro_text"></p>
+        <div class="close_btn ">确定</div>
+    </div>
+</div>
+
+
+<script src="../../static/js/account/user_set.js">
+</script>
+
+</body>
+</html>

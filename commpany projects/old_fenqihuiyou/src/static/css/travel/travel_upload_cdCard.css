@@ -1,0 +1,55 @@
+body{
+    background: #ebeff2;
+    height: 100%;
+}
+
+.addHeight{
+    height: 5rem;
+}
+
+.travel_upload{
+    width: 16.75rem;
+    background: #fff;
+    line-height: 5rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    border:1px solid #bababa;
+    margin-top: 1.25rem;
+}
+
+.iconfont{
+    color: #bababa;
+}
+
+.travel_preview{
+    height: 10rem;
+    font-size: .65rem;
+    overflow: hidden;
+    line-height: 10rem;
+    color: #152323;
+}
+
+.travel_preview img{
+    width: 100%;
+    height: 100%;
+}
+
+.travel_submit{
+    width: 16.5rem;
+    height: 2.25rem;
+    text-align: center;
+    line-height: 2.25rem;
+    font-size: .85rem;
+    color: #fff;
+    margin: 3rem auto;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left top, #00b6dd , #00ad75); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right, #00b6dd, #00ad75); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, #00b6dd, #00ad75); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #00b6dd , #00ad75); /* 标准的语法 */
+}
+
+.unSubmit{
+    background: dimgray;
+}

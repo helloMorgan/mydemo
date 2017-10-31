@@ -1,0 +1,1 @@
+"use strict";controllerFunc("getToken","getTokenCtr",function(t,e,n,o){});

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载中....</title>
+    @@include('../../templates/head.inc')
+    <link rel="stylesheet" href="../../static/css/travel/detail.css"/>
+    <script>
+        window.onload = function () {
+            var loadDialog = new Dialog(DIALOG_LOAD);
+            loadDialog.show();
+            var token = GetQueryString('token');
+//            alert(token);
+//            localStorage.removeItem("fqhy_token");
+//            localStorage.setItem("fqhy_token", token);
+            setTimeout(function () {
+                window.location.href = decodeURIComponent(GetQueryString('next_url'));
+            }, 200);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

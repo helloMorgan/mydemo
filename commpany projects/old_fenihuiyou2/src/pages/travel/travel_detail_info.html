@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngScope">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>旅游详情</title>
+    <link rel="stylesheet" href="../../static/css/travel/travel_information.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css"/>
+    @@include('../../templates/head.inc')
+</head>
+
+<body ng-controller="ngController">
+<nav class="travel-head-guide" id="travel_detail_guideNav">
+    <p><i class="iconfont " style="display: inline-block; width: 4rem; color: #152323;"  ng-click="goBack();">&#xe603;</i></p>
+
+    <p><i class="iconfont col" style="margin-right: .5rem; color: #ebc223" ng-click="collection()">&#xe683;</i>
+        <!--<i ng-click="shareDetail()" class="iconfont">&#xe601;</i>-->
+    </p>
+</nav>
+<!-- head  swiper-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="item in images" repeat-finish="renderFinish()">
+            <img ng-src="{{OSS_IMG_URL+item.imgUrl}}"/>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <p class="travel-buy-num" ng-if=" salesCount > 0" ng-cloak>已有 <span ng-bind="salesCount"></span> 人购买</p>
+</div>
+<!-- 订单详情 -->
+<div class="travel_information_detail">
+    <div class="travel_information_title">
+        <div>
+            <p class="travel_information_title_p1" ng-bind="pTitle">
+            </p>
+        </div>
+        <p class="travel_information_title_p2" ng-model="pTitleSub">
+            ({{pTitleSub}})
+        </p>
+        <p><span class="travel_infor_div_price">首付最低:</span><span class="travel_infor_div_price"
+                                                                  ng-bind="myFistFee+'元'"></span></p>
+    </div>
+    <div class="travel_information_list">
+        <ul>
+            <!--￥<span class="travel_fen_price"-->
+            <!--ng-bind="myFistFee">元</span>起+-->
+            <div>
+                <div class="trav_fen">
+                    <p><span class="travel_tit">月付最低:</span><span
+                            class="travel_fen_price" ng-bind="aomountInstallment"></span>元×<span
+                            class="travel_fen_price"
+                            ng-bind="staging"></span>期
+                    </p>
+                </div>
+                <!--<p class="travel_cli"><span>可分期:</span><span ng-bind="fDuration.replace(',','/')"></span></p>-->
+                <div class="click_layer">
+                    <span ng-bind="fenNum"></span><span>种选择</span>
+                    <i class="iconfont trevel-issue-icon" ng-click="showLayer();">&#xe64d;</i>
+                </div>
+            </div>
+            <li ng-click="reservePro(1)">
+                <span class="travel_information_list_left">出发日期:</span>
+                <span class="travel_information_list_right" ng-bind="departureMonth"></span>
+                <div id="tra-info-start" ng-if="nowSubmit" ng-cloak><i class="iconfont iconfont-data"> &#xe607; </i>
+                </div>
+            </li>
+            <li ng-click="telPhone()">
+                <span class="travel_information_list_left">咨询电话:</span>
+                <span class="travel_information_list_right" ng-bind="siKefuMobile"></span>
+            </li>
+            <li>
+                <span class="travel_information_list_left">用户评价:</span>
+                <span class="travel_information_list_right">
+                          <i class="iconfont">&#xe608;</i>
+                          <i class="iconfont">&#xe608;</i>
+                          <i class="iconfont">&#xe608;</i>
+                          <i class="iconfont">&#xe608;</i>
+                          <i class="iconfont">&#xe608;</i>
+                    </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 详情tab -->
+<div class="travel_information_tab">
+    <div class="travel-tab-active tab" id="travel_tab_active">
+        <p class="">行程详情</p>
+    </div>
+    <div class="tab" ng-hide="infoListShow">
+        <p class="">预定须知</p>
+    </div>
+    <div class="tab" ng-hide="payListShow">
+        <p class="">费用包含</p>
+    </div>
+</div>
+<div class="travel-fragment-hostTab">
+    <!-- tab 行程详情 -->
+    <div class="swiper-scrollbar"></div>
+
+    <div class="swiper-container-content">
+        <div class="swiper-wrapper travel-tab-swiper-wrap">
+            <div class="swiper-slide" id="begin_swiper_slide">
+                <div class="info_img1" ng-repeat="item in travelList" repeat-finish="renderFinish()">
+                    <img class="info_imgA" ng-src={{OSS_IMG_URL+item.imgUrl}}>
+                </div>
+            </div>
+            <div class="swiper-slide travel-wrap-pay" ng-hide="infoListShow">
+                <div class="info_img2" ng-repeat="item in infoList" repeat-finish="renderFinish()">
+                    <img class="info_imgB" ng-src={{OSS_IMG_URL+item.imgUrl}}>
+                </div>
+            </div>
+            <div class="swiper-slide travel-wrap-pay" ng-hide="payListShow">
+                <div class="info_img3" ng-repeat="item in payList" repeat-finish="renderFinish()">
+                    <img class="info_imgC" ng-src={{OSS_IMG_URL+item.imgUrl}}>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='empty'></div>
+</div>
+<div class="travel-choose-dialog" id="travel-choose-dialog" ng-click="hideDialog()">
+
+    <div class="travel-dia-menu" id="detailMenu">
+        <ul>
+            <li id="detail_to_login" ng-bind="dialogInfo" ng-click="toPage(dialogInfo)">还没登录，立即登录</li>
+            <li ng-bind="dialogDown" ng-click="toPage1(dialogDown)"></li>
+        </ul>
+    </div>
+</div>
+<!--立即预定按钮-->
+<!--<img id="img1" style="position: fixed;bottom: 10px;height: 300px;width: 300px;"  alt="" >-->
+<!--<wx-img ng-bind="wxImgId" style="position: fixed;bottom: 10px;height: 300px;width: 300px;"  alt="" ></wx-img>-->
+<!--<wx-img ng-bind="""weixin://resourceid/8c52f8cd64f88cle39ecc70731laal462" style="position: fixed;top: 250px;height: 300px;width: 300px;"  alt=""></wx-img>-->
+<div class="load-wrap" ng-show="dialog">
+    <p class="load"></p>
+</div>
+
+<div class="travel_information_button" ng-click="reservePro(2)" ng-if="nowSubmit" ng-cloak>
+    <a>立即预定</a>
+</div>
+<div class="shelter" ng-if="isShelter" ng-click="closeStag()" ng-cloak>
+    <div class="staging_container">
+        <div class="staging">
+            <div class="staging_info">
+                <div class="staging_info_container" ng-repeat="item in installmentItems">
+                    <div class="staging_info_left">
+                        <div class="box" ng-model="item.fq">
+                            分{{item.fq}}期
+                        </div>
+                    </div>
+                    <div class="staging_info_right">
+                        <p><label>首付</label> ￥<span ng-bind="item.pFirstFee | number:2 ">1599.00</span>起+￥<span
+                                ng-bind="item.price">1599.12</span>×<span ng-bind="item.fq">3</span>期</p>
+                        <!--<p>手续费,月利率：<span ng-bind="item.initFee | number:2">1.5</span>%-->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="promp_msg" ng-hide="isMsg">
+    <span class="msg_des" ng-bind="msg"></span>
+</div>
+
+
+<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="../../static/js/travel/travel_detail_info.js"></script>
+</body>
+<script>
+
+
+    $(document).ready(function () {
+        <!--立即预定js定位 ios兼容设置-->
+        function changeHtml() {
+            var height = document.documentElement.clientHeight;
+            var fs = document.getElementsByTagName('html')[0].style.fontSize;
+            $('.travel_information_button').css({
+                'position': 'fixed',
+                'top': height - parseFloat(fs) * 3,
+            })
+        }
+
+        window.onresize = function () {
+            changeHtml();
+        }
+    });
+</script>
+
+</html>

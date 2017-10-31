@@ -1,0 +1,230 @@
+.swiper-container {
+    width: 100%;
+    height: 9.5rem;
+}
+
+.main-label-wrap {
+    min-height: 3.5rem;
+}
+.swiper-container img {
+    width: 100%;
+    height:100%;
+}
+
+.main-label {
+    width: 5.6rem;
+    height: 3.5rem;
+    text-align: center;
+    background: orange;
+    border-radius: 5px;
+    color: white;
+    float: left;
+    margin-bottom: 0.25rem;
+    margin-left: 0.2rem;
+    font-size: 0.65rem;
+}
+.route-sales-title .hot_sell{
+    color: #25464D;
+}
+.route-head-info {
+    background: url('../../bitmap/recommended/route-nav-info.png') no-repeat center;
+    height: 2.25rem;
+    background-size: 14.85rem;
+    text-align: center;
+    line-height: 2.25rem;
+    font-size: 0.75rem;
+    color: #b6c6c9;
+}
+
+.main-label img{
+    height:100%;width: 100%;
+}
+.main-label-wrap .main-label:nth-of-type(3n+1) {
+    margin-left: 0;
+}
+
+.main-info {
+    text-align: center;
+    background: orange;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 0.5rem;
+}
+
+.rec-fine-route {
+    color: #41c8da;
+}
+
+.bottom_nav ul li:nth-of-type(1) span {
+    /*color:linear-gradient(red, blue);*/
+    color: green;
+    background-image: -webkit-linear-gradient(#00ad65, #01b6da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.route-search {
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+    width: 100%;
+    height: 1.75rem;
+    /*box-sizing: border-box;*/
+    overflow: hidden;
+
+}
+.route_con{
+    height:100%;
+    width: 90%;
+    margin:0 0.75rem;
+    display: flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+.search_span{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    flex:1;
+}
+.realName-icon {
+    display: inline-block;
+    height: 1.75rem;
+    width: 1.75rem;
+   margin-right: 0.2rem;
+    z-index: 10000;
+    background: url('../../bitmap/recommended/route-real-name.png');
+    background-repeat: no-repeat;
+    background-size: 1.75rem;
+}
+
+.route-input {
+    background: white;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: 0;
+    padding-left: 2.8rem;
+    box-sizing: border-box;
+    font-size: 0.6rem;
+    color: #638383;
+}
+
+.route-search-icon {
+    position: absolute;
+    top: 0.7rem;
+    left: 1.25rem;
+    font-size: 0.75rem !important;
+}
+
+.main-label-wrap {
+    margin: 0 0.75rem;
+}
+
+.route-sales {
+    border-bottom: 0.5rem solid #eceff1;
+    padding-bottom: 0.5rem;
+}
+.route-sales-title {
+    height: 2.25rem;
+    line-height: 2.25rem;
+    text-indent: 1.25rem;
+    background: #ffffff url('../../bitmap/recommended/index_p_07.png') center no-repeat;
+    background-position: 0.75rem;
+    background-size: 0.15rem 0.65rem;
+}
+
+.clear {
+    clear: both;
+}
+
+.route-sale-bg {
+    width: 100%;
+    height: 6.25rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+    position: relative;
+}
+
+@keyframes saleBg {
+    0% {background-position: top;background-size: 100%}
+    25% {background-position: center;background-size: 105%}
+    50% {background-position: bottom;background-size: 110%}
+    75% {background-position: center;background-size: 105%}
+    100% {background-position: top;background-size: 100%}
+}
+
+.route-place, .route-sales-info {
+    text-indent: 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #203C43;
+}
+
+.route-sales-info {
+    font-size: 0.55rem;
+    color: #698589;
+}
+
+.route-sales-title span {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.route_tp{
+    padding: 1rem .25rem 0;
+    height: 2.2rem;
+    background: url('../../bitmap/recommended/index_p_07.png') top no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5px;
+}
+.route-sale-price {
+    border-radius: 0.2rem;
+    min-width: 4.875rem;
+    height: 3.2rem;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.route-price-info {
+    font-size: 0.45rem;
+    padding: 0 0.25rem 0.3rem 0.25rem;
+}
+
+.route-price-tag {
+    font-size: 0.3rem;
+    margin-right: 0.05rem;
+}
+
+.route-price-number {
+    font-size: 0.8rem;
+    font-weight:900;
+}
+
+.route-total-price {
+    height:1.1rem;
+    line-height: 1.1rem;
+    background: rgba(12, 23, 38, 0.7);
+    padding:0 0.25rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.route-total-price span {
+    font-size: 0.6rem;
+}
+
+.route-empty {
+    height: 3rem;
+}
+
+.route_hr {
+    width: 100%;
+    height: .5rem;
+    background: #dbe0e3;
+    margin-top: 1rem;
+}

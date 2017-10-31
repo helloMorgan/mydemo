@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>上传身份证</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/travel/travel_upload_cdCard.css?v={version}">
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css?v={version}" />
+     
+    </head>
+
+    <body>
+        <header class="travel-head-nav register-head">
+            <h1>上传身份证</h1>
+            <i class="iconfont-back iconfont " id="register-back" onclick='javascript:history.go(-1)'>&#xe603;</i>
+        </header>
+        <section class="travel_upload addHeight">
+            <p class="iconfont add_font">&#xe627;</p>
+            <input id="fileImage" type="file" name="file" capture="camera" onchange="uploadCdCardObj.previewImg(this,'#thubm')" accept="image/*" />
+        </section>
+
+        <section class="travel_upload travel_preview">
+            <span>预览</span>
+            <img src="" id="thubm" alt="">
+        </section>
+
+        <section class="travel_submit unSubmit">
+            下一步
+        </section>
+        <script src="../../static/js/lib/jquery.min.js?v={version}"></script>
+        <script src="../../static/js/lib/common.js?v={version}"></script>
+        <script src='../../static/js/travel/travel_upload_cdCard.js?v={version}'></script>
+    </body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="credits">
+
+<head>
+    <meta charset="UTF-8">
+    <title>信用额度</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+<script src="../../static/js/lib/common.js?v1=1.0"></script>
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_credits.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+</head>
+
+<body ng-controller="creditsController">
+    <div class="container">
+        <div class="displays_quota">
+            <hgroup>
+                <h2 ng-bind="totalMoney">{{totalMoney}}</h2>
+                <p>总额度（元）<a ng-click="promotion()">提升额度</a><i></i></p>
+            </hgroup>
+        </div>
+
+        <div class="display_quota_box">
+            <div class="amount_returned">
+                <hgroup>
+                    <h2>待还款总额(元)</h2>
+                    <p class="bold" ng-bind="freezeMoney">{{freezeMoney}}</p>
+                </hgroup>
+            </div>
+            <div class="available_credit">
+                <hgroup>
+                    <h2>当前可用额度(元)</h2>
+                    <p class="bold" ng-bind="leaveMoney">{{leaveMoney}}</p>
+                </hgroup>
+            </div>
+        </div>
+    </div>
+
+    <div class="layer" ng-if="isDisplay" ng-click="closeDisplay()">
+    </div>
+
+    <div class="bomb_box" ng-if="isDisplay">
+        <div class="phone_box">
+            <ul>
+                    <li>额度提升至</li>
+                    </ul>
+                    <div class="userset-button user-no-width" style=" margin: 0; margin-top: 1.125rem; ">
+                        <!--<input type="text" class="amount_text"  ng-model="amount"  ng-keyup="amount=thousandBitSeparator(amount)"-->
+                        <!--required>-->
+                        <input type="text" class="amount_text"    ng-model = "sendData.amount"  onkeypress="formatStr()">
+                    </div>
+                    <div class="userset-button btn_top user-no-width ">
+                        <div class="btn " id="cancel_phone " ng-click="increaseAmount() ">
+                            提交申请
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="pays-inner" ng-if="prompt">
+                <div class="pays-title">
+
+                    <div><img ng-src="{{path}}" alt="" id="img_src"></div>
+                    <div ng-bind="message">恭喜您，成功申请！</div>
+                </div>
+                <div class="pays-content">
+                    <div class="pays-back" ng-click="backIndex()">回首页</div>
+                    <div class="pays-continue" ng-click="closePro()">继续申请</div>
+                </div>
+            </div>
+
+
+            <div class="prompt_box" ng-if="userError">
+                <div class="pro_box">
+                    <p ng-bind="pro_text"></p>
+            <div class="close_btn " ng-click="closeBtn()">确定</div>
+        </div>
+    </div>
+
+    <div id="layer">
+        <div class="prompt_box">
+            <p ng-bind="pro_text"></p>
+            <div class="close_btn ">确定</div>
+        </div>
+    </div>
+
+
+    <script src="../../static/js/account/user_credits.js">
+    </script>
+
+</body>
+
+</html>

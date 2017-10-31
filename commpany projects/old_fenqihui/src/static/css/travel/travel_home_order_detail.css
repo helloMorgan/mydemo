@@ -1,0 +1,187 @@
+body{
+
+    background: #EBEFF2;
+}
+.travel-back{
+    height:2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size:0.8rem;
+    position: relative;
+    background: #fff;
+    margin-bottom: 2px;
+}
+.travel-back>a{
+    display: block;
+    position: absolute;
+    height:2rem;
+    line-height: 2rem;
+    margin-left: 0.75rem;
+    font-size:1rem;
+    color: #9C9C9C;
+    top:0;
+    font-weight: bold;
+    text-shadow:  0.1rem 0.1rem 0.1rem #8f949a;
+}
+.tra-home-order-detail{
+    padding:0 0.75rem;
+    background: #fff;
+}
+.tra-home-order-detail .travel_myOrder_top{
+    padding-left:0;
+    padding-right:0;
+}
+.tra-home-order-detail .travel_myOrder_info{
+    margin:0;
+}
+.tra-home-order-detail .travel_myOrder_mid{
+    padding-left:0;
+    padding-right:0;
+}
+.tra-detail-price{
+    height:1.9rem;
+    line-height:1.9rem;
+    padding:0 0.75rem;
+    display: flex;
+    align-items: center;
+}
+.tra-detail-price .tra-money-icon{
+    background:#01B19D;
+    border-radius: 0.2rem;
+    color: #fff;
+    font-size:0.5rem;
+    display: inline-block;
+    width:0.9rem;
+    height:0.9rem;
+    text-align: center;
+    line-height: 0.9rem;
+}
+.tra-detail-price span:last-child{
+    font-size:0.7rem;
+    margin-left:0.5rem;
+}
+.tra-detail-data{
+    padding:0 0.75rem;
+    height:3rem;
+    background: #fff;
+    line-height: 3rem;
+    margin-bottom: 0.25rem;
+    font-size:0;
+}
+.tra-detail-data>label{
+    font-size:0.7rem;
+    color: #000;
+    font-weight: bold;
+    margin-right:1rem;
+}
+.tra-detail-data .tra-detail-data1{
+    color: #276477;
+    font-size:0.7rem;
+
+}
+.tra-detail-data .tra-detail-data2{
+    color: #E1271B;
+    font-size:0.7rem;
+
+}
+.tra-detail-agree{
+    padding:0.7rem 0.75rem;
+    font-size:0.7rem;
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+.tra-detail-agree>label{
+    color: #95adb2;
+}
+.tra-detail-agree>input{
+    width:0.7rem;
+    height:0.7rem;
+    background:#01B19D;
+    color: #fff;
+    margin:0;
+}
+.tra-detail-agree>span:first-child{
+    display: inline-block;
+    width:0.7rem;
+    height:0.7rem;
+    background:#01B19D;
+    color: #fff;
+    margin:0;
+    text-align: center;
+    margin-right: 0.55rem;
+}
+.tra-detail-submit{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    display: flex;
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    /*background: #FFF;*/
+    background: -webkit-linear-gradient(top,#ffeb01,#fecc66);
+    background: linear-gradient(to bottom,#ffeb01,#fecc66);
+    text-align: center;
+    color: #a55f5a;
+    text-indent: 7rem;
+}
+.tra-detail-submit div{
+    flex:2;
+    height:100%;
+    margin-left: 0.75rem;
+
+}
+.tra-detail-submit div>p:first-child{
+    padding-top:0.75rem;
+    font-size:0.75rem;
+    color: #EB520C;
+}
+.tra-detail-submit div>p:last-child{
+    padding-top:0.6rem;
+    font-size:0.6rem;
+    color: #2A3E45;
+    font-weight: 400;
+}
+.tra-detail-submit .tra-order-submit{
+    flex:1;
+    display: block;
+    height:100%;
+    line-height: 3rem;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 0.1rem;
+    border-bottom-right-radius: 0;
+    /*background: -webkit-linear-gradient(top,#F06B01 , #E22D1A); !* Safari 5.1 - 6.0 *!*/
+    /*background: -o-linear-gradient(bottom , #F06B01 , #E22D1A); !* Opera 11.1 - 12.0 *!*/
+    /*background: -moz-linear-gradient(bottom ,#F06B01 , #E22D1A); !* Firefox 3.6 - 15 *!*/
+    /*background: linear-gradient(to bottom , #F06B01 , #E22D1A); !* 标准的语法 *!*/
+
+
+
+
+
+}
+
+.withdraw {
+    margin-left: .5rem;
+    height: 2rem;
+    font-size: .8rem;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999;
+}

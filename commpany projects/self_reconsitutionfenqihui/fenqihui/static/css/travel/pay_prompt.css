@@ -1,0 +1,105 @@
+body,
+html,
+.pays-container {
+	width: 100%;
+	height: 100%;
+}
+
+.pays-container {
+	/*background: #000;*/
+	position: relative;
+	font-size: 1rem;
+}
+
+.pays-inner {
+	width: 60%;
+	height: 7rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	border: 1px solid #B7B7B7;
+	border-radius: 0.2rem;
+	padding: 1rem;
+	box-shadow: 0.2rem 0.2rem 0.2rem #ccc;
+	z-index: 100;
+}
+
+.pays-title {
+	width: 100%;
+	height: 5rem;
+	text-align: center;
+}
+
+.pays-title>div:first-child {
+	margin-bottom: 0.2rem;
+	height: 3rem;
+	font-size: 3rem;
+	color: #00ad64;
+}
+
+.pays-title img {
+	width: 50%;
+	height: 100%;
+}
+
+.pays-title>div:last-child {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.9rem;
+	color: #4dc699;
+}
+
+.pays-content {
+	width: 100%;
+	height: 2rem;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+}
+
+.pays-content>div {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	text-align: center;
+	color: #fff;
+	line-height: 2rem;
+	height: 100%;
+	border-radius: 0.2rem;
+}
+
+.pays-content>div:first-child {
+	background: -webkit-linear-gradient(left top, #00b0df, #00ad64);
+	/* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(bottom right, #00b0df, #00ad64);
+	/* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(bottom right, #00b0df, #00ad64);
+	/* Firefox 3.6 - 15 */
+	background: linear-gradient(to bottom right, #00b0df, #00ad64);
+	/* 标准的语法 */
+	margin-right: 0.2rem;
+}
+
+.pays-content>div:last-child {
+	background: -webkit-linear-gradient(left top, #f06e00, #e1281c);
+	/* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(bottom right, #f06e00, #e1281c);
+	/* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(bottom right, #f06e00, #e1281c);
+	/* Firefox 3.6 - 15 */
+	background: linear-gradient(to bottom right, #f06e00, #e1281c);
+	margin-left: 0.2rem;
+}
+
+.prompt_box>p {
+	border-bottom: none;
+}
+
+.prompt_box .close_btn {
+	margin-top: 0;
+}

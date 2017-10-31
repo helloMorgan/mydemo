@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单详情</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+	</head>
+	
+	<link rel="stylesheet" type="text/css" href="../../static/css/travel/travel_myDetails.css"/>
+	<body ng-app='myDetails' ng-controller="myDetailsCtrl">
+	<header>
+		<img src="" ng-src="{{data.imgUrl}}" style="width:100%;height: 100%;" />
+	</header>
+		<div id="popup" ng-if="data.popup" ng-click="popupVanish()"></div>
+		<div class="stagesOrder" ng-if="data.stages">
+			<!--<div class="slide"><i>3期&nbsp;: &nbsp; </i> 首付<i> &nbsp;￥1599.00  </i> &nbsp;起 +&nbsp; <a>1599.12×13</a>  期</div>-->
+			<div class="slide stagesOrderBorder" ng-repeat='list in data.selectList track by $index'><i>{{list.duration}}期&nbsp;: &nbsp; </i> 首付<i> &nbsp;{{data.firstPrice}}  </i> &nbsp;起 +&nbsp; <a>{{list.mPay}}×{{list.duration}}</a>  期</div>
+			<!--<div class="slide"><i>3期&nbsp;: &nbsp; </i> 首付<i> &nbsp;￥1599.00  </i> &nbsp;起 +&nbsp;  <span class="stages_interest">免息</span></div>-->
+			
+		</div>
+		<div id="mainOrder">
+			<p class="mainOrder_title">{{data.dataList.title}}</p>
+			<div class="mainOrder_info">
+				<div class="firstPay" style="border-bottom:1px solid #DEDEDE ;">
+					<span>最低首付</span><i style="position: relative;left: 1.2rem;" >{{data.firstPrice}}</i><a style="flex: 2;display: inline-block; text-align: center;">{{data.businessName}}</a>
+				</div>
+				<div class="leastPay"><span>最低月付</span><i>{{data.monthPayLowest}}×{{data.duration}}期</i><a  class="select">{{data.select}}种选择</a><label class="submit_notice" ng-click="stages()"></label></div>
+			</div>
+		</div>
+		<div id="mainDetails">
+			<div class="mainDetails_tab">
+				<span class="mainDetails_chooseOne" ng-click="chooseTab(1)">图文详情</span>
+				<span class="mainDetails_chooseTwo" ng-if="data.Text" ng-click="chooseTab(2)">服务内容</span>
+			</div>
+			<div ng-show='!data.switch'  class="mainDetails_text">
+				<p class="mainDetails_title"></p>
+				<div class="mainDetails_word">
+					
+					<div class="mainDetails_article">
+						<p id="text">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div ng-show='data.switch' class="mainDetails_text">
+				<p id="mainDetails_title"></p>
+				
+			</div>
+		</div>
+		<footer ng-click="load()">提交订单</footer>
+	</body>
+	<script src="../../static/js/travel/travel_myDetails.js" type="text/javascript" charset="utf-8"></script>
+</html>

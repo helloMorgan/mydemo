@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="orderTrack">
+<head>
+    <meta charset="UTF-8">
+    <title>订单查询</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/account/order_tracking.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_set.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/layer_prompt.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+</head>
+
+
+<body ng-controller="orderTrackCtr">
+<header class="travel-head-nav">
+    <h1>订单查询</h1>
+    <!--<i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>-->
+</header>
+<!--<h1 class="order_header">-->
+    <!--<i class="iconfont">&#xe602;</i>-->
+    <!--<span>我的订单</span>-->
+<!--</h1>-->
+
+<div class="order_wrap">
+
+    <div class="myOrder_info" ng-repeat="item in orderList">
+        <ul class="order_content">
+
+            <li>
+                <label class="order_width">订单编号</label>
+                <span ng-bind="item.oNo">FFFFF11111111111111</span>
+            </li>
+            <li>
+                <label>商家</label>
+                <span ng-bind="item.sName">融360</span>
+            </li>
+            <li>
+                <label>产品</label>
+                <span ng-bind="item.pTitle">装修</span>
+            </li>
+            <li>
+                <label>分期金额（元）</label>
+                <span ng-bind="item.oTotalPrice">10000</span>
+            </li>
+            <li>
+                <label>分期期数（月）</label>
+                <span ng-bind="item.oTotalDuration">12</span>
+            </li>
+        </ul>
+
+        <hr width="90%" color="#f1f1f1">
+        <div class="status">
+            <span>订单状态</span>
+            <span ng-bind="item.oStatusDesc">待审核</span>
+        </div>
+
+        <!--<hr width="90%">-->
+        <div class="view" ng-hide="item.oProcessStatus != 303">
+            <!--<a href="javascript:void(0)" ng-click="goInstallment()">查看协议</a>-->
+            <a href="javascript:void(0)" class="view_repayment" ng-click="goWithdraw(item)">提现</a>
+            <!--<a href="javascript:void(0)"  ng-click="goPayInfo()">查看还款计划</a>-->
+        </div>
+    </div>
+</div>
+
+<div class="popWindow_al" ng-if="isDisplay" style="background-color: rgba(163,163,163,.5)" ng-cloak>
+    <div class="prompt_for_no_updates1" id="pop_div">
+        <p id="pop_title">确认退出登录？</p>
+        <div class="close_btn1" style="padding: 0.5rem 0;">
+                <span>
+                 <span class="mod_no" ng-click="cancel()">取消</span>
+                 <span class="mod_yes" ng-click='confirm()'>确认</span>
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="layer">
+    <div class="prompt_box" style="height: 4.8rem">
+        <!--<div class="prompt_icon"><i class="iconfont">&#xe660;</i></div>-->
+        <p>请先进行实名认证</p>
+        <div class="close_btn ">
+            <span ng-click="backAccount();">好的</span>
+        </div>
+
+        <!--<img src="../../static/bitmap/travel/close_order_pro.png" alt="关闭按钮" ng-click="promptClose()">-->
+    </div>
+</div>
+
+
+
+<footer class="bottom_nav" id="bottom-tab">
+    <ul>
+        <li id='nav_home' onClick="toReal()" ng-hide="realName"><a>实名认证</a></li>
+        <li id='nav_dest' ng-click="toOrder()"><a>提交订单</a></li>
+        <li id='nav_mine' onClick="toMine()"><a id="mine-btn">订单查询</a>
+        <li id="nav_layour" ng-click="lagout()" ng-hide="noToken"><a>退出登录</a></li>
+        <li id="nav_layIn" ng-click="layIn()" ng-hide="!noToken"><a>登录</a></li>
+    </ul>
+</footer>
+</body>
+
+<script src="../../static/js/account/order_tracking.js"></script>
+</html>

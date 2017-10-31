@@ -1,0 +1,1 @@
+"use strict";controllerFunc("getToken","getTokenCtr",function(e,t,o,n){GetQueryString("homeUrl");console.log(GetQueryString("code")),console.log(GetQueryString("state"))});

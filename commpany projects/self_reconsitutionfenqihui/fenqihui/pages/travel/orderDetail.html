@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>订单详情</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css?v={version}" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/travel/orderDetail.css?v={version}" />
+        <link rel="stylesheet" href="../../static/css/common/common_foot.css?v={version}" />
+
+    </head>
+
+    <body>
+        <div id="header">
+            <i class="iconfont-back_ss iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+            <h1>订单详情</h1>
+        </div>
+        <div id="main">
+            <div class="order_detail_banner"></div>
+            <div class="order_detail_info">
+                <i class="leftLine"></i>
+                <p class="title"></p><i class="rightLine"></i>
+                <ul class="order_detail_list">
+                    <li class="order_detail_li ">
+
+                        <label class="order_detail_label "><span class="iconfont">&#xe66c;</span>首付款</label>
+                        <span class="order_detail_span oTotalFirstPrice"></span>
+                    </li>
+                    <li class="order_detail_li ">
+
+                        <label class="order_detail_label "><span class="iconfont">&#xe66c;</span>预付款</label>
+                        <span class="order_detail_span oPrepayMoney"></span>
+                    </li>
+                    <li class="order_detail_li ">
+
+                        <label class="order_detail_label "> <span class="iconfont">&#xe66c;</span>分期惠</label>
+                        <span class="order_detail_span fenQi"></span>
+                    </li>
+                    <li class="order_detail_li ">
+
+                        <label class="order_detail_label "><span class="iconfont">&#xe66c;</span>分期期数</label>
+                        <span class="order_detail_span oTotalDuration"></span>
+                    </li>
+                    <li class="order_detail_li ">
+
+                        <label class="order_detail_label "><span class="iconfont">&#xe66c;</span>每月应还</label>
+                        <span class="order_detail_span oDurationMoney"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order_detail_detail">
+
+                <span class="order_detail_price">价格明细</span>
+                <li class="order_detail_li ">
+
+                    <p>
+                        <label class="order_detail_label "><span class="iconfont">&#xe66c;</span>首付:</label>
+                        <span class="order_detail_span oTotalFirstPrices"></span>
+                    </p>
+                    <p>
+                        <span class="order_detail_span fenQis"></span>
+                    </p>
+
+                </li>
+            </div>
+            <div class="order_detail_radio">
+                <i class="iconfont reader" onclick="orderDetailObj.agreeDeal()">&#xe66d;</i>
+                <p>我已阅读并同意
+                    <a href="javascript:location.href='../travel/travel_contract_text.html'">《分期惠-分期购买协议》</a>
+                </p>
+            </div>
+        </div>
+        <div id="footer" onclick="orderDetailObj.orderPay()">提交预定</div>
+        <div id="popup"></div>
+        <div class="layer">
+            <p class="successP">您的预订已提交，请保持电话畅通</p>
+            <p class="successP">我们的客服将在两个工作日内与您联系</p>
+            <p class="errorP">提交订单失败，请重试</p>
+            <span class="button" onclick="orderDetailObj.layers()">确定</span>
+        </div>
+        <script src="../../static/js/lib/jquery.min.js?v={version}"></script>
+        <script src="../../static/js/lib/common.js?v={version}"></script>
+        <script src="../../static/js/travel/orderDetail.js?v={version}" type="text/javascript" charset="utf-8"></script>
+    </body>
+
+</html>

@@ -1,0 +1,53 @@
+.bank_info {
+    height: 5.5rem;
+    width: 17.25rem;
+    background: #e7596a;
+    margin: .625rem;
+    border-radius: .4rem;
+    padding-top: 1px
+}
+
+.bank_info_top {
+    height: 3.5rem;
+    border-bottom: 1px solid #f196a8;
+}
+
+.bank_info_bottom {
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    font-size: .75rem;
+}
+
+.bank_info_top h1 {
+    width: 1.5rem;
+    height: 1.5rem;
+    /*background: url("../../bitmap/account/bank_icon/0102.png") no-repeat;*/
+    /*background: url("../../bitmap/account/bank_icon/0308.png") no-repeat;*/
+
+
+    margin-top: .625rem;
+    margin-left: .375rem;
+    float: left;
+}
+
+.bank_info_font {
+    width: 8.75rem;
+    color: #fff;
+    font-size: .75rem;
+    float: left;
+    margin-top: .755rem;
+    margin-left: .5rem;
+    font-weight: 500;
+}
+
+.bank_info_font p:last-child {
+    font-size: .5rem;
+    margin-top: .275rem;
+}
+
+.bank_info_font p {
+    width: 11rem;
+}
+

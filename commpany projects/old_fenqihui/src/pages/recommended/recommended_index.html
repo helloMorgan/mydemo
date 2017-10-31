@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="mainPage">
+
+<head>
+	<meta charset="utf-8">
+	<title>精品路线</title>
+	<link rel="stylesheet" href="../../static/css/recommended/recommended_index.css" />
+	<link rel="stylesheet" href="../../static/css/common/common_foot.css" />
+	<link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css" />
+	@@include('../../templates/head.inc')
+	@@include('../../templates/weiXin.inc')
+
+</head>
+
+<body ng-controller="mainController">
+	<div class="route-search" id="recommended_real_name" >
+		<div class="route_con">
+			<p ng-if="isRealName" ng-click="toRealName()" class="realName-icon" ></p>
+			<!--<span class="search_span">-->
+				<!--<span  class="iconfont route-search-icon">&#xe60d;</span>-->
+				<!--<input  id="route_search"  readonly  type="text" value="搜索...目的地/关键词" class="route-input" ng-click="goSearch()">-->
+			<!--</span>-->
+		</div>
+	</div>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" ng-repeat="item in bannerList" ng-click="toDetail(item.pId)">
+				<img ng-src={{OSS_IMG_URL+item.url}} >
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<!--<div class="route-head-info">分期旅行是一种习惯</div>-->
+	<div class="main-label-wrap" id="main-wrap">
+		<section class="main-label" ng-repeat="item in labelArray" ng-click="searchBourn(item.laId,item.laName, $index)" >
+			<img ng-src={{OSS_IMG_URL+item.url}} alt="">
+		</section>
+		<div class="clear"></div>
+	</div>
+
+	<!--<div class="route_hr"></div>-->
+	<div class="route-head-info">热销</div>
+	<div class="route-sales-wrap">
+		<!--<p class="route-sales-title"><span class="hot_sell">热销</span></p>-->
+		<div class="route-sales route-sales-begin" ng-click="searchDetail(item)" ng-repeat="item in proItems">
+			<!--url('../../bitmap/recommended/route-sales-img.png') center no-repeat;-->
+			<div class="route-sale-bg" ng-style="{'background':'url('+OSS_IMG_URL+item.imgUrl+') no-repeat'}">
+				<div class="route-sale-price">
+					<div class="route_tp">
+						<!--<p class="route-price-info">分期惠游</p>-->
+						<p class="route-price-month"><i>月付</i><span class="route-price-tag">￥</span><span class="route-price-number" ng-bind="item.monthPay.toFixed(0)"></span><span class="route-price-tag">起</span></p>
+					</div>
+					<!--<p class="route-total-price"><span>总价:</span><span ng-bind="item.pTotalMoney"></span></p>-->
+				</div>
+
+				<div class="tit_content">
+					<p ng-bind="item.proType"></p>
+				</div>
+			</div>
+			<p class="route-place" ng-bind="item.title"></p>
+			<!--<p class="route-sales-info" ng-bind="'('+item.pTitleSub+')'"></p>-->
+		</div>
+	</div>
+	<!--<h1 style="height: 300px;width: 300px;background: red" id="fenqihui">shexiangtou</h1>-->
+	<div class="route-empty"></div>
+	<footer class="bottom_nav" id="bottom-tab">
+		<ul>
+			<li id='nav_home' onClick="toIndex()">
+				<a><img src="../../static/bitmap/foot/boutique travel_access.png" alt=""></a>
+				<span class="foot_index"></span>
+			</li>
+			<li id='nav_dest' onClick="toDest()"><a><img src="../../static/bitmap/foot/dest.png" alt=""><p class="rec-fine-route"></p></a></li>
+			<li id='nav_mine' onClick="toMine()"><a id="mine-btn"><img src="../../static/bitmap/foot/my_travel.png" alt=""><p class="tra-travel"></p></a>
+			</li>
+		</ul>
+	</footer>
+	<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+	<script src="../../static/js/recommended/recommended_index.js"></script>
+	<!--<script src="../../static/js/weixin.js"></script>-->
+</body>
+
+</html>

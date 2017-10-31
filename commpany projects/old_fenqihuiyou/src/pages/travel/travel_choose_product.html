@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='travel-choose-product'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>日期选择</title>
+    <link rel="stylesheet" href="../../static/css/travel/travel_choose_product.css?_t=12345"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css"/>
+    @@include('../../templates/head.inc')
+</head>
+
+<body ng-controller='travel-choose'>
+<header class="travel-head-nav">
+    <h1>日期选择</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+
+<!--<div class="box" style="height: 1rem"></div>-->
+<section class="travel-content-wrap">
+    <div id="travel-head" class="travel-content-head">
+        <!--<h3>选择产品</h3>-->
+        <!--<section class="travel-choose-box" ng-repeat="item in packageItems"-->
+        <!--ng-click="selectCheckBox(item.mName,$event,$index)" repeat-finish="renderFinish()">-->
+        <!--<i id="radio_tag"-->
+        <!--class="iconfont iconfont-checkbox radio-tag">&#xe672;</i>-->
+        <!--<p class="travel-choose-info" ng-bind="item.mYearMonth"></p>-->
+        <!--&lt;!&ndash;<input type="checkbox" class="">&ndash;&gt;-->
+        <!--</section>-->
+        <p class="travel-choose-data-info">选择日期</p>
+    </div>
+    <div class="travel-choose-data">
+        <!--swiper init -->
+        <!--style="margin-left: -.5rem;"-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-click="selectDate(item.mYearMonth,$event,$index)"
+                     ng-repeat="item in dateItems" ng-class="{dateSelected: $index==selectedRow}"
+                     repeat-finish="renderDateFinish()" style="float: left;">
+                    <p class="travel-slide-content" id="travel_slide"><span></span>{{item.mYearMonth}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="travel-pick-wrap" id="travel_pick_wrap">
+        <nav class="travel-pick-head">
+            <ul class="travel-pick-title">
+                <li>日</li>
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+            </ul>
+        </nav>
+    </section>
+</section>
+
+<div class="container">
+    <section class="travel_shopInfo_wrap">
+        <h4>购买数量</h4>
+        <section class="travel-buy-num">
+            <div class="travel-buy-ticket">
+                <label>成人</label>
+                <!--<i class='iconfont travel-icon-select'>&#xe65c;</i>-->
+                <select ng-model="engineer.adultCurrentNum" class="form-control" ng-options="item for item in poll"
+                        ng-change="selectNum('adult')"></select>
+            </div>
+            <div class="travel-buy-ticket">
+                <label>老人</label>
+                <!--<i class='iconfont travel-icon-select'>&#xe65c;</i>-->
+                <select ng-model="engineer.oldCurrentNum" class="form-control" ng-options="item for item in poll"
+                        ng-change="selectNum('old')"></select>
+
+            </div>
+            <div class="travel-buy-ticket">
+                <label>儿童</label>
+                <!--<i class='iconfont travel-icon-select'>&#xe65c;</i>-->
+                <select ng-model="engineer.chilCurrentNum" class="form-control" ng-options="item for item in poll"
+                        ng-change="selectNum('chil')"></select>
+            </div>
+        </section>
+
+        <!--<div class="hr_one">-->
+
+        <!--</div>-->
+        <div class="travel-card-title" style="margin-left: .5rem">
+            <div>
+                <p class="dialog-show-event">单房差</p>
+                <section class="travel-info-dialog" id="travel_info_dialog">
+                    <p>单房差说明</p>
+                    <p>自由行产品以两人入住一间房为价格核算标准,如出现单人购买入住一间房，需要交补一人单房差。</p>
+                </section>
+                <p class="iconfont trevel-issue-icon">&#xe64d;</p>
+
+
+                <section class="travel_dfc">
+                    <p ng-click="dfcReduce()"><i class="iconfont icon-cal">&#xe628;</i></p>
+                    <input type="text" ng-model="dfcNum" readonly="true">
+                    <p ng-click="dfcAdd()"><i class="iconfont icon-cal">&#xe627;</i></p>
+                </section>
+            </div>
+            <p><span ng-bind="SingleRoomPoll">0元</span></p>
+        </div>
+        <div class="travel-begin-pay">
+            <section ng-class="{'input-calTotalPrice':signing}">
+                <label>总价</label>
+                <p ng-class="{'on_line':signing}" style="width: 7rem">
+                <span class="custom_margin_left" ng-hide="!signing">
+                 <span class="travel-price-wrap"><span ng-hide="!signing" class="travel-show-total"
+                                                       ng-bind="calTotalPrice"></span></span>
+                            </span>
+                    <span ng-hide="signing" class="meets"></span>
+                    <input ng-hide="signing" type="tel" model-convert ng-model="calTotalPrice" ng-readonly="signing"
+                           id="total_price"
+                           class="travel-choose-totalPrice" placeholder="0"
+                           style="width: 6rem; text-align: right; text-indent: 1rem;">
+
+                </p>
+
+            </section>
+            <!--<section class='travel-raise-total'>-->
+            <!--<label>可用额度</label>-->
+            <!--<div><a href="../account/user_credits.html">提升额度</a><span>￥<i ng-bind="creditMoney | formatNum"></i></span>-->
+            <!--</div>-->
+            <!--</section>-->
+
+            <div class="travel-card-title travel-total-money" style="margin-top: .625rem;" ng-hide="!signing">
+                <div>
+                    <p class="fenqi_p">分期总额</p>
+                    <section for="" class="travel-info-dialog travel-info-cover" >
+                        <!--<p>手续费说明</p>-->
+                        <p ng-bind="rateDescription"></p>
+                    </section>
+                    <p class="iconfont trevel-issue-icon">&#xe64d;</p>
+                </div>
+                <p style="width: 5rem; text-align: center"><span ng-bind="allTotalMoney">0元</span></p>
+            </div>
+
+
+            <!--<hr class="hr_border" ng-hide="!signing">-->
+
+
+            <section class='travel-beginPay-label'>
+                <!--<label>首付<span>(最低首付: <i ng-bind="'￥'+mFirstFee"></i>)</span></label>-->
+                <label ng-hide="!signing">首付总额<span>(最低首付: <i ng-bind="'￥'+showDownPayment"></i>)</span></label>
+                <label ng-hide="signing">首付总额<span>(最低首付: <i ng-bind="'￥'+showDownPayment"></i>)</span></label>
+                <!-- model-convert-->
+                <p ng-class="{'payCheck':isError}"><span class="label_money" style=" margin-left: 50%"></span><span><input type="tel"
+                                                                                                 class="travel-choose-totalPrice"
+                                                                                                 ng-model="downPayment"
+                                                                                                 model-convert required
+                ></span></p>
+
+                <!---->
+            </section>
+            <p class="pay-check-info" ng-show="payCheckInfo" ng-bind="downPayInfo"></p>
+
+            <hr class="hr_border" ng-hide="signing">
+            <div class="travel-card-title travel-total-money" ng-hide="signing">
+            <div>
+            <p class="fenqi_p">分期总额</p>
+            <section for="" class="travel-info-dialog travel-info-cover" >
+            <p>手续费说明</p>
+            <p ng-bind="rateDescription"></p>
+            </section>
+            <p class="iconfont trevel-issue-icon">&#xe64d;</p>
+            </div>
+            <p style="width: 5rem; text-align: center"><span ng-bind="allTotalMoney">0元</span></p>
+            </div>
+
+
+        </div>
+
+        <!--<div class="travel-card-title travel-total-money">-->
+        <!--<div>-->
+        <!--<p style="margin-right: .75rem; margin-left: .75rem">分期总金额</p>-->
+        <!--<section for="" class="travel-info-dialog travel-info-cover" id="travel_info_dialog1">-->
+        <!--<p>手续费说明</p>-->
+        <!--<p ng-bind="rateDescription"></p>-->
+        <!--</section>-->
+        <!--<p class="iconfont trevel-issue-icon">&#xe64d;</p>-->
+        <!--</div>-->
+        <!--<p style="width: 5rem; text-align: center"><span ng-bind="allTotalMoney">0元</span></p>-->
+        <!--</div>-->
+
+
+        <section class="travel-devide-num" id="travel_devide_num" ng-hide="equalPrice">
+            <!--<p class="travel-devide-num-select">$9999 x 1 期</p>-->
+            <!--输入完首付之后  再显示分期吧-->
+            <p ng-repeat="item in installmentItems" ng-click="selectInstallment(item,$index)"
+               ng-class="{travelDevideNumSelect: $index==installmentSelectedRow}">
+                <span ng-bind="'￥'+item.price+'×'"></span>
+                <span ng-bind="item.fq+'期'"></span>
+            </p>
+        </section>
+    </section>
+    <div class="load4" ng-show="dialog">
+        <p class="loader"></p>
+    </div>
+
+
+</div>
+
+<div class="travel-foot-info">
+    <span class="solid"></span>
+    <span class="dotted"></span>
+    <label>分期惠游 | 分期旅行是一种时尚</label>
+    <span class="dotted"></span>
+    <span class="solid"></span>
+</div>
+<footer class="travel-pay-foot">
+    <section>
+        <p class="travel-pay-calculate" ng-bind="'首付:&nbsp;￥'+downPayment"></p>
+        <p class="travel-last-devide" ng-bind="'分期: '+installmentNumShow"></p>
+    </section>
+    <section ng-click="reserveNow()" ng-class="{'reverseAtOnce':installmentCheck,'reverseNo':!installmentCheck}">
+        立即预定
+    </section>
+</footer>
+<div class="travel-choose-dialog" id="travel-choose-dialog">
+
+    <div class="travel-dia-menu">
+        <ul>
+            <li>还没登录，立即登录</li>
+            <li>取消</li>
+        </ul>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src='../../static/js/travel/travel_choose_product.js?_t=12345'></script>
+</body>
+
+</html>

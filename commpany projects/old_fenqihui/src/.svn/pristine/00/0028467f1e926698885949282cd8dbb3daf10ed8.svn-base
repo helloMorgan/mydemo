@@ -1,0 +1,350 @@
+.userset-button {
+    width: 12rem;
+    margin: 0 auto;
+    height: 2.25rem;
+    text-align: center;
+    line-height: 2.25rem;
+    font-size: 0.8rem;
+    color: #a55f5a;
+    background: -webkit-linear-gradient(top,#ffeb01,#fecc66);
+    background: linear-gradient(to bottom,#ffeb01,#fecc66);
+}
+
+body {
+    background: #eeeeee;
+}
+
+.user-set-tel {
+    color: #00b19d;
+    font-size: 1rem!important;
+}
+
+.userset-button {
+    margin-top: 2rem;
+    border-radius: .5rem;
+}
+
+.popWindow {
+    background: rgba(157, 157, 157, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    display: none;
+}
+
+.popWindow2 {
+    background: rgba(157, 157, 157, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: fixed;
+    display: none;
+}
+
+.bomb_box {
+    height: 12rem;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    z-index: 9999;
+    display: none;
+}
+
+.phone_box {
+    width: 16.25rem;
+    height: 10.5rem;
+    margin: .5rem auto;
+    left: 1.25rem;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+.phone_box>ul {
+    margin-left: auto;
+    font-size: .75rem;
+}
+
+.phone_box>ul li {
+    text-align: center;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.phone_box>ul li:nth-child(2) {
+    font-size: 1rem;
+    color: #00b19d;
+}
+
+.phone_box>ul li:nth-child(3) {
+    font-size: .5rem;
+    color: #999;
+}
+
+.btn_top {
+    margin: 0;
+    margin-top: .5rem;
+}
+
+.account_banding_btns .btn_boder a {
+    color: #01b6d4;
+}
+
+.account_banding_btns a {
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+#phone {
+    font-size: 1rem;
+}
+
+.btn_boder {
+    background: #fff;
+    border: 1px solid #00b19d;
+}
+
+#cancel_phone {
+    font-size: 1rem;
+}
+
+.user-no-width {
+    width: auto;
+}
+
+.prompt_for_no_updates {
+    width: 10rem;
+    height: 4.25rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: .25rem .25rem;
+    z-index: 9999;
+}
+
+.prompt_for_no_updates>p {
+    height: 2.375rem;
+    width: 100%;
+    border-bottom: 1px solid #d2d9dc;
+    line-height: 2.375rem;
+    text-align: center;
+}
+
+.prompt_for_no_updates .close_btn {
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.popWindow_al {
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    position: absolute;
+}
+
+#pop_div {
+    width: 10rem;
+    height: 5rem;
+}
+
+#pop_div .mod_no {
+    width: 4rem;
+    margin-right: 0.5rem;
+}
+
+#pop_div .mod_yes {
+    width: 4rem;
+}
+
+.prompt_for_no_updates1 {
+    padding: 0.75rem;
+    width: 8rem;
+    height: 7rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: .25rem .25rem;
+    z-index: 9999;
+}
+
+#pop_title {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+}
+
+.a_phone {
+    color: #fff;
+}
+
+.a_cancel {
+    color: #00b19d;
+}
+
+.userset-wrap {
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+}
+
+.userset-wrap>ul>li>a i:nth-of-type(2) {
+    color: #00b19d;
+    font-size: 1rem;
+}
+
+.userset-wrap>ul>li>a>span {
+    flex: 1;
+    margin-left: 0.45rem;
+    font-size: .9rem;
+    color: #333333;
+}
+
+.userset-wrap>ul>li>a {
+    display: flex;
+    height: 2.75rem;
+    line-height: 2.5rem;
+    font-size: 0.7rem;
+    color: #253232;
+    border: none;
+}
+
+.user_icon_reset {
+    color: #95adb2;
+    font-size: 1rem !important;
+}
+
+.update_button {
+    /*width: 100%;*/
+    height: 2.75rem;
+    position: absolute;
+    z-index: 1;
+    right: .5rem;
+    top: .2rem;
+}
+
+.hotline {
+    position: relative;
+}
+
+.confirm_list {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 20%;
+}
+
+.confirm_box {
+    background: #fff;
+    margin: 0 auto;
+    border-radius: .25rem .25rem 0 0;
+    width: 8.75rem;
+    background: #FFFFFF;
+}
+
+.confirm_01 {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.confirm_box p {
+    line-height: 2.2rem;
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    border-top: #e0e0e0 .05rem solid;
+    background: #FFFFFF;
+}
+
+.confirm_01 dd {
+    min-height: 1rem;
+    font-size: .8rem;
+    text-align: center;
+    color: #666;
+    padding: 0 .5rem;
+}
+
+.confirm_box p:last-of-type span {
+    border-left: #e0e0e0 .05rem solid;
+    display: block;
+}
+
+.confirm_box p:last-of-type {
+    color: #ff6565;
+}
+
+.layer {
+    background: rgba(102, 102, 102, 0.6);
+    /*filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#99666666', endColorstr='#99666666');*/
+    position: fixed;
+    display: block;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.userset-wrap>ul {
+    margin-top: .75rem;
+}
+
+.userset-wrap>ul>li {
+    background: #FFFFFF;
+    margin-bottom: .5rem;
+    height: 3rem;
+    box-shadow: 0 .5rem .2rem #e9e9e9;
+}
+
+.iconfont {
+}
+
+.icon_left {
+    color: #eeeeee !important;
+    margin-left: .75rem;
+    font-size: .5rem !important;
+}
+
+.user-set-tel {
+    margin-right: .6rem;
+    color: #2fd1b5;
+    float: right;
+}
+
+
+.tel {
+    margin-right: .5rem;
+    color: #2fd1b5 !important;
+    float: right;
+}

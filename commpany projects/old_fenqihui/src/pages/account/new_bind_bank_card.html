@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定银行卡</title>
+    @@include("../../templates/head.inc")
+
+    <link rel="stylesheet" href="../../static/css/account/new_bind_bank_card.css">
+<body>
+<header class="travel-head-nav">
+    <h1>绑定银行卡</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+
+<div class="bank_card_container">
+    <ul>
+        <li>
+            <i class="iconfont">&#xe666;</i>
+            <label>卡类型</label>
+            <i class="iconfont">&#xe668;</i>
+            <span class="bind_bank">中国建设银行</span>
+            <span class="bank_type">储蓄卡</span>
+        </li>
+
+        <li>
+            <i class="iconfont">&#xe666;</i>
+            <label>手机号</label>
+            <i class="iconfont">&#xe668;</i>
+            <input type="tel" placeholder="银行卡绑定的手机号" class="bank_tel">
+        </li>
+
+        <li>
+            <i class="iconfont">&#xe666;</i>
+            <label>手机号</label>
+            <i class="iconfont">&#xe668;</i>
+            <input type="tel" placeholder="请输入验证码" class="bank_ms">
+            <i class="iconfont">&#xe668;</i>
+            <span class="getCode">获取验证码</span>
+        </li>
+
+    </ul>
+
+    <p class="bank_pro">(请在60秒内完成验证， 超时请点击重新发送)</p>
+
+    <div class="bind_card">
+        完成
+    </div>
+</div>
+</body>
+</html>

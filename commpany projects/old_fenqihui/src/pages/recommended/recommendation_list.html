@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='recommedationList'>
+
+<head>
+	<meta charset="UTF-8">
+	<title id="title"></title>
+	@@include('../../templates/head.inc')
+	<link rel="stylesheet" href="../../static/css/recommended/recommendation_list.css" />
+</head>
+
+<body ng-controller='recommendationListController'>
+	<header class="travel-head-nav">
+		<h1 ng-bind="title"></h1>
+		<i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+	</header>
+	<section class="recommendation_list_wrap">
+		<label ng-repeat="item in items" ng-click="searchDetail(item.destId,$index,item.destName)" ng-class="{labelSelected: $index==selectedRow}"> <span ng-bind="item.destName"> </span> </label>
+	</section>
+	<script src='../../static/js/recommended/recommendation_list.js'></script>
+
+</body>
+
+</html>

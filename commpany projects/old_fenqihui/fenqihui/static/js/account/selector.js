@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){function c(){var c="于路",t="1111111111111111111";alert(111),$.ajax({type:"POST",url:BaseUrl+"account/openAccountFirst",data:{realName:c,capAcntNo:t},success:function(c){},error:function(){}})}c()});

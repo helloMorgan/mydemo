@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>分期购买咨询服务协议</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+
+    <style>
+
+        body{
+            box-sizing: border-box;
+            font-size:0.7rem;
+        }
+
+        article{
+            box-sizing: border-box;
+            padding: 0 .5rem;
+        }
+
+        section {
+            font-size: .7rem;
+            line-height: 1.3rem !important;
+        }
+
+        p {
+            margin-top: .5rem;
+        }
+        .money-book{
+            text-align: center;
+        }
+
+        .first-sign p {
+            margin-top: 1rem;
+        }
+
+        h3 + p {
+            margin-top: 0;
+        }
+
+        .foot-sign{
+            display: flex;
+        }
+
+        .foot-sign>p:nth-of-type(1){
+            margin-right: 3rem;
+            width: 5rem;
+        }
+
+
+
+        h2 {
+            font-weight: bold;
+            text-align: left;
+            margin-top: 1.5rem;
+            line-height: 1.4rem;
+            text-indent: 1rem;
+            font-size: .8rem;
+        }
+
+        h3 {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .travel-head-nav {
+            border-bottom: 1px solid #e4dede;
+        }
+
+        td {
+            border: 1px solid gray;
+        }
+
+        li {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            border: 1px solid gray;
+        }
+
+        footer > p {
+            margin-top: 1rem;
+        }
+
+        li > p {
+            border-right: 1px solid gray;
+            margin-top: 0;
+
+        }
+
+        ul > li:nth-of-type(3), ul > li:nth-of-type(5) {
+            border-top: 0;
+        }
+
+        .second-tab {
+            margin-top: 1rem;
+        }
+
+
+        .second-tab p {
+            height: 2rem;
+            line-height: 2rem;
+            font-weight: bold;
+
+        }
+        .second-tab li .line_height{
+            line-height: 1rem;
+        }
+        .second-tab > li > p:nth-of-type(1) {
+            width: 23%;
+        }
+
+        .second-tab > li > p:nth-of-type(2) {
+            width: 25%;
+        }
+
+        .second-tab > li > p:nth-of-type(3) {
+            width: 28%;
+        }
+
+        .second-tab > li > p:nth-of-type(4) {
+            border-left: 1px solid gray;
+            width: 24%;
+            border-right: 0;
+        }
+
+        .second-tab > li:nth-of-type(6), .second-tab > li:nth-of-type(8),.second-tab > li:nth-of-type(10) ,.second-tab > li:nth-of-type(12){
+            border-bottom: 0;
+        }
+
+        .second-tab > li:nth-last-child(1) {
+            border-top: 0;
+        }
+
+        .third-tab > li > p:nth-of-type(1) {
+            width: 3rem;
+            text-align: center;
+            border-right: 0;
+        }
+
+        .third-tab > li{
+            width: 93%;
+        }
+        .font_weight{
+            font-weight: bold;
+        }
+        footer>p>span{
+            margin-right: 6rem;
+            margin-left: 1rem;
+        }
+        .money-boo-wrap{
+            margin-bottom:3rem;
+        }
+        .name_style{
+            font-weight: bold;
+            /*font-size:0.8rem;*/
+        }
+        .sign_real{
+            border-bottom:1px solid #000;
+            padding:0 0.4rem;
+            font-weight: bold;
+            /*font-size:0.8rem;*/
+            min-width: 3rem;
+            display: inline-block;
+            text-align: center;
+        }
+        .sign_add{
+            text-align: right;
+            margin-top:1rem;
+        }
+        .first-sign .fist_p{
+            margin-top: 0;
+        }
+        .content p{
+            padding-left: 2.34rem;
+            position: relative;
+        }
+        .content2 p{
+            padding-left: 1.4rem;
+        }
+        .content p span{
+            position: absolute;
+            top:0;
+            left: 1.5rem;
+        }
+        .italic_p{
+            font-weight: bold;
+            color: #000;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        .blue_con{
+            color: blue;
+        }
+        .red_con{
+            color: red;
+        }
+        .text_indent{
+            text-indent: 2em;
+        }
+        .foot_con{
+            margin-left: 1.4rem;
+        }
+        .foot_lide{
+
+            height:3rem;
+            margin:0.8rem 0;
+        }
+        .foot_top{
+            height:2rem;
+            display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;
+        }
+        .foot_con1{
+            width: 2.5rem;
+        }
+        .foot_con2{
+            -webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;
+            height:2rem;
+            line-height: 2rem;
+            color: #000;
+            font-weight: bold;
+            /*font-size:0.8rem;*/
+        }
+        .foot_con3{
+            text-align: right;
+        }
+        .foot_date{
+            display: inline-block;
+            padding: 0 0.5rem;
+            border-bottom: 1px solid #000;
+            line-height: 1rem;
+            margin:0;
+        }
+        .content_side{
+            margin:1rem 0;
+        }
+        .order_title{
+            text-align: center;
+            margin:0;
+        }
+        table{
+            width: 100%;
+            border-collapse:collapse;
+            margin-top:1rem;
+        }
+        table tr td{
+            height:1.8rem;
+            line-height: 1.8rem;
+        }
+        table tr td{
+            text-align: center;
+        }
+        .bottom{
+            height:2rem;
+        }
+    </style>
+
+</head>
+
+<body ng-app="installApp" ng-controller="installCtrl">
+
+<header class="travel-head-nav">
+    <h1>分期购买咨询服务协议</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+
+<article>
+    <section class="sign_add"><span>协议签署地：</span><span class="sign_real" ng-bind="signRegion">北京</span></section>
+
+    <section class="first-sign">
+        <p class="fist_p">甲方：&nbsp;(平台方）<span class="name_style" ng-bind="idInfo.firstparty[0].platName"></span></p>
+        <div class="title_con">企业统一社会信用代码：<span class="name_style" ng-bind="idInfo.firstparty[0].creditCode"></span></div>
+        <p>乙方：&nbsp;(购买方）<span class="name_style" ng-bind="idInfo.secondparty[0].realName"></span></p>
+        <div class="title_con">身份证号码：<span class="name_style" ng-bind="idInfo.secondparty[0].idCard"></span></div>
+        <div class="title_con"> 联系方式：<span class="name_style" ng-bind="idInfo.secondparty[0].mobile"></span></div>
+        <p>丙方：&nbsp;（产品销售方）<span class="name_style" ng-bind="idInfo.thirdparty[0].platName"></span></p>
+        <div class="title_con">企业统一社会信用代码：<span class="name_style" ng-bind="idInfo.thirdparty[0].creditCode"></span></div>
+    </section>
+
+
+    <h2> 本协议各方根据《中华人民共和国合同法》，经各方充分协商，依平等自愿、等价有偿的原则，达成如下协议：</h2>
+
+    <section class="content">
+        <h3>第一条 名词释义</h3>
+        <p><span>1.</span>甲方：系分期惠游平台的合法运营商，依托自身平台为乙方等注册用户提供分期咨询等中介服务。</p>
+        <p><span>2.</span>乙方:系在甲方商城注册并使用其分期服务购买丙方旅游产品的完全民事行为能力人。</p>
+        <p><span>3.</span>丙方：系具备合法运营及产品销售资质的旅行社。</p>
+        <p class="italic_p"><span>4.</span>
+           协议生效：本协议在乙方[ 丙方是否需要点击？]点击“   <label class="blue_con">提交订单</label>      ”或其他相同功能的按钮并确认后，即时生效。
+        </p>
+        <p><span>5.</span><label class="red_con">还款日：</label>具体还款日及还款信息以乙方与贷款中介服务机构签订的《借款咨询服务协议》为准。</p>
+
+    </section>
+
+    <section class="content">
+
+        <h3>第二条 分期支付订单内容</h3>
+        <p><span ng-if="rd">1.</span>分期支付订单内容详见附件一《分期支付订单》。</p>
+        <p ng-if="rd"><span>2.</span>手续费说明： <label ng-bind="rateDes"></label></p>
+    </section>
+
+    <section class="content">
+        <h3>第三条 甲乙丙三方权利义务</h3>
+        <p><span>1.</span>甲方接受乙方申请为其购买上述订单对应旅游产品提供分期付款咨询服务，并协助乙方对接所需的贷款中介服务机构。乙方应按照该机构要求开立借款账户并签订相关借款服务协议。</p>
+        <p><span>2.</span>乙方应向贷款中介服务机构缴纳相关费用，具体收费标准及内容以双方签订的《借款咨询服务协议》约定为准。乙方授权并委托甲方代付其全部相关费用给该贷款中介服务机构。</p>
+        <p><span>3.</span>乙方将此笔订单的首付款按照甲方的规则按时交付，用于完成乙方购买此笔订单下的商品。</p>
+        <p><span>4.</span>乙方购买丙方产品的具体内容、服务方式及其他约定，以双方线下另行签订的《团队旅游出境合同》协议为准。</p>
+        <p><span>5.</span>在乙方按照平台规则支付首付款后，若因乙方原因要求取消、修改订单或乙方未按约定还款的，乙方需支付违约金、管理费、偿还借款本金和利息等，具体收取方式及标准以甲方平台公布为准。 </p>
+        <p><span>6.</span>丙方需保证自身具备合法资质向乙方提供合格产品及服务。若乙方因产品、服务质量等原因与丙方发生纠纷，乙、丙双方应另行解决。甲方及甲方合作的贷款中介服务机构作为分期服务提供方不对丙方提供的旅游产品及服务质量负责，乙方不得以任何产品和服务质量、纠纷及其他原因为由拒绝偿还分期付款的款项。若因丙方资质及产品、服务质量等原因造成甲、乙方损失，甲、乙方有权要求丙方依据《分期惠游商户合作协议》、《团队旅游出境合同》等相关协议及约定进行赔偿。</p>
+        <p ><span>7.</span>乙方应确保其向甲丙双方提供的信息、资料均真实、合法、有效、 完整，且不存在任何虚假、隐瞒和遗漏。若乙方违反本协议任何约定，甲丙双方有权根据本协议及有关条款对乙方的信息和资料予以合理的披露。</p>
+        <p class="italic_p"><span>8.</span>乙方在甲方[ 丙方需要在甲方平台点击确认么？]平台上点击“   <label class="blue_con">提交订单</label>    ”或其他相同功能的按钮并确认后即视为其已经充分阅读并接受本协议条款内容和受此内容之拘束；亦视为乙方作出的承诺及签署行为。 </p>
+
+    </section>
+
+    <section class="content">
+        <h3>第四条 保密条款</h3>
+        <p><span>1.</span>本协议各方保证，本协议任何一方应对本协议项下之事务，以及因本协议目的而获得的有关协议另一方之财务、知识产权、公司管理或其他方面的信息负有保密义务（除已在公共渠道获得的信息外），未经另一方书面同意，不得向其他第三人披露。</p>
+        <p><span>2.</span>对于乙方而言，甲方将按照本协议（包括其有效修订和补充，下同）使用、披露其各项信息、资料；对于丙方而言，丙方同意并确认乙方有权配合甲方行使本协议项下各项权利，向甲方提供乙方的各项信息、资料，丙方将按照本协议使用、披露乙方信息、资料。</p>
+        <p><span>3.</span>上述保密条款不适用甲方依据法律、法规、具有管辖权的法院或政府主管机构要求披露的信息。</p>
+    </section>
+
+    <section class="content2 ">
+        <h3>第五条 违约责任</h3>
+        <p class="text_indent">任何一方违反本协议的约定，使得本协议的全部或部分不能履行，均应承担违约责任，并赔偿对方因此遭受的损失（包括由此产生的诉讼费和律师费）；如果三方均违约，根据实际情况各自承担相应的责任，违约方应赔偿因其违约而给守约方造成的损失，包括协议履行后可以获得的利益，但不能超过违反协议一方订立本协议时可以预见或应当预见的因违反协议可能造成损失。</p>
+
+    </section>
+
+    <section class="content">
+        <h3>第六条 本协议的附件及适用</h3>
+        <p><span>1.</span>乙方与贷款中介服务机构签订的《借款咨询服务协议》《资金划转委托书》、分期惠游平台、相关贷款服务中介机构网站公示的各项规则均为本协议的组成部分，相关名词可互相引用参照，如有产生歧义的理解，均以本协议条款为准。若各方对本协议理解和认同，即对本协议所有组成部分的内容理解并认同，一旦乙方使用甲方提供的分期付款咨询服务购买丙方旅游产品或服务，各方即受本协议所有组成部分的约束。本协议部分内容被有管辖权的法院认定为违法或无效的，不因此影响其他内容的效力。</p>
+        <p><span>2.</span>本协议采用电子文本形式制成，各方均认可此形式协议的法律效力。甲乙丙三方自行下载、保留至少一份本电子协议，同时甲方或委托的第三方机构保管本电子协议及所有与本协议有关的书面文件或电子信息。</p>
+        <P><span>3.</span>本协议及其修改或补充均采用通过甲方网站以电子文本形式制成，可以有一份或者多份并且每一份具有同等法律效力，并永久保存在甲方为此设立的专用服务器上备查和保管。保管期限为五年，自本协议生效之日起计算。</P>
+
+    </section>
+
+    <section class="content2">
+        <h3>第七条 争议解决条款</h3>
+        <p class="text_indent">因本协议引起的或与本协议有关的任何争议，由各方友好协商解决。协商不成时，各方均应向甲方经营所在地的人民法院提起诉讼。</p>
+    </section>
+
+    <footer class="foot_con" ng-if="signShow" ng-cloak>
+        <div class="foot_lide">
+            <div class="foot_top">
+                <div class="foot_con1">甲方：</div>
+                <div class="foot_con2">
+                    <div ng-bind="signInfo.firstparty[0].name"></div>
+                </div>
+            </div>
+            <div class="foot_con3">
+                <p class="foot_date">
+                    <span>签订日期：</span>
+                    <label ng-bind="date1[0]"></label>年
+                    <label ng-bind="date1[1]"></label>月
+                    <label ng-bind="date1[2]"></label>日
+                </p>
+            </div>
+        </div>
+        <div class="foot_lide">
+            <div class="foot_top">
+                <div class="foot_con1">乙方：</div>
+                <div class="foot_con2">
+                    <div ng-bind="signInfo.secondparty[0].name"></div>
+                </div>
+            </div>
+            <div class="foot_con3">
+                <p class="foot_date">
+                    <span>签订日期：</span>
+                    <label ng-bind="date2[0]"></label>年
+                    <label ng-bind="date2[1]"></label>月
+                    <label ng-bind="date2[2]"></label>日
+                </p>
+            </div>
+        </div>
+        <div class="foot_lide">
+            <div class="foot_top">
+                <div class="foot_con1">丙方：</div>
+                <div class="foot_con2">
+                    <div ng-bind="signInfo.thirdparty[0].name"></div>
+                </div>
+            </div>
+            <div class="foot_con3">
+                <p class="foot_date">
+                    <span>签订日期：</span>
+                    <label ng-bind="date3[0]"></label>年
+                    <label ng-bind="date3[1]"></label>月
+                    <label ng-bind="date3[2]"></label>日
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <section class="content_side" ng-if="orderShow" ng-cloak>
+        <h3>附件一</h3>
+        <h2 class="order_title">分期支付订单</h2>
+        <table>
+            <tr>
+                <td>产品名称</td>
+                <td ng-bind="orderInfo.pName"></td>
+            </tr>
+            <tr>
+                <td>产品编号</td>
+                <td ng-bind="orderInfo.pNo"></td>
+            </tr>
+            <tr>
+                <td>用户编号</td>
+                <td ng-bind="orderInfo.uNo"></td>
+            </tr>
+            <tr>
+                <td>用户注册手机号</td>
+                <td ng-bind="orderInfo.uMobile"></td>
+            </tr>
+            <tr>
+                <td>用户姓名</td>
+                <td ng-bind="orderInfo.uRealName"></td>
+            </tr>
+            <tr>
+                <td>用户证件号</td>
+                <td ng-bind="orderInfo.uIdCard"></td>
+            </tr>
+            <tr>
+                <td>订单编号</td>
+                <td ng-bind="orderInfo.oNo"></td>
+            </tr>
+            <tr>
+                <td>订单生成日</td>
+                <td ng-bind="orderInfo.oDate"></td>
+            </tr>
+            <tr>
+                <td>订单金额</td>
+                <td ng-bind="orderInfo.oTotalMoney | formatNum"></td>
+            </tr>
+            <tr>
+                <td>首付款金额</td>
+                <td ng-bind="orderInfo.oFirstPay | formatNum "></td>
+            </tr>
+            <tr>
+                <td>分期期数</td>
+                <td ng-bind="orderInfo.oDuration"></td>
+            </tr>
+            <tr>
+                <td>分期金额</td>
+                <td ng-bind="orderInfo.oDurationMoney| formatNum"></td>
+            </tr>
+            <tr>
+                <td>每期服务费</td>
+                <td ng-bind="orderInfo.oServiceFee | formatNum"></td>
+            </tr>
+            <tr>
+                <td>每期应还款总额</td>
+                <td ng-bind="orderInfo.oRepayment | formatNum"></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="bottom"></section>
+
+</article>
+
+
+</body>
+<script src="../../static/js/travel/travel_installment_contract.js"></script>
+</html>

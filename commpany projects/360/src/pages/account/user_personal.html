@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userPersonal">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/travel_product_list2.css">
+    <link rel="stylesheet" href="../../static/css/account/user_oder.css">
+</head>
+
+
+<body ng-controller='userPersonalController'>
+<!--我的订单-->
+<header class="pageMall">
+    <div class="inner">
+        <nav>
+            <ul>
+                <li></li>
+                <li>
+                    <h1 style="font-weight: 400;">我的订单</h1>
+                </li>
+                <li id="mine_index_config_btn"></i>
+                </li>
+                <div class="clearfix"></div>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+
+
+<article>
+    <div class="inner">
+        <section class="mineorder">
+            <div class="minebox">
+                <dl>
+                    <a href="#" class="mini_account">
+                    </a>
+                    <dt>
+                        <span ng-bind="userName">***</span>
+                        <!--<span><a href="#" ng-bind=" dCfNum + '个'" class="wait-go"></a>待出发</span>-->
+                    </dt>
+
+                </dl>
+                <!--<p><span class="quota" ng-bind="creditLeaveMoney">***</span>元</p>-->
+                <!--<span>可用额度</span>-->
+
+                <!--<div class="my_credit">-->
+                <!--&lt;!&ndash;<i class="iconfont">&#xe650;</i>&ndash;&gt;-->
+                <!--<i class="iconfont">&#xe683;</i>-->
+                <!--<i class="iconfont">&#xe683;</i>-->
+                <!--<i class="iconfont">&#xe683;</i>-->
+                <!--<i class="iconfont">&#xe683;</i>-->
+                <!--<i class="iconfont">&#xe683;</i>-->
+                <!--<a href="javascript:void(0)" ng-click='goCredit()' class="up_credit"><i class="iconfont top_icon">&#xe661;</i>信用额度评估 </a>-->
+                <!--</div>-->
+            </div>
+        </section>
+        <div class="travel_order" id="travel_order">
+            <div class="travel_order_myOrder travel_order_active">
+                <div class="my_order">
+                    <div class='iconfont'>&#xe602;</div>
+                    <p class=>我的订单</p>
+                </div>
+
+            </div>
+            <div class="travel_order_monOrder">
+                <div class="my_bill">
+                    <div class='iconfont'>&#xe62d;</div>
+                    <p>月付账单</p>
+                </div>
+            </div>
+            <div class="travel_order_waiting" id="to_set_out">
+                <div class="to_set">
+                    <div class='iconfont'>&#xe665;</div>
+                    <p>已完成</p>
+                </div>
+            </div>
+
+            <!--<div class="travel_order_collection" id="collection">-->
+            <!--<div class="to_collection">-->
+            <!--<div class='iconfont'>&#xe683;</div>-->
+            <!--<p>收藏</p>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="travel-order-box">
+
+
+        <!--我的订单-->
+        <div class="travel-order-wrap " id="my_order" ng-style="orderShow">
+
+            <div class="travel_myOrder_info" ng-repeat="item in myOrder ">
+                <div class="travel_myOrder_top">
+                    <!--<p class="travel_myOrder_top_title" ng-bind="item.product.pTitle">上海/北京/成都 直飞普及岛6-7天自由行</p>-->
+                    <!--<p class="travel_myOrder_top_second" ng-bind="item.product.titileSub">(入住5星酒店,专车接送)</p>-->
+                </div>
+                <div class="travel_myOrder_mid" ng-click="checkInfo(item)">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">分期金额（元）</span>
+                            <span class="travel_myOrder_mid_info">
+                                    <label class="cmoneyIcon">¥</label><span
+                                    ng-bind="item.order.oTotalFirstPrice"></span> + <label
+                                    class="cmoneyIcon">¥</label><span
+                                    ng-bind="item.order.durationMoney+'×'+item.order.totalDuration"></span>期
+                                </span>
+                        </p>
+                        <!--<p class="">-->
+                        <!--<span class="travel_myOrder_mid_class">选择产品</span>-->
+                        <!--<span class="travel_myOrder_mid_info" ng-bind="item.meals.mName">产品1:[普及岛出] 6天机票</span>-->
+                        <!--</p>-->
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">分期期数（月）</span>
+                            <span class="travel_myOrder_mid_info" ng-bind="item.meals.mDate">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">每月应还（元）</span>
+                            <span class="travel_myOrder_mid_info">
+                                    <label ng-if="item.order.ticketOldNum!=0">老人</label><span
+                                    ng-if="item.order.ticketOldNum!=0" ng-bind="item.order.ticketOldNum"
+                                    class="ticketNum"></span>
+                                    <label ng-if="item.order.ticketOldNum!=0&&item.order.ticketYoungNum!=0">、</label>
+                                    <label ng-if="item.order.ticketYoungNum!=0">成人</label><span
+                                    ng-if="item.order.ticketYoungNum!=0" ng-bind="item.order.ticketYoungNum"
+                                    class="ticketNum"></span>
+                                    <label ng-if="item.order.ticketChildrenNum!=0&&item.order.ticketYoungNum!=0">、</label>
+                                    <label ng-if="item.order.ticketChildrenNum!=0">儿童</label><span
+                                    ng-if="item.order.ticketChildrenNum!=0" ng-bind="item.order.ticketChildrenNum"
+                                    class="ticketNum"></span>
+                                </span>
+                        </p>
+                    </div>
+                    <!--  <p class='travel_myOrder_error'>
+                        <span>逾期:</span>
+                        <span>23天</span>
+                        <span>逾期费用:</span>
+                        <span>233.78</span>
+                    </p> -->
+                    <!--<div class="travel_myOrder_mid_right" ng-if="item.product.imgUrl">-->
+                    <!--<img ng-src="{{OSS_IMG_URL+item.product.imgUrl}}" alt="">-->
+                    <!--</div>-->
+
+
+                </div>
+                <div class="travel_myOrder_bot">
+                    <span class="travel_myOrder_bot_state" ng-bind="item.order.processStatus | orderStatus"></span>
+                    <a href='javascript:void(0)' class="travel_myOrder_bot_info" ng-click="checkInfo(item)"
+                       ng-style="isHidden(item)">查看详情</a>
+                    <!--<a href='javascript:void(0)' class="travel_myOrder_bot_info" ng-click="submitContract(item)"-->
+                    <!--ng-style="isShowSubmit(item)" style="margin-right: .75rem">提交合同</a>-->
+                    <!--<a href='javascript:void(0)' class="travel_myOrder_bot_info" ng-click="submitContract(item)"-->
+                    <!--ng-style="isShowSubmitCont(item)" style="margin-right: .75rem">提交资料</a>-->
+                    <a href='javascript:void(0)' class="travel_myOrder_bot_info2" ng-click="productPay(item)"
+                       ng-style="isShow(item)">去支付</a>
+                </div>
+
+            </div>
+
+            <!--无订单时显示-->
+            <div class="travel-no-order"
+                 ng-style="myOrder==null || myOrder==undefined ||  myOrder.length==0?orderShow:orderHidden" ng-cloak>
+                <div class="travel_car"></div>
+                <p>很遗憾，您暂时还没有订单！</p>
+                <p>赶紧去逛逛吧！</p>
+
+                <div>
+                    <span ng-click="goTo()">去逛逛</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 月付账单-->
+        <div class="travel-order-wrap not_show" id="my_bill">
+            <div class="travel_myOrder_info" ng-repeat="item in monthBill">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title" ng-bind="item.pTitle">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second" ng-bind="item.titileSub">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid" ng-click="checkInfo(item)" ng-click="checkInfo(item)">
+                    <div class="travel_myOrder_mid_left" style="padding-top: 0;">
+                        <p class="">
+                                <span class="travel_myOrder_mid_class travel_month_order">
+                                    <label>出</label><label>发</label><label>日</label><label>期</label>
+                                </span>
+                            <span class="travel_myOrder_mid_info" ng-bind="item.mDate">2016.11.11</span>
+                        </p>
+                        <p class="">
+                                <span class="travel_myOrder_mid_class  travel_month_order">
+                                    <label>本</label><label>月</label><label>待</label><label>付</label><label>总</label><label>额</label>
+                                </span>
+                            <span class="travel_myOrder_mid_info" ng-bind="'¥'+item.rCurrPaidMoney">¥417.32</span>
+                        </p>
+                        <p class="">
+                                <span class="travel_myOrder_mid_class travel_month_order">
+                                    <label>本</label><label>期</label><label>还</label><label>款</label><label>日</label><label>期</label>
+
+                                </span>
+                            <span class="travel_myOrder_mid_info" ng-bind="item.rDueDate + '日'">23日 <a
+                                    href="javascript:void(0)">提前结款</a></span>
+                        </p>
+
+                        <p class="">
+                                <span class="travel_myOrder_mid_class  travel_month_order">
+                                <label>剩</label><label>余</label><label>还</label><label>款</label><label>期</label><label>数</label>
+                                </span>
+                            <span class="travel_myOrder_mid_info" ng-bind="item.leaveDueMun">8</span>
+                        </p>
+
+                    </div>
+                    <!--<p class='travel_myOrder_error'>-->
+                    <!--<span>逾期:</span>-->
+                    <!--<span>23天</span>-->
+                    <!--<span style="margin-left: 1.5rem">逾期费用:</span>-->
+                    <!--<span>￥233.78</span>-->
+                    <!--</p>-->
+                </div>
+                <div class="travel_myOrder_bot_center">
+                    <a href='javascript:void(0)' class="travel_myOrder_bot_info_red_center"
+                       ng-click="productMonthPay(item)">去还款</a>
+                </div>
+            </div>
+
+            <!--无订单时显示-->
+            <div class="travel-no-order" ng-style="monthBill.length==0?orderShow:orderHidden" ng-cloak>
+                <div class="travel_car"></div>
+                <p>很遗憾，您暂时还没有月付订单！</p>
+                <p>赶紧去逛逛吧！</p>
+                <div>
+                    <span ng-click="goTo()">去逛逛</span>
+                </div>
+            </div>
+        </div>
+
+        <!--待出发-->
+        <!--not show-->
+        <div class="travel-order-wrap not_show" id="to_set">
+
+            <div class="travel_myOrder_info" ng-repeat="item in waitGo">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title" ng-bind="item.product.pTitle">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second" ng-bind="item.product.titileSub">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid" ng-click="checkInfo(item)" ng-click="checkInfo(item)">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">分期惠游</span>
+                            <span class="travel_myOrder_mid_info">
+                                    <label class="cmoneyIcon">¥</label><span
+                                    ng-bind="item.order.oTotalFirstPrice"></span> + <label
+                                    class="cmoneyIcon">¥</label><span
+                                    ng-bind="item.order.durationMoney+'×'+item.order.totalDuration"></span>期
+                                </span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出发日期</span>
+                            <span class="travel_myOrder_mid_info" ng-bind="item.meals.mDate">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出发人数</span>
+                            <span class="travel_myOrder_mid_info">
+                                    <label ng-if="item.order.ticketOldNum!=0">老人</label><span
+                                    ng-if="item.order.ticketOldNum!=0" ng-bind="item.order.ticketOldNum"
+                                    class="ticketNum"></span>
+                                    <label ng-if="item.order.ticketOldNum!=0&&item.order.ticketYoungNum!=0">、</label>
+                                    <label ng-if="item.order.ticketYoungNum!=0">成人</label><span
+                                    ng-if="item.order.ticketYoungNum!=0" ng-bind="item.order.ticketYoungNum"
+                                    class="ticketNum"></span>
+                                    <label ng-if="item.order.ticketChildrenNum!=0&&item.order.ticketYoungNum!=0">、</label>
+                                    <label ng-if="item.order.ticketChildrenNum!=0">儿童</label><span
+                                    ng-if="item.order.ticketChildrenNum!=0" ng-bind="item.order.ticketChildrenNum"
+                                    class="ticketNum"></span>
+                            </span>
+                        </p>
+                    </div>
+                    <!--  <p class='travel_myOrder_error'>
+                        <span>逾期:</span>
+                        <span>23天</span>
+                        <span>逾期费用:</span>
+                        <span>233.78</span>
+                    </p> -->
+                    <!--<div class="travel_myOrder_mid_right">-->
+                    <!--<img src="{{item.meals.imgUrl}}" alt="">-->
+
+                </div>
+                <div class="travel_myOrder_bot">
+                    <span class="travel_myOrder_bot_state">待出发</span>
+                    <!--<span ng-bind="item.order.processStatus | orderStatus"></span>-->
+                    <a href='#' class="travel_myOrder_bot_info" ng-click="checkInfo(item)" ng-style="waitShow">查看详情</a>
+                </div>
+
+            </div>
+
+            <!--无订单显示-->
+            <div class="travel-no-order" ng-style="waitGo.length==undefined?orderShow:orderHidden" ng-cloak>
+                <div class="travel_car"></div>
+                <p>很遗憾，您暂时还没有待出发订单！</p>
+                <p>赶紧去逛逛吧！</p>
+                <div>
+                    <span ng-click="goTo()">去逛逛</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!--收藏-->
+        <!--<div class="travel-walk-list not_show">-->
+        <!--<ul>-->
+        <!--&lt;!&ndash;toDetail(item.pId)&ndash;&gt;-->
+        <!--<li style=" margin: 0.5rem 0;" class="travel-product-item" ng-click="toDetail(item.pId)"  ng-repeat="item in items">-->
+        <!--<p class="travel-walk-title" ng-bind="item.pTitle"></p>-->
+        <!--<p class="travel-walk-des" ng-bind="'('+item.pTitleSub+')'"></p>-->
+        <!--<div class="travel-walk-imgcon">-->
+        <!--<img ng-src="{{OSS_IMG_URL+item.imgUrl}}" alt="">-->
+        <!--<p></p>-->
+        <!--&lt;!&ndash;<div id="travel-walk-list-tip">&ndash;&gt;-->
+        <!--&lt;!&ndash;<p class="tra-walk-tip1">&ndash;&gt;-->
+        <!--&lt;!&ndash;分期惠游&ndash;&gt;-->
+        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p class="tra-walk-tip2">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span>&ndash;&gt;-->
+        <!--&lt;!&ndash;月付￥<span ng-bind="item.payMonthly"></span><label>起</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p class="tra-walk-tip3">总价：<span ng-bind="item.pTotalMoney"></span></p>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--<div class="route-sale-price">-->
+        <!--<div class="route_tp">-->
+        <!--<p class="route-price-info">分期惠游</p>-->
+        <!--<p><i>月付</i><span class="route-price-tag">￥</span><span class="route-price-number" ng-bind="item.payMonthly.toFixed(0)"></span><span class="route-price-tag">起</span></p>-->
+
+        <!--</div>-->
+        <!--&lt;!&ndash;<p class="route-total-price"><span>总价:</span><span ng-bind="item.pTotalMoney"></span></p>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<p class="travel-walk-tag">-->
+        <!--<span ng-repeat="la in item.pLaId.split(',')" ng-bind="'#'+la+'#'"></span>-->
+        <!--</p>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <!--&lt;!&ndash;无订单时显示&ndash;&gt;-->
+        <!--<div class="travel-no-order" ng-style="items==null || items==undefined || items.length==0?orderShow:orderHidden" ng-cloak>-->
+        <!--<div class="travel_car"></div>-->
+        <!--<p>很遗憾，您暂时还没有收藏任何产品！</p>-->
+        <!--<p>赶紧去逛逛吧！</p>-->
+        <!--<div>-->
+        <!--<span ng-click="goTo()">去逛逛</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+</article>
+<script src="../../static/js/travel/user_personal.js">
+</script>
+<footer class="bottom_nav" id="bottom-tab">
+    <ul>
+        <li id='nav_home' onClick="toReal()"><a>实名认证</a></li>
+        <li id='nav_dest' onClick="toOrder()"><a>提交订单</a></li>
+        <li id='nav_mine' onClick="toMine()"><a id="mine-btn">订单查询</a>
+        </li>
+    </ul>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userForgetLoginPassword">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置用户名</title>
+    @@include('../../templates/head.inc')
+    <link rel="stylesheet" href="../../static/css/account/user_set_username.css" />
+
+</head>
+
+<body ng-controller="userForgetLoginPasswordController">
+<header class="travel-head-nav" style="border-bottom:1px solid #e8e8e8">
+    <h1>设置用户名</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+
+<div id="register-form">
+    <div class="register-phone register-same">
+        <label for="user-phone" class="user-label" style="width: 3.5rem">用户名</label>
+        <i class="iconfont">&#xe668;</i>
+        <!--<input type="text" id="user-phone"  class="forger_phone" placeholder="字母或数字16位，中文8位" ng-model="userName"  />-->
+        <input type="text" id="user-phone"  class="forger_phone" placeholder="请输入用户名" ng-model="userName"  />
+    </div>
+    <div class= "login-user-login orage" ng-click="saveName()">
+        <a >保存</a>
+    </div>
+
+</div>
+<div class="layer_con" >
+    <span class="promt_msg" ng-bind="pro_text" ng-hide="isMsg" ng-cloak></span>
+</div>
+
+<script src='../../static/js/account/user_set_username.js'></script>
+
+
+</body>
+
+</html>

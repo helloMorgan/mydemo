@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personal</title>
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css" /> <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/account/user_oder.css">
+</head>
+
+<body>
+    <header class="pageMall">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li></li>
+                    <li>
+                        <h1>我的旅行</h1>
+                    </li>
+                    <li id="mine_index_config_btn">
+                        <i class="shopCart" id="headerShopCart"></i>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article>
+        <div class="inner">
+            <section class="mineorder">
+                <div class="minebox">
+                    <dl onclick="javascript:location.href='./user_to_starting.html'">
+                        <a href="#" class="mini_account">
+                        </a>
+                        <dt>
+                            <em>15140506380</em>
+                            <span><a href="#">3个</a>待出发</span>
+                        </dt>
+                    </dl>
+                    <p><em class="quota">1,000</em>&nbsp;元</p>
+                    <span>可用额度</span>
+                </div>
+            </section>
+        </div>
+        <div class="clearfix"></div>
+        <div class="travel_order">
+            <div class="travel_order_myOrder travel_order_active">
+                <div onclick="javascript:location.href='./user_personal.html'">
+                    <div class='iconfont'>&#xe602;</div>
+                    <p class=>我的订单</p>
+                </div>
+            </div>
+            <div class="travel_order_monOrder">
+                <div onclick="javascript:location.href='./user_monthly_bill.html'">
+                    <div class='iconfont'>&#xe62d;</div>
+                    <p>月付账单</p>
+                </div>
+            </div>
+            <div class="travel_order_waiting" onclick="javascript:location.href='./user_to_set_out.html'">
+                <div>
+                    <div class='iconfont'>&#xe600;</div>
+                    <p>待出发</p>
+                </div>
+            </div>
+        </div>
+        <div class="travel-order-wrap">
+            <!--订单详情-->
+            <div class="travel_myOrder_info">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出&nbsp;发&nbsp;日&nbsp;期</span>
+                            <span class="travel_myOrder_mid_info">2016.11.11</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付</span>
+                            <span class="travel_myOrder_mid_info">￥417.32</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class" style="letter-spacing:.3rem; margin-right: .7rem;">剩余付款月</span>
+                            <span class="travel_myOrder_mid_info">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class" style="margin-right: 1rem;">每日最后付款日</span>
+                            <span class="travel_myOrder_mid_info">23日</span>
+                        </p>
+                    </div>
+                    <p class='travel_myOrder_error'>
+                        <span>逾期:</span>
+                        <span>23天</span>
+                        <span style="margin-left: 1.5rem">逾期费用:</span>
+                        <span>￥233.78</span>
+                    </p>
+                    <div class="travel_myOrder_mid_right_success">
+                    </div>
+                    <!--  <div class="travel_myorder_mid_right2">
+        已出行
+    </div> -->
+                </div>
+                <div class="travel_myOrder_bot">
+                    <span class="travel_myOrder_bot_state">9月待支付</span>
+                    <a href='../travel/travel_order_sucess_details.html' class="travel_myOrder_bot_info">查看详情</a>
+                </div>
+            </div>
+            <div class="travel_myOrder_info">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出&nbsp;发&nbsp;日&nbsp;期</span>
+                            <span class="travel_myOrder_mid_info">2016.11.11</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付</span>
+                            <span class="travel_myOrder_mid_info">￥417.32</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class" style="letter-spacing:.3rem; margin-right: .7rem;">剩余付款月</span>
+                            <span class="travel_myOrder_mid_info">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">每日最后付款日</span>
+                            <span class="travel_myOrder_mid_info">23日</span>
+                        </p>
+                    </div>
+                    <!--  <p class='travel_myOrder_error'>
+        <span>逾期:</span>
+        <span>23天</span>
+        <span>逾期费用:</span>
+        <span>233.78</span>
+    </p> -->
+                    <div class="travel_myOrder_mid_right_success">
+                    </div>
+                    <!--  <div class="travel_myorder_mid_right2">
+        已出行
+    </div> -->
+                </div>
+                <div class="travel_myOrder_bot">
+                    <span class="travel_myOrder_bot_state">9月待支付</span>
+                    <a href='../travel/travel_order_sucess_details.html' class="travel_myOrder_bot_info">查看详情</a>
+                </div>
+            </div>
+            <div class="travel_myOrder_info">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出&nbsp;发&nbsp;日&nbsp;期</span>
+                            <span class="travel_myOrder_mid_info">2016.11.11</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付</span>
+                            <span class="travel_myOrder_mid_info">￥417.32</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class" style="letter-spacing:.3rem; margin-right: .7rem;">剩余付款月</span>
+                            <span class="travel_myOrder_mid_info">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">每日最后付款日</span>
+                            <span class="travel_myOrder_mid_info">23日</span>
+                        </p>
+                    </div>
+                    <!--  <p class='travel_myOrder_error'>
+        <span>逾期:</span>
+        <span>23天</span>
+        <span>逾期费用:</span>
+        <span>233.78</span>
+    </p> -->
+                    <div class="travel_myOrder_mid_right_success">
+                    </div>
+                    <!--  <div class="travel_myorder_mid_right2">
+        已出行
+    </div> -->
+                </div>
+                <div class="travel_myOrder_bot">
+                    <span class="travel_myOrder_bot_state">分期已完成</span>
+                    <a href='../travel/travel_order_sucess_details.html' class="travel_myOrder_bot_info">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer class="bottom_nav" id="bottom-tab">
+    <ul>
+        <li id='nav_home' onClick="toIndex()"><a><img src="../../static/bitmap/foot/boutique travel.png" alt=""></a></li>
+        <li id='nav_dest' onClick="toDest()"><a><img src="../../static/bitmap/foot/dest.png" alt=""><p class="rec-fine-route"></p></a></li>
+        <li id='nav_mine' onClick="toMine()"><a id="mine-btn"><img src="../../static/bitmap/foot/my_travel.png" alt=""><p class="tra-travel"></p></a>
+        </li>
+    </ul>
+</footer>
+</body>
+
+</html>

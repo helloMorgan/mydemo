@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngOrder">
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/decoration_order.css"/>
+    <link rel="stylesheet" href="../../static/css/common/payment.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/layer_prompt.css"/>
+</head>
+<body ng-controller="ngOrderCtl">
+
+<header class="travel-head-nav">
+    <h1></h1>
+    <i class="iconfont-back_ss iconfont" ng-click="goTrack();">&#xe603;</i>
+</header>
+<ul class="order_content">
+    <li>
+        <label>商家</label>
+        <span ng-model="shopeName">{{shopeName}}</span>
+    </li>
+    <li>
+        <label>产品</label>
+        <span ng-model="proName">{{proName}}</span>
+    </li>
+    <li>
+        <label>分期金额（元）</label>
+        <input type="tel" class="input_installment" ng-model="fqMoney" maxlength="6">
+    </li>
+    <li ng-click="displayList()">
+        <label>分期期数（月）</label>
+        <span ng-model="staging">{{staging}} <i class="iconfont">&#xe630;</i></span>
+    </li>
+</ul>
+
+
+<div class="order_submit" ng-click="orderPay()">
+    提交申请
+</div>
+
+<div class="layer2" ng-hide="showPayment">
+    <div class="payment_time_mask2" >
+        <h2>请选择分期</h2>
+        <ul>
+            <li ng-repeat="item in installmentArr" ng-bind="item.fq">6</li>
+        </ul>
+    </div>
+</div>
+
+
+<!--<ul class="content_info">-->
+    <!--<li>月息季本等额本金还款</li>-->
+<!--</ul>-->
+
+<!--<div class="register-agree register-same" id="register-only">-->
+    <!--<i class="iconfont" ng-class="{'read-deal':!isReadDeal}" ng-click="agreeDeal()">&#xe624;</i>-->
+    <!--<label class="user-label">我同意</label>-->
+    <!--<a href="javascript:location.href='../travel/travel_contract_text.html'">&lt;&lt;分期惠协议&gt;&gt;</a>-->
+<!--</div>-->
+
+
+<div class="layer">
+    <div class="prompt_box">
+        <!--<div class="prompt_icon"><i class="iconfont">&#xe660;</i></div>-->
+        <p>您的预订已提交，请保持电话畅通</p>
+        <p>我们的客服将在两个工作日内与您联系</p>
+        <div class="close_btn ">
+            <!--<a class="close_btn">-->
+            <!--OK-->
+            <!--</a>-->
+            <span ng-click="backAccount();">好的</span>
+        </div>
+
+        <!--<img src="../../static/bitmap/travel/close_order_pro.png" alt="关闭按钮" ng-click="promptClose()">-->
+    </div>
+</div>
+
+<!--<footer class="bottom_nav" id="bottom-tab">-->
+<!--<ul>-->
+<!--<li id='nav_home' onClick="toReal()"><a>实名认证</a></li>-->
+<!--<li id='nav_dest' onClick="toDest()"><a>提交订单</a></li>-->
+<!--<li id='nav_mine' onClick="toMine()"><a id="mine-btn">订单查询</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</footer>-->
+
+</body>
+
+<script src="../../static/js/travel/decoration_order.js"></script>
+</html>

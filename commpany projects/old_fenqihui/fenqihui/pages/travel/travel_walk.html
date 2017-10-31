@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="ngScope" ng-controller="ngController">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> 
+    <title ng-bind="laName"></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/travel/travel_walk.css">
+</head>
+<body >
+    <div class="travel-walk">
+        <header class="travel-head-nav">
+            <h1 ng-bind="laName"></h1>
+            <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+        </header>
+    <div class="travel-walk-list">
+        <ul>
+            <li ng-click="toDetail(item.pId)" ng-repeat="item in items">
+                <p class="travel-walk-title" ng-bind="item.pTitle"></p>
+                <p class="travel-walk-des" ng-bind="'('+item.pTitleSub+')'"></p>
+                <div class="travel-walk-imgcon">
+                    <img ng-src="{{OSS_IMG_URL+item.imageUrl}}" alt="">
+                    <div id="travel-walk-list-tip">
+                        <p class="tra-walk-tip1">
+                            分期惠游
+                        </p>
+                        <p class="tra-walk-tip2">
+                            <span>
+                                月付￥<span ng-bind="item.payMonthly"></span><label>起</label>
+                            </span>
+                        </p>
+                        <p class="tra-walk-tip3">总价：<span ng-bind="item.pTotalMoney"></span></p>
+                     </div>
+                </div>
+                <p class="travel-walk-tag" >
+                    <span ng-repeat="la in item.pLaId.split(',')" ng-bind="'#'+la+'#'"></span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    </div>
+<script src="../../static/js/travel/travel_walk.js"></script>
+</body>
+</html>

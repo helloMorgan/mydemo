@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userRegisterAccount">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置登录密码</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_mine_set.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_form_style.css">
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+</head>
+
+<body ng-controller="userRegisterAccountController">
+    <header class="travel-head-nav register-head" style="border-bottom:1px solid #e8e8e8">
+        <h1>设置登陆密码</h1>
+        <i class="iconfont-back iconfont" id="register-back" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    </header>
+    <article>
+        <form action="#" method="post" name="set_password" class="set_password">
+            <div class="mobile_id">
+                <div class="item">
+                    <label>手机号</label>
+                    <input type="tel" class="basic_phone"  placeholder="请输入手机号码（11位）" ng-model="phone">
+                </div>
+                <div class="item">
+                    <label >验证码</label>
+                    <input type="number" class="basic_msm" maxlength="6" placeholder="请输入短信验证码" ng-model="sms"    style="margin: 0">
+                    <a href="javascript:void(0);" class="sms-bg" value="获取验证码" ng-click="getSmsCode()">获取验证码</a>
+                </div>
+
+                <div class=" item ">
+                    <label>密码&nbsp;</label>
+                    <input type="password" class="basic_password "  placeholder="请输入密码（6-16个字符） " ng-model="password ">
+                    <a href="javascript:void(0); " class="swap_eye">
+                        <img src="../../static/bitmap/account/close_eyes.png " class="eye_img">
+                    </a>
+                </div>
+            </div>
+
+            <div class="account_banding_btns ">
+                <div class="btn gray " ng-click="setPassword()">
+                    <a href="javascript:void(0); " id="save_btn" style="color:#fff ">保存</a>
+                </div>
+            </div>
+        </form>
+    </article>
+
+    <div id="layer">
+        <div class="prompt_box">
+            <p ng-bind="pro_text"></p>
+            <div class="close_btn">确定</div>
+        </div>
+    </div>
+
+
+    <script src="../../static/js/account/user_register_account.js"></script>
+
+
+</body>
+
+</html>

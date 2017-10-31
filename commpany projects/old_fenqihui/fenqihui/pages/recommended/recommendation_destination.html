@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="destination">
+<head>
+    <meta charset="UTF-8">
+    <title>目的地</title>
+    <link rel="stylesheet" href="../../static/css/recommended/recommended_index.css"/>
+    <link rel="stylesheet" href="../../static/css/recommended/recommendation_destination.css"/>
+
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css"/>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+</head>
+<body ng-controller="destinationController" style="overflow-y: hidden">
+<!--<div class="route-search" id="recommended_real_name" ng-click="goSearch()">-->
+    <!--<div class="route_con">-->
+        <!--<p ng-if="isRealName" ng-click="toRealName()" class="realName-icon" ></p>-->
+        <!--&lt;!&ndash;<span class="search_span">&ndash;&gt;-->
+				<!--&lt;!&ndash;<span  class="iconfont route-search-icon">&#xe60d;</span>&ndash;&gt;-->
+				<!--&lt;!&ndash;<input  id="route_search"  readonly  type="text" placeholder="搜索目的地" class="route-input">&ndash;&gt;-->
+			<!--&lt;!&ndash;</span>&ndash;&gt;-->
+    <!--</div>-->
+<!--</div>-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="item in bannerList" ng-click="toDetail(item.pId)">
+            <img ng-src={{OSS_IMG_URL+item.url}} alt="banner">
+        </div>
+    </div>
+    <div class="swiper-pagination"  style="bottom: 1.5rem;"></div>
+</div>
+
+<div class="container ">
+    <div class="container_left" style="height: 22rem; overflow-y:scroll;">
+        <ul >
+            <li ng-repeat="item in destNameList"  ng-bind="item.firLevelName" ng-click="changeList($index);"></li>
+        </ul>
+    </div>
+
+    <div class="container_right">
+        <div class="left_img" ng-repeat="item in list track by $index">
+            <img ng-src="{{OSS_IMG_URL+item.url}}" class="destination_img" ng-click="searchBourn(item.pTypeId, item.name)">
+            <!--<div class="destination_layer">-->
+                <!--<p>日本</p>-->
+                <!--<p>Japan</p>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+<footer class="bottom_nav" id="bottom-tab">
+    <ul>
+        <li id='nav_home' onClick="toIndex()">
+            <a><img src="../../static/bitmap/foot/boutique travel.png" alt=""></a>
+            <span class="foot_index"></span>
+        </li>
+        <li id='nav_dest' onClick="toDest()"><a><img src="../../static/bitmap/foot/dest_access.png" alt=""><p class="rec-fine-route"></p></a></li>
+        <li id='nav_mine' onClick="toMine()"><a id="mine-btn"><img src="../../static/bitmap/foot/my_travel.png" alt=""><p class="tra-travel"></p></a>
+        </li>
+    </ul>
+</footer>
+<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="../../static/js/recommended/recommendation_destination.js"></script>
+</html>

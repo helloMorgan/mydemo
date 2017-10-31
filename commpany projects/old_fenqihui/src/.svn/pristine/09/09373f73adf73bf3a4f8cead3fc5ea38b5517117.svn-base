@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的分期</title>
+    @@include("../../templates/head.inc")
+</head>
+<link rel="stylesheet" href="../../static/css/travel/travel_myStages.css"/>
+
+<link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+<body ng-app='myStages' ng-controller="myStagesCtrl">
+<header id="header">
+    <div class="header_title">
+        <p>我的分期</p>
+        <span class="header_install" ng-click="goAccountSet()"></span>
+    </div>
+    <div class="header_info">
+        <div class="my_info">
+            <div class="title_img"><img src="../../static/bitmap/travel/title.gif"/></div>
+            <div class="title_start">
+                <div class="title_phone" ng-bind="accountName">16910586524</div>
+                <div class="title_star">
+                    <i class="iconfont">&#xe683;</i>
+                    <i class="iconfont">&#xe683;</i>
+                    <i class="iconfont">&#xe683;</i>
+                    <i class="iconfont">&#xe683;</i>
+                    <i class="iconfont">&#xe683;</i>
+                </div>
+            </div>
+        </div>
+        <div class="header_lift" ng-click="goCredit()">
+            <span class="iconfont" style="font-size: 0.9rem;">&#xe662;</span>
+            <p>信用额度评估</p>
+        </div>
+    </div>
+</header>
+<div id="main">
+    <div class="main_tab">
+        <span ng-click="chooseTab(1)" class="mainDetails_chooseTwo" style="border-bottom: 1px solid #00ceb7;"
+              ng-class="{false:'green',true:'gray'}[data.aClass]"><label
+                ng-class="{false:'green',true:'gray'}[data.aClass]" class="iconfont">&#xe66f;&nbsp;</label>我的订单</span>
+        <span ng-click="chooseTab(2)" ng-class="{true:'green',false:'gray'}[data.aClass]" class="mainDetails_chooseOne"><label
+                ng-class="{true:'green',false:'gray'}[data.aClass]" class="iconfont">&#xe6c7;&nbsp;</label>月付订单</span>
+    </div>
+    <div class="main">
+        <div class="mainPlace">
+            <div class="mainList" ng-if="!data.switch">
+                <!--<img src="../../static/bitmap/account/without_result.png"  class="tu" style="text-align:center;clear: both;display: block;margin:auto; " alt="">
+                <p style="text-align: center;margin-top: 1rem;">您还没有订单</p>-->
+
+
+
+
+                <div class="dataList">
+                    <div class="dataList_li" ng-repeat="list in data.dataList track by $index">
+                        <div class="badge">{{list.pTitle}}</div>
+                        <div class="dataListItem dataListItemTop">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>首付金额</p>
+                            </div>
+                            <div class="listNum">{{list.firstPrice}}</div>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>预付款</p>
+                            </div>
+                            <div class="listNum">{{list.prepayMoney}}</div>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>分期金额 (元)</p>
+                            </div>
+                            <div class="listNum">{{list.totalDurationPrice}}</div>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>分期期数 (月)</p>
+                            </div>
+                            <div class="listNum">{{list.duration}}</div>
+                        </div>
+                        <div class="dataListItem" style="border-bottom: 1px solid #f4f4f4;">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>每月应还 (元)</p>
+                            </div>
+                            <div class="listNum">{{list.durationMoney}}</div>
+                        </div>
+                        <div class="itemState">{{list.orderStatusDesc}}</div>
+                        <div class="item_pay" ng-click="toPay(list)" ng-if="isShow(list)">首付</div>
+                        <div class="clearfix"></div>
+                        <div class="itemDetalis">
+                            <div class="itemTab" ng-click="datum(list)" ng-if="isHide(list)">补充资料</div>
+                            <div class="itemTab" ng-click="details(list)">查看详情</div>
+                        </div>
+                        <div class="border"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--另一个tab-->
+            <div ng-if="data.switch" class="mainList" ng-repeat="list in data.monthList track by $index">
+
+                <div class="mainList" ng-if="data.switch">
+                <!--<img src="../../static/bitmap/account/without_result.png"  class="tu" style="text-align:center;clear: both;display: block;margin:auto; " alt="">
+                <p style="text-align: center;margin-top: 1rem;">您还没有月付订单</p>-->
+
+
+
+
+                <div class="dataList">
+                    <div class="dataList_li">
+                        <div class="badge">{{list.pTitle}}</div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>本月代付总额</p>
+                            </div>
+                            <div class="listNum">￥{{list.rCurrPaidMoney}}</div>
+                            <p class="overdueFee" ng-if="list.overdueFee">含逾期费:￥{{list.overdueFee}}</p>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>本月还款日期</p>
+                            </div>
+                            <div class="listNum">{{list.rDueDate}}</div>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>剩余还款期数</p>
+                            </div>
+                            <div class="listNum">{{list.leaveDuration}}</div>
+                        </div>
+                        <div class="dataListItem">
+                            <div class="listText">
+                                <span class="iconfont">&#xe66c;</span>
+                                <p>到期未还款期数</p>
+                            </div>
+                            <div class="listNum">{{list.overdueDuration}}</div>
+                        </div>
+
+                        <div class="dataListItem goPay" ng-click="goMonthPay(list)">
+                            去还款
+                        </div>
+                        <div ng-if="false" class="dataListItem  forwardPay">
+                            <u>提前还款</u>
+                        </div>
+
+                    </div>
+                    <div class="border"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    </div>
+
+<footer class="bottom_nav" id="bottom-tab">
+    <ul>
+        <li id='nav_home' onClick="toIndex()">
+            <a><img src="../../static/bitmap/foot/boutique travel.png" alt=""></a>
+            <span class="foot_index"></span>
+        </li>
+        <li id='nav_dest' onClick="toDest()"><a><img src="../../static/bitmap/foot/dest.png" alt="">
+            <p class="rec-fine-route"></p></a></li>
+        <li id='nav_mine' onClick="toMine()"><a id="mine-btn">
+            <img src="../../static/bitmap/foot/my_travel_access.png" alt="">
+            <p class="tra-travel"></p></a>
+        </li>
+    </ul>
+</footer>
+</body>
+
+
+<script src="../../static/js/travel/travel_myStages.js"></script>
+
+</html>

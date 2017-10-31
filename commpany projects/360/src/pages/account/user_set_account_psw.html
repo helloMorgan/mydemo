@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userSetAccountPsw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置登录密码</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_mine_set.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_form_style.css">
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+
+</head>
+
+<body ng-controller="userSetAccountPswController">
+<article>
+    <header class="travel-head-nav" style="border-bottom: 1px solid #e8e8e8">
+        <h1>设置登录密码</h1>
+        <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    </header>
+    <form action="javascript:void(0);" method="post" name="set_password" class="set_password" ng-submit="save()">
+        <div class="mobile_id">
+            <div class="item">
+                <label>身份证号</label>
+                <input type="text" class="basic_id" placeholder="请输入您的身份证号" ng-model="idCard" required>
+            </div>
+            <div class="item">
+                <label>密码&nbsp;</label>
+                <input type="password" class="basic_password" placeholder="请输入密码（6-16个字符）" ng-model="pass"  style="width:9.5rem " required>
+                <a href="javascript:void(0);" class="swap_eye ">
+                    <img src="../../static/bitmap/account/close_eyes.png" class="eye_img">
+                </a>
+            </div>
+        </div>
+        <div class="account_banding_btns">
+            <input type="button" class="btn blue " value="保存 " id="save_btn " ng-disabled="myForm.$invalid "
+                   ng-click="setPwd()">
+        </div>
+    </form>
+</article>
+<div class="layer_con" ng-hide="isMsg">
+    <span class="promt_msg" ng-bind="pro_text" ></span>
+</div>
+
+
+<script src="../../static/js/account/user_set_account_psw.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 切换是否显示密码
+        $('.swap_eye').bind('click', function () {
+            var str = $('.swap_eye .eye_img')[0].src.match(/\/(\w+\.(?:png))$/i)[1];
+            if (str == "open_eyes.png") {
+                $('.swap_eye .eye_img').css('height', '.875rem');
+                $('.swap_eye .eye_img').attr('src', "../../static/bitmap/account/close_eyes.png");
+                $('.basic_password').attr('type', 'password');
+            } else {
+                $('.swap_eye .eye_img').css('height', '1.3rem');
+                $('.swap_eye .eye_img').attr('src', "../../static/bitmap/account/open_eyes.png");
+                $('.basic_password').attr('type', 'text');
+            }
+        });
+
+
+    })
+</script>
+</body>
+
+</html>

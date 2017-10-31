@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngOrder">
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单</title>
+
+
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css"/>
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/travel/decoration_order.css"/>
+
+
+</head>
+<body ng-controller="ngOrderCtl">
+<header class="travel-head-nav">
+    <h1></h1>
+    <i class="iconfont-back_ss iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+<div class="swiper-containerBusiness" ng-if="data.businessList">
+    <div class="standard"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="list in data.businessArr track by $index">{{list.si_name}}</div>
+    </div>
+    <div class="popupSubmit" ng-click="popupSbumit(1)">确定</div>
+</div>
+
+<div class="swiper-containerProduce">
+    <div class="standard"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="list in data.produceArr track by $index">{{list.p_title}}</div>
+    </div>
+    <div class="popupSubmit" ng-click="popupSbumit(2)">确定</div>
+</div>
+
+<div class="swiper-containerTime">
+    <div class="standard"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="list in data.timeArr track by $index">{{list}}</div>
+    </div>
+    <div class="popupSubmit" ng-click="popupSbumit(3)">确定</div>
+</div>
+
+
+<div id="popup" ng-if="data.popup" ng-click="popupVanish()"></div>
+<div class="stagesOrder" ng-if="data.stages">
+
+    <div class="slide" ng-repeat="list in data.timeArr track by $index"><i>{{list}}期&nbsp;: &nbsp; </i> 首付<i> &nbsp;{{data.firstPay}} </i>
+        &nbsp;起 +&nbsp; <a>{{data.shouldPay}}×{{list}}</a> 期
+    </div>
+
+</div>
+
+<div id="main">
+    <div class="order_content">
+        <li>
+            <label class="left"><a class="iconfont badge">&#xe66c;</a>选择商家</label>
+            <span class="right" ng-click="popup(1)" ng-model="data.Business">{{data.Business}}<i class="iconfont">&#xe630;</i></span>
+        </li>
+        <li>
+            <label><a class="iconfont badge">&#xe66c;</a>选择产品</label>
+            <span ng-model="data.produce" ng-click="popup(2)">{{data.produce}}<i class="iconfont">&#xe630;</i></span>
+        </li>
+        <li>
+            <label><a class="iconfont badge">&#xe66c;</a>首付金额（元）</label>
+            <input type="number" class="input_installment" maxlength="7" ng-blur="onblue(data.firstPay,1)" required
+                   pattern="\d{1,5}" ng-model="data.firstPay">
+            <p class="warn" ng-show="data.warn">请输入正确的金额 (输入时不能是小数,负数)</p>
+        </li>
+        <li>
+            <label><a class="iconfont badge">&#xe66c;</a>预付款（元）</label>
+            <input type="number" class="input_installment" maxlength="7" required ng-blur="onblue(data.prepay,2)"
+                   pattern="\d{1,5}" ng-model="data.prepay" >
+            <p class="warn" ng-show="data.warn1">请输入正确的金额 (输入时不能是小数,负数)</p>
+        </li>
+        <li>
+            <label><a class="iconfont badge">&#xe66c;</a>分期金额（元）</label>
+            <label style="float: right;text-align: center;margin-right: 1rem;">{{data.price}}</label>
+
+            <p class="warn" ng-show="data.warn2">请输入正确的金额</p>
+        </li>
+        <li ng-click="displayList()" class="submit_position">
+            <label><a class="iconfont badge">&#xe66c;</a>分期期数（月） </label> <span class="submit_notice"
+                                                                                ng-click="stages()"></span>
+            <span ng-click="popup(3)" style="color: #333333;" ng-model="data.time">{{data.time}} <i class="iconfont">&#xe630;</i></span>
+        </li>
+        <li class="submit_position"   >
+            <label><a class="iconfont badge">&#xe66c;</a>每月应还（元） </label>
+            <!--<span class="submit_interest">免息</span>-->
+
+            <label style="float: right;text-align: center;margin-right: 1rem;height: 1rem;color: #333333;">{{data.shouldPay}}</label>
+
+            <div class="submit_explain" style="max-width: 13rem;">说明：申请金额不能大于合同金额</div>
+            <!--<div class="submit_explain">说明：申请金额不能大于合同金额</div>-->
+        </li>
+        <div class="line"></div>
+        <li>
+            <u class="submit_uploading" ng-click="load()">上传合同资料</u>
+        </li>
+    </div>
+</div>
+<input type="submit" class="order_submit" value="提交申请" ng-click="orderPay()"/>
+
+</body>
+<script>
+
+</script>
+<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="../../static/js/travel/decoration_order.js"></script>
+</html>

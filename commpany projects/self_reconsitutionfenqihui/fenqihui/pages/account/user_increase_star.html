@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>上传信用评估资料</title>
+    <link rel="stylesheet" href="../../static/css/travel/detail.css"/>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_increase_start.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+</head>
+<body>
+
+<header class="travel-head-nav border_bottom">
+    <h1>上传信用评估资料</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    <span onclick="increaseStarObj.submitContract()" class="account-upload-btn">提交</span>
+</header>
+
+<section class="account-upload-content">
+    <h2 class="account-title-first"><i class="iconfont">&#xe68c;</i><span>个人资质</span></h2>
+    <p class="upload_des">
+        护照、结婚证、所经营企业营业执照、职业资格证书、职称证书等
+    </p>
+    <section class="account-img-content">
+        <ul class="personalNatural-img-list img-list" id="personalNatural-img-list"></ul>
+
+        <figure class="account-img-wrap" id="personalNaturalFull">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="个人资质照片">
+            <input id="personalNatural" type="file" name="file" accept="image/*"/>
+        </figure>
+
+    </section>
+</section>
+
+
+<section class="account-upload-content">
+    <h2 class="account-title-first"><i class="iconfont">&#xe651;</i><span>资产证明</span></h2>
+    <p class="upload_des">
+        名下的车辆行驶证、房产证、购房合同、投资/理财合同、保险合同、有价单据等
+    </p>
+    <section class="account-img-content">
+        <ul class="assetCertificate-img-list img-list" id="assetCertificate-img-list"></ul>
+        <figure class="account-img-wrap" id="assetCertificateFull">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="资产证明照片">
+            <input id="assetCertificate" type="file" name="file" accept="image/*"/>
+        </figure>
+    </section>
+</section>
+
+
+<section class="account-upload-content">
+    <h2 class="account-title-first"><i class="iconfont">&#xe797;</i><span>其他凭证</span></h2>
+    <p class="upload_des">
+        员工工牌、信用卡账单、收入证明、社保或公积金缴纳证明、旅游合同及定金收据等其他有利于用户获取额度的资料原件
+    </p>
+    <section class="account-img-content">
+        <ul class="otherCredentials-img-list img-list" id="otherCredentials-img-list"></ul>
+        <figure class="account-img-wrap" id="otherCredentialsFull">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="其他凭证照片">
+            <input id="otherCredentials" type="file" name="file" accept="image/*"/>
+        </figure>
+
+    </section>
+</section>
+
+<div id="layer">
+    <div class="prompt_box">
+        <p ng-bind="pro_text"></p>
+        <div class="close_btn">确定</div>
+    </div>
+</div>
+<script src="../../static/js/lib/jquery.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+<script src="../../static/js/account/user_increase_star.js"></script>
+</body>
+</html>

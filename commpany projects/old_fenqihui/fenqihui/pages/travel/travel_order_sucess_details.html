@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>产品详情</title>
+    <link rel="stylesheet" href="../../static/css/recommended/recommended_index.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css" />
+    <link rel="stylesheet" href="../../static/css/travel/public.css">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+</head>
+
+<body ng-app="orderDetailsApp" ng-controller="orderDetailsCtrl">
+    <header class="travel-head-nav">
+        <h1>产品详情</h1>
+        <i class="iconfont-back iconfont" ng-click='goBack();'>&#xe603;</i>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper" >
+            <!--ng-repeat="imgurl in imgList"-->
+            <div class="swiper-slide" >
+                <a href="#"><img ng-src="{{OSS_IMG_URL+imgUrl}}" alt="banner"></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div style="height: .625rem;background: #fff;"></div>
+    <aside>
+        <div class="travel_myOrder_info m_top">
+            <div class="travel_myOrder_top">
+                <p class="travel_myOrder_top_title" ng-bind="productItem.product.pTitle">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                <p class="travel_myOrder_top_second" ng-bind="productItem.product.titileSub">(入住5星酒店,专车接送)</p>
+            </div>
+            <div class="travel_myOrder_mid">
+                <div class="travel_myOrder_mid_left">
+                    <p class="">
+                        <span class="travel_myOrder_mid_class">分期惠游</span>
+                        <span class="travel_myOrder_mid_info">
+                        <label class="cmoneyIcon">首付 </label><span ng-bind="productItem.order.oTotalFirstPrice"></span><label class="cmoneyIcon">元</label> + <span ng-bind="productItem.order.durationMoney+'元×'+productItem.order.totalDuration"></span>期
+
+                        </span>
+                    </p>
+
+                    <p class="">
+                        <span class="travel_myOrder_mid_class">出发日期</span>
+                        <span class="travel_myOrder_mid_info" ng-bind="productItem.meals.mDate">2019-10-17</span>
+                    </p>
+                    <p class="">
+                        <span class="travel_myOrder_mid_class">出发人数</span>
+                        <span class="travel_myOrder_mid_info">
+                            <!--<label ng-if="productItem.order.ticketYoungNum!=0" ng-cloak>成人</label><span ng-if="productItem.order.ticketYoungNum!=0" ng-bind="productItem.order.ticketYoungNum" class="ticketNum" ng-cloak></span>-->
+                            <!--<label ng-if="productItem.order.ticketYoungNum!=0&&productItem.order.ticketOldNum!=0">、</label>-->
+                            <!--<label ng-if="productItem.order.ticketOldNum!=0" ng-cloak> 老人</label><span ng-bind="productItem.order.ticketOldNum" class="ticketNum" ng-if="productItem.order.ticketOldNum!=0" ng-cloak></span>-->
+                            <!--<label ng-if="productItem.order.ticketChildrenNum!=0&&productItem.order.ticketChildrenNum!=0">、</label>-->
+                            <!--<label ng-if="productItem.order.ticketChildrenNum!=0" ng-cloak> 儿童</label><span ng-bind="productItem.order.ticketChildrenNum" class="ticketNum" ng-if="productItem.order.ticketChildrenNum!=0" ng-cloak></span>-->
+                            <label ng-cloak></label><span  ng-bind="productItem.order.ticketNum" class="ticketNum" ng-cloak></span>
+                        </span>
+                    </p>
+                </div>
+                <div class="travel_myOrder_info_box" ng-click="productInfo()">
+                    查看产品详情
+                </div>
+            </div>
+        </div>
+        <ul class="account_manage ">
+            <li class="u_top" ng-click="goDeal()" >
+                <span  class="sp1"><i class="iconfont"></i> 查看&lt;&lt;分期惠游咨询服务协议&gt;&gt;
+                    <i class="iconfont details-icon">&#xe607;</i></span>
+            </li>
+            <li class="u_top" ng-click="goContract()"  ng-cloak>
+                <span  class="sp2"><i class="iconfont"></i>上传旅行合同及资质
+                    <i class="iconfont details-icon">&#xe607;</i></span>
+            </li>
+            <li class="u_top" ng-if="productItem.order.oIsPayment == 1?true:false" ng-click="goPayDetail()" ng-cloak>
+                <span  class="sp3"><i class="iconfont"></i>查看账单详情
+                    <i class="iconfont details-icon">&#xe607;</i></span>
+            </li>
+            <!--<li class="u_top" ng-if="submitCon" ng-click="submitContract()" ng-cloak>-->
+                <!--<span  class="sp3"><i class="iconfont"></i>提交旅行合同-->
+                    <!--<i class="iconfont details-icon">&#xe607;</i></span>-->
+            <!--</li>-->
+
+        </ul>
+    </aside>
+    <script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+    <script src="../../static/js/travel/travel_order_sucess_details.js">
+
+    </script>
+</body>
+
+</html>

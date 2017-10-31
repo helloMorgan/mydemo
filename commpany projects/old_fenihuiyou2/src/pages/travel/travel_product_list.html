@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ngScope" ng-controller="ngController">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title ng-bind="laName"></title>
+    @@include('../../templates/head.inc')
+    <link rel="stylesheet" href="../../static/css/travel/travel_product_list.css">
+</head>
+<body>
+<div class="travel-walk">
+    <header class="travel-head-nav">
+        <h1 ng-bind="laName"></h1>
+        <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    </header>
+    <div class="travel-walk-list" >
+        <ul>
+            <li class="travel-product-item" ng-click="toDetail(item.pId)" ng-repeat="item in items" ng-cloak>
+                <p class="travel-walk-title" ng-bind="item.pTitle"></p>
+                <p class="travel-walk-des" ng-bind="item.pTitleSub"></p>
+                <div class="travel-walk-imgcon">
+                    <img ng-src="{{OSS_IMG_URL+item.imgUrl}}" alt="">
+
+                    <div class="route-sale-price">
+                        <div class="route_tp">
+                            <p class="route-price-info">分期惠游</p>
+                            <p><i>月付</i><span class="route-price-tag">￥</span><span class="route-price-number" ng-bind="item.payMonthly.toFixed(0)"></span><span class="route-price-tag">起</span></p>
+
+                        </div>
+                        <!--<p class="route-total-price"><span>总价:</span><span ng-bind="item.pTotalMoney"></span></p>-->
+                    </div>
+                </div>
+                <p class="travel-walk-tag" ng-bind="item.pFeature">
+                    <!--<span ng-repeat="la in item.pLaId.split(',')" ng-bind="'#'+la+'#'"></span>-->
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="list_none" ng-if="totalCount" ng-cloak>
+        <div id="container">
+            <img src="../../static/bitmap/account/without_result.png" alt="">
+        </div>
+        <p>产品暂未上架，敬请期待~</p>
+    </div>
+</div>
+<script src="../../static/js/travel/travel_product_list.js"></script>
+</body>
+</html>

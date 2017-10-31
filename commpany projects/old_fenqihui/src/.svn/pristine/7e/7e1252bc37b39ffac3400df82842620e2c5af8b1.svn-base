@@ -1,0 +1,52 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.recommendation_list_wrap {
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(left top, #01b6dd, #00af79);
+    background: -o-linear-gradient(bottom right, #01b6dd, #00af79);
+    background: -moz-linear-gradient(bottom right, #01b6dd, #00af79);
+    background: linear-gradient(to bottom right, #01b6dd, #00af79);
+    background-repeat: no-repeat;
+    padding: 1.1rem 0.75rem 0;
+    color: #276478;
+    box-sizing: border-box;
+}
+
+.labelSelected{
+    background: -webkit-linear-gradient(left top, #ef6405, #e23318);
+    background: -o-linear-gradient(bottom right, #ef6405, #e23318);
+    background: -moz-linear-gradient(bottom right, #ef6405, #e23318);
+    background: linear-gradient(to bottom right, #ef6405, #e23318);
+}
+
+.recommendation_list_wrap label {
+    display: block;
+    float: left;
+    background-image: url('../../bitmap/recommended/recommendation_list_unselect.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 3.9rem;
+    width: 3.9rem;
+    margin-left: 0.4rem;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 3.9rem;
+    margin-top: 0.55rem;
+    position: relative;
+    -webkit-animation: twinkling 1s ease-in-out;
+}
+.recommendation_list_wrap label:nth-of-type(4n+1) {
+    margin-left: 0;
+}
+@-webkit-keyframes twinkling {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

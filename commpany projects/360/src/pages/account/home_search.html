@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    @@include('../../templates/head.inc')
+    <link rel="stylesheet" href="../../static/css/account/home_search.css">
+    <script src="../../static/js/account/home_search.js"></script>
+</head>
+<body ng-app="searchApp" ng-controller="searchCtrl">
+    <div id="search_container">
+        <form class="search_in" action="" >
+            <input type="search" name="info" placeholder="搜索...目的地/关键词" ng-model="address"/>
+            <span class="search_cancel" onclick='javascript:history.go(-1)' ng-hide="cancel">取消</span>
+            <span class="search_cancel" ng-click="goSearch()" ng-hide="search">搜索</span>
+            <span class="iconfont search_icon">&#xe60d;</span>
+            <span class="iconfont search_del" ng-hide="!address" ng-click="delValue()">&#xe646;</span>
+        </form>
+        <div class="serch_content1" ng-hide="isHistory">
+            <div class="search_history" ng-hide="isHis">
+                <div class="search_title" >
+                    <div class="">历史搜索</div>
+                    <div class="del_history" ng-click="delHis()">
+                        <span class="iconfont del_icon">&#xe652;</span>
+                        <span>清空历史</span>
+                    </div>
+                </div>
+                <div class="search_con">
+                    <span class="history_item"  ng-repeat="item in searchArray" ng-bind="item" ng-click="hisSearch(item)"></span>
+
+                </div>
+            </div>
+            <!--<div class="hot_in" >-->
+                <!--<div class="hot_in_title">-->
+                    <!--<span class="iconfont hot_icon">&#xeb89;</span><span class="hot_word">国内热门</span>-->
+                <!--</div>-->
+                <!--<div class="hot_in_con">-->
+                    <!--&lt;!&ndash;<span class="history_item">新疆乌孙夏特</span>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="hot_out">-->
+                <!--<div class="hot_out_title">-->
+                    <!--<span class="iconfont hot_icon hot_out_icon">&#xe9a6;</span><span class="hot_word">国际热门</span>-->
+                <!--</div>-->
+                <!--<div class="hot_out_con">-->
+                    <!--<span class="history_item">加里弗尼亚</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="serch_content2" ng-hide="isThink">
+            <div class="think_title">猜你想搜</div>
+            <div class="think_here">
+                <span class="iconfont think_icon">&#xe654;</span>
+                <span class="iconfont think_into">&#xe607;</span>
+                <p>
+                    <span>戛纳当地游</span>
+                    <span class="think_not">12个</span>
+                </p>
+            </div>
+            <div class="think_add">
+                <span class="iconfont think_icon">&#xe658;</span>
+                <p>
+                    <span>噶工</span>
+                    <span class="think_not">四川</span>
+                    <span class="think_not">目的地</span>
+                </p>
+            </div>
+        </div >
+
+    </div>
+
+</body>
+</html>

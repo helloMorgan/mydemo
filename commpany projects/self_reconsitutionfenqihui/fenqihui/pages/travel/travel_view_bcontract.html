@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>上传旅行合同</title>
+        <link rel="stylesheet" href="../../static/css/travel/detail.css" />
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css?v={version}" />
+        <link rel="stylesheet" href="../../static/css/travel/travel_upload_contract.css?v={version}" />
+    </head>
+
+    <body>
+
+        <header class="travel-head-nav">
+            <h1>补充合同</h1>
+            <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+            <span class="travel-upload-btn">提交</span>
+        </header>
+
+        <section class="travel-upload-content">
+            <h2 class="travel-title-first"><i class="iconfont">&#xe62c;</i><span class="sType"></span></h2>
+            <section class="travel-img-content touristContent">
+
+                <ul class="tourist-img-list img-list" id="tourist-img-list">
+
+                </ul>
+                <figure class="travel-img-wrap" ng-hide="travelImgsFull" id="travelImgsFull2">
+                    <img src="../../static/bitmap/travel/travel_upload_img.png" alt="旅游合同照片">
+                    <input id="touristAdd2" type="file" name="file" capture="camera" accept="image/*" />
+                </figure>
+            </section>
+        </section>
+
+        <section class="travel-upload-content">
+            <h2 class="travel-title-first"><i class="iconfont">&#xe62f;</i><span>付款收据</span></h2>
+            <section class="travel-img-content paymentContent">
+                <ul class="payment-img-list img-list" id="payment-img-list">
+
+                </ul>
+                <figure class="travel-img-wrap" id="receiptImgsFull2">
+                    <img src="../../static/bitmap/travel/travel_upload_img.png" alt="借款收据照片">
+                    <input id="paymentAdd2" type="file" name="file" capture="camera" accept="image/*" />
+                </figure>
+            </section>
+        </section>
+        <section class="travel-upload-content">
+            <h2 class="travel-title-first"><i class="iconfont">&#xe797;</i><span >签证资料</span></h2>
+            <section class="travel-img-content vasaContent">
+                <ul class="vasa-img-list img-list" id="vasa-img-list">
+
+                </ul>
+                <figure class="travel-img-wrap" id="otherImgsFull2">
+                    <img src="../../static/bitmap/travel/travel_upload_img.png" alt="其他凭证照片">
+                    <input id="vasaAdd2" type="file" name="file" capture="camera" accept="image/*" />
+                </figure>
+
+            </section>
+        </section>
+        <script src="../../static/js/lib/jquery.min.js?v={version}"></script>
+        <script src="../../static/js/lib/common.js?v={version}"></script>
+        <script src='../../static/js/travel/travel_view_bcontract.js?v={version}'></script>
+    </body>
+
+</html>

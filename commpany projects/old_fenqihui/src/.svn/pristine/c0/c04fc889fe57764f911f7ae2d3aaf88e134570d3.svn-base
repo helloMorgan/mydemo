@@ -1,0 +1,424 @@
+@charset "utf-8";
+
+/*
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    -webkit-overflow-scrolling : touch;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-size: 12px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/*@font-face {*/
+    /*font-family: 'iconfont';  !* project id 168185 *!*/
+    /*src: url('//at.alicdn.com/t/font_ytr1e1h4d8ynl8fr.eot');*/
+    /*src: url('//at.alicdn.com/t/font_ytr1e1h4d8ynl8fr.eot?#iefix') format('embedded-opentype'),*/
+    /*url('//at.alicdn.com/t/font_ytr1e1h4d8ynl8fr.woff') format('woff'),*/
+    /*url('//at.alicdn.com/t/font_ytr1e1h4d8ynl8fr.ttf') format('truetype'),*/
+    /*url('//at.alicdn.com/t/font_ytr1e1h4d8ynl8fr.svg#iconfont') format('svg');*/
+/*}*/
+
+@font-face {
+  font-family: 'iconfont';  /* project id 168185 */
+  src: url('//at.alicdn.com/t/font_ksp9roykvvon7b9.eot');
+  src: url('//at.alicdn.com/t/font_ksp9roykvvon7b9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_ksp9roykvvon7b9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_ksp9roykvvon7b9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_ksp9roykvvon7b9.svg#iconfont') format('svg');
+}
+.menu-icon {
+    position: absolute;
+    bottom: 3rem;
+    /*display: none;*/
+    font-size: 1.2rem;
+    color: #fff;
+    background: orange;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+    /*transform-origin: 0 0;*/
+    /*transform: rotate(-60deg)*/
+}
+
+.iconfont {
+    font-family: "iconfont";
+    font-size: 1.1rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*head csss*/
+
+.travel-head-nav {
+    height: 2.2rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    line-height: 2.2rem;
+    background: #fff;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.travel-head-nav h1 {
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.iconfont-back {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -.1rem;
+    bottom: 0;
+    margin: auto;
+    color: #999999;
+    width: 3rem;
+}
+
+/*user account set */
+
+.userset-wrap {
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+}
+
+.userset-wrap > ul > li > a i:nth-of-type(1) {
+    color: #00b19d;
+    font-size: 1rem;
+}
+
+.userset-wrap > ul > li > a > span {
+    margin-left: 0.45rem;
+}
+
+.userset-wrap > ul > li > a {
+    display: flex;
+    height: 2.75rem;
+    line-height: 2.5rem;
+    font-size: 0.7rem;
+    color: #253232;
+}
+
+.user_icon_reset {
+    color: #95adb2;
+    font-size: 1rem !important;
+    margin-right: .75rem;
+}
+
+input {
+    outline: medium;
+    border: none;
+    -webkit-appearance: none;
+}
+
+input[type=button], input[type=text], input[type=password] {
+    -webkit-appearance: none;
+    outline: none
+}
+
+body,
+html {
+    width: 100%;
+}
+
+/*load dialog*/
+.load4 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 100;
+}
+
+.load4 .loader {
+    color: orangered;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+
+}
+
+/*公共弹窗*/
+.common-dialog-wrap {
+    position: fixed;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.common-dialog-content {
+    height: 2rem;
+    border-bottom: 1px solid #ccc7c7;
+    line-height: 2rem;
+    text-align: center;
+    font-size: .65rem;
+}
+
+.common-btn {
+    text-align: center;
+    height: 2rem;
+    color: orange;
+    line-height: 2rem;
+}
+
+.common-dialog-content-wrap {
+    background: #fff;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 5px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*吐司样式*/
+.common-toast {
+    height: 1.6rem;
+    width: 4rem;
+    box-sizing: content-box;
+    color: #fff;
+    padding: 0 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    line-height: 1.6rem;
+    margin: auto;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 2rem;
+}
+
+.common-loadGif {
+    height: 4rem;
+    width: 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.common-loadGif img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+a, button, input, p {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a, button, input, p {
+    -webkit-user-modify: read-only;
+}

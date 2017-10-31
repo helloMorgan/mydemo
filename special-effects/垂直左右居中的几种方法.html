@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<style>
+		    *{margin:0;padding:0}
+		    .parent{background: red;width:300px;height:300px;margin:0 auto;margin-top:30px;}
+		    .child{color:#fff;background-color: blue;}
+		    .parent1{display: table-cell;vertical-align: middle;text-align: center;}
+		    .parent2{display: flex;justify-content:center;align-items:center;}
+		    .parent3{position: relative;}
+		    .child3{position:absolute;left:50%;top:50%;width:200px;height:150px;line-height:150px;text-align:center;margin-left:-100px;margin-top:-75px;}
+		    .parent4{position:relative}
+		    .child4{position:absolute;left:0;top:0;margin:0;bottom:0;right:0;width:150px;height:150px;line-height:150px;margin:auto;overflow:auto;text-align: center;}
+		    .parent5{position:relative}
+		    .child5{ position: absolute;top:50%;left:50%;width:100%;transform:translate(-50%,-50%);text-align: center;}
+		    .parent6{text-align: center;font-size:0;}
+		    .child6{font-size:16px;vertical-align: middle;display:inline-block;}
+		    .parent6:after{content:'';width:0;height:100%;display:inline-block;vertical-align:middle;}
+		    .parent7{display:flex;text-align: center;}
+		    .child7{margin:auto}
+		    .parent8{display: -webkit-box;-webkit-box-pack:center;-webkit-box-align:center;-webkit-box-orient: vertical;text-align: center}
+		    .empty-child {float:left;height:50%; margin-bottom:-120px;}
+            .child9{ clear:both; height:240px;line-height:240px;position:relative;text-align: center;}
+		</style>
+	</head>
+	<body>
+	    <!--1.tabel-cell-->
+	    <div class="parent1 parent">
+	        <div class="child1 child">我居中了吗1111</div>
+	    </div>
+	    <!--2.display:flex-->
+	    <div class="parent2 parent">
+            <div class="child2 child">我居中了吗2222</div>
+        </div>
+        <!--3.绝对定位 -margin-->
+        <div class="parent3 parent">
+            <div class="child3 child">我居中了吗3333</div>
+        </div>
+        <!--4.绝对定位-->
+       <div class="parent4 parent">
+            <div class="child4 child">我居中了吗4444</div>
+        </div>
+        <!--5.translate动画-->
+        <div class="parent5 parent">
+            <div class="child5 child">我居中了吗5555</div>
+        </div>
+        <!--6.display:inline-block  after占位-->
+        <div class="parent6 parent">
+            <div class="child6 child">我居中了吗6666</div>
+        </div>
+        <!--7.display:flex和margin:auto-->
+        <div class="parent7 parent">
+            <div class="child7 child">我居中了吗7777</div>
+        </div>
+        <!--8.display:-webkit-box-->
+        <div class="parent8 parent">
+            <div class="child8 child">我居中了吗8888</div>
+        </div>
+        <!--9.添加空元素-->
+        <div class="parent9 parent">
+            <div class="empty-child"></div>
+            <div class="child9 child">我居中了吗9999</div>
+        </div>
+        
+	</body>
+</html>

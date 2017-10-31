@@ -1,0 +1,146 @@
+body {
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("../../bitmap/account/login_background.png");
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+.login_form {
+    width: 17rem;
+    height: 11.25rem;
+    position: absolute;
+    z-index: 9999;
+    bottom: 2.25rem;
+    left: .875rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.user_phone , .user_code  {
+    height: 2.75rem;
+    line-height: 2.75rem;
+    background: #FFFFFF;
+    background:rgba(255, 255, 255, 0.4);
+    -webkit-border-radius: 1.25rem;
+    -moz-border-radius: 1.25rem;
+    border-radius: 1.25rem;
+}
+
+.user_phone > label, .user_code>label {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../../bitmap/account/phone_img.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    float: left;
+    margin-right: .875rem;
+}
+
+.tel_input {
+    float: left;
+    margin-top: .8rem;
+    border: none;
+    /*background: #FFFFFF;*/
+    /*background:rgba(255, 255, 255, 0.4);*/
+    background-color: transparent;
+    font-size: .8rem;
+    width: 10rem;
+}
+
+
+
+　::-webkit-input-placeholder {
+    color: #FFFFFF;
+    font-size: .8rem;
+}
+
+.iconfont {
+    color: #FFFFFF;
+}
+
+.close_btn {
+    float: right;
+    margin-right: 1rem;
+}
+
+.user_code {
+    margin-top: .75rem;
+}
+
+.user_code>label {
+    background: url("../../bitmap/account/suo_img.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.user_code>img {
+    height: 1.875rem;
+    width: .1rem;
+    margin-top: .5rem;
+}
+
+.get_code {
+    display: inline-block;
+    text-decoration: underline;
+    position: absolute;
+    right: .8rem;
+    color: #FFFFFF;
+    font-size: .8rem;
+}
+
+.register-agree {
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .6rem;
+}
+
+#register-only.register-agree.register-same>i {
+    color: #fed841;
+    font-size: .8rem;
+}
+
+.register-agree>i {
+    margin-right: .5rem;
+}
+
+#register-only>a {
+    color: #b6a8ab;
+}
+
+.login_submit {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    background: -webkit-linear-gradient(top, #ffeb01, #fecc66);
+    background: linear-gradient(to bottom, #fed841, #fecc66);
+    text-align: center;
+    color: #a55f5a;
+    text-indent: 7rem;
+
+    -webkit-border-radius: 1.25rem;
+    -moz-border-radius: 1.25rem;
+    border-radius: 1.25rem;
+
+}
+
+
+
+
+
+
+
+
+

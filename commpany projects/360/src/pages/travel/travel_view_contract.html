@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngScope">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查看合同</title>
+    <link rel="stylesheet" href="../../static/css/travel/detail.css"/>
+    @@include('../../templates/head.inc')
+    <link rel="stylesheet" href="../../static/css/travel/travel_view_contract.css"/>
+</head>
+<body ng-controller="ngController">
+
+<header class="travel-head-nav">
+    <h1>查看合同</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    <span ng-click="submitContract()" class="travel-upload-btn">提交</span>
+</header>
+
+<section class="travel-upload-content">
+    <h2 class="travel-title-first"><i class="iconfont">&#xe62c;</i><span>旅游合同</span></h2>
+    <section class="travel-img-content">
+        <figure class="travel-img-wrap" ng-repeat="wxImgId in travelImgs" >
+            <p class="travel-img-remove" ng-click="removeImg('travelImgs',$index)" ng-hide="isShowRemoveTravel"><i class="iconfont ">&#xe63d;</i></p>
+            <wx-img ng-bind="wxImgId.fileUrl" alt=""></wx-img>
+        </figure>
+
+        <figure class="travel-img-wrap" ng-click="addTravelImg('travelImgs')" ng-hide="travelImgsFull" id="travelImgsFull">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="旅游合同照片">
+        </figure>
+
+    </section>
+</section>
+
+
+<section class="travel-upload-content" ng-hide="onlyShowVisa">
+    <h2 class="travel-title-first"><i class="iconfont">&#xe62f;</i><span>付款收据</span></h2>
+    <section class="travel-img-content">
+        <figure class="travel-img-wrap" ng-repeat="wxImgId in receiptImgs">
+            <p class="travel-img-remove" ng-click="removeImg2('receiptImgs',$index, '2')" ng-hide="isShowRemove"><i class="iconfont ">&#xe63d;</i></p>
+            <wx-img ng-bind="wxImgId" alt=""></wx-img>
+        </figure>
+
+        <figure class="travel-img-wrap" ng-click="addTravelImg2('receiptImgs', '2')" ng-hide="receiptImgsFull" id="receiptImgsFull">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="借款收据照片">
+        </figure>
+    </section>
+</section>
+
+
+<section class="travel-upload-content" ng-hide="onlyShowPay">
+    <h2 class="travel-title-first"><i class="iconfont">&#xe797;</i><span>签证资料</span></h2>
+    <section class="travel-img-content">
+        <figure class="travel-img-wrap" ng-repeat="wxImgId in otherImgs">
+            <p class="travel-img-remove" ng-click="removeImg2('otherImgs',$index, '3')" ng-hide="isShowRemove"><i class="iconfont ">&#xe63d;</i></p>
+            <wx-img ng-bind="wxImgId" alt=""></wx-img>
+        </figure>
+
+        <figure class="travel-img-wrap" ng-click="addTravelImg2('otherImgs', '3')">
+            <img src="../../static/bitmap/travel/travel_upload_img.png" alt="其他凭证照片">
+        </figure>
+
+    </section>
+</section>
+
+
+<!--图片展示层-->
+<section class="pays-container" ng-style="imgSelect?imgShow:imgHidden" ng-click="shelterHidden()">
+    <div class="pays-inner">
+        <img src="{{imgUrl}}" alt="">
+    </div>
+</section>
+
+
+</body>
+<script src='../../static/js/travel/travel_view_contract.js'></script>
+</html>

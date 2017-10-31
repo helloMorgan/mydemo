@@ -1,0 +1,353 @@
+.swiper-container {
+    width: 100%;
+}
+
+body {
+    height: 35rem;
+    /*overflow-y:scroll !important;*/
+    overflow: scroll !important;
+}
+
+.main-label-wrap {
+    min-height: 100px;
+}
+
+.swiper-container img {
+    width: 100%;
+}
+
+.main-label {
+    width: 5.6rem;
+    padding-top: 0.5rem;
+    height: 3.5rem;
+    text-align: center;
+    background: orange;
+    border-radius: 5px;
+    color: white;
+    float: left;
+    margin-top: 0.25rem;
+    margin-left: 0.2rem;
+    font-size: 0.65rem;
+}
+
+.route-head-info {
+    background: url('../../bitmap/recommended/route-nav-info.png') no-repeat center;
+    height: 2.25rem;
+    background-size: 14.85rem;
+    text-align: center;
+    line-height: 2.25rem;
+    font-size: 0.75rem;
+    color: #b6c6c9;
+}
+
+.main-label p:nth-of-type(1) {
+    font-size: 1.5rem;
+}
+
+.main-label p:nth-last-of-type(1) {
+    margin-top: 0.5rem;
+}
+
+.main-label-wrap .main-label:nth-of-type(3n+1) {
+    margin-left: 0;
+}
+
+.main-label-wrap .main-label:nth-of-type(1) {
+    background: #fd7074;
+}
+
+.main-label-wrap .main-label:nth-of-type(2) {
+    background: #e34774;
+}
+
+.main-label-wrap .main-label:nth-of-type(3) {
+    background: #5fd1cc;
+}
+
+.main-label-wrap .main-label:nth-of-type(4) {
+    background: #ee8c40;
+}
+
+.main-label-wrap .main-label:nth-of-type(5) {
+    background: #5dbcf9;
+}
+
+.main-label-wrap .main-label:nth-of-type(6) {
+    background: #f5b741;
+}
+
+.main-label-wrap .main-label:nth-of-type(7) {
+    background: #01b5ce;
+}
+
+.main-label-wrap .main-label:nth-of-type(8) {
+    background: #00b19d;
+}
+
+.main-label-wrap .main-label:nth-of-type(9) {
+    background: #01ac75;
+}
+
+.main-label-wrap .main-label:nth-of-type(10) {
+    background: #e53617;
+}
+
+.main-label-wrap .main-label:nth-of-type(11) {
+    background: #ea530c;
+}
+
+.main-label-wrap .main-label:nth-of-type(12) {
+    background: #eb6700;
+}
+
+.main-info {
+    text-align: center;
+    background: orange;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 0.5rem;
+}
+
+.rec-fine-route {
+    color: #41c8da;
+}
+
+.bottom_nav ul li:nth-of-type(1) span {
+    /*color:linear-gradient(red, blue);*/
+    color: green;
+    background-image: -webkit-linear-gradient(#00ad65, #01b6da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rec-fine-route {
+    color: #41c8da;
+}
+
+.bottom_nav ul li:nth-of-type(1) span {
+    /*color:linear-gradient(red, blue);*/
+    color: green;
+    background-image: -webkit-linear-gradient(#00ad65, #01b6da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.route-search {
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+    width: 100%;
+    height: 1.75rem;
+    /*box-sizing: border-box;*/
+    overflow: hidden;
+
+}
+.route_con{
+    height:100%;
+    margin:0 0.75rem;
+    display: flex;
+}
+.search_span{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    flex:1;
+}
+.realName-icon {
+    display: inline-block;
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-right: 0.2rem;
+    z-index: 10000;
+    background: url('../../bitmap/recommended/route-real-name.png');
+    background-repeat: no-repeat;
+    background-size: 1.75rem;
+}
+
+.route-input {
+    background: white;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: 0;
+    padding-left: 2.8rem;
+    box-sizing: border-box;
+    font-size: 0.3rem;
+}
+
+
+
+.main-label-wrap {
+    margin: 0 0.75rem;
+}
+
+.route-sales {
+    border-bottom: 0.5rem solid #eceff1;
+    padding-bottom: 0.5rem;
+}
+
+.route-sales-wrap .route-sales-begin:nth-of-type(1) {
+    margin-top: 1.05rem;
+}
+
+.route-sales-title {
+    height: 2.25rem;
+    line-height: 2.25rem;
+    text-indent: 1.25rem;
+    background: #ffffff url('../../bitmap/recommended/route-list-tag.png') center no-repeat;
+    background-position: 0.75rem;
+    background-size: 0.15rem 0.65rem;
+}
+
+.clear {
+    clear: both;
+}
+
+.route-sale-bg {
+    width: 100%;
+    height: 6.25rem;
+    background-repeat: no-repeat;
+    background-size: 100% !important;
+    position: relative;
+}
+
+@keyframes saleBg {
+    0% {background-position: top;background-size: 100%}
+    25% {background-position: center;background-size: 105%}
+    50% {background-position: bottom;background-size: 110%}
+    75% {background-position: center;background-size: 105%}
+    100% {background-position: top;background-size: 100%}
+}
+
+.route-place, .route-sales-info {
+    text-indent: 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.route-sales-info {
+    font-size: 0.55rem;
+    color: #b0c2c5;
+}
+
+.route-sales-title span {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.route-sale-price {
+    padding: 0 5px .25rem;
+    border-radius: 5px;
+    min-width: 4.375rem;
+    height: 4.2rem;
+    background: #70625f url('../../bitmap/recommended/route-price.png') top no-repeat;
+    background-size: 100% 3.1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.route-price-info {
+    margin-top: 1.2rem;
+    font-size: 0.45rem;
+    margin-bottom: 0.25rem;
+}
+
+.route-price-tag {
+    font-size: 0.3rem;
+    margin-right: 0.05rem;
+}
+
+.route-price-number {
+    font-size: 0.8rem;
+    font-weight:900;
+}
+
+.route-total-price {
+    margin-top: 0.62rem;
+}
+
+.route-total-price span {
+    font-size: 0.6rem;
+}
+
+.route-empty {
+    height: 3rem;
+}
+
+.search_span{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    flex:1;
+}
+
+.route_hr {
+    width: 100%;
+    height: .5rem;
+    background: #dbe0e3;
+    margin-top: 1.25rem;
+}
+
+
+.left_img>img  {
+    width: 5.875rem;
+    height: 4rem;
+
+}
+
+.left_img {
+    width: 5.875rem;
+    height: 4rem;
+    float: left;
+    margin-left: .625rem;
+    margin-top: .5rem;
+    position: relative;
+}
+
+
+
+.container_left {
+    float: left;
+    margin-top: .5rem;
+    background: #FFFFFF;
+}
+
+.container_left>ul>li {
+    height: 2.25rem;
+    width: 5rem;
+    background: #FFFFFF;
+    text-align: center;
+    line-height: 2.25rem;
+    color: #152323;
+    font-size: .75rem;
+    border-bottom: 1px solid #dddddd;
+}
+
+.destination_img {
+}
+
+.destination_layer {
+    position: absolute;
+    color: #ffffff;
+    font-size: .85rem;
+    font-weight: 500;
+    top: 1rem;
+    left: 2rem;
+
+}
+
+.destination_layer>p:first-child {
+    text-indent: .3rem;
+}
+
+.visted {
+    background: #f4f4f4 !important;
+}
+
+.container_right {
+    overflow:scroll;
+}

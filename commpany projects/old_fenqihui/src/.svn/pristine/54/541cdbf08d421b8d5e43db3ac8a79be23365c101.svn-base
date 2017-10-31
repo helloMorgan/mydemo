@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>关于我们</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+    <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script src="../../static/js/lib/common.js"></script>
+    <style>
+        body,html{
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+            color: #606666;
+        }
+        h2 {
+            color: #000;
+            line-height: 1.4rem;
+            font-size: .75rem;
+        }
+        section{
+            padding: 0 0.75rem;
+        }
+        .pro>p{
+            text-indent: 2em;
+            margin-left: 1rem;
+        }
+        .pro ol{
+            list-style-type:lower-alpha ;
+            padding-left: 3rem;
+        }
+        .pro_red, .pro_red>h2{
+            color: red;
+        }
+        .pro>div{
+            margin-left: 1rem;
+            color: #000;
+            font-weight: 500;
+        }
+        table{
+            border-collapse: collapse;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            color: #000;
+        }
+        table td{
+            border:1px solid #000;
+            text-align: center;
+            padding:0 0.2rem;
+        }
+        .bottom{
+            height:2rem;
+        }
+        header{
+            border-bottom:1px solid #d2d9dc;
+        }
+
+    </style>
+</head>
+<body>
+<header class="travel-head-nav">
+    <h1>关于我们</h1>
+    <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+</header>
+    <section class="pro">
+        <h2>1. 什么是分期惠游？</h2>
+        <p>
+            分期惠游作为分期惠系列场景化互联网分期消费服务的首推产品，旨在解决家庭出境旅游的短期资金压力，同时分期惠游切实立足场景化，将服务嵌入旅游链条，把分期服务同精选线路有机结合，在提供金融服务的同时从源头筛选、监控服务质量，不仅为客户解决家庭出行的资金负担，更加成为客户旅游服务过程中的品质保障。
+        </p>
+    </section>
+    <section class="pro">
+        <h2>2. 如何使用分期惠游？</h2>
+        <div>具体流程如下：</div>
+        <ol>
+            <li>注册成为分期惠游用户</li>
+            <li>绑定银行卡</li>
+            <li>选购分期惠游产品
+                <p>方式一：在分期惠游中选购心仪产品</p>
+                <p>方式二：在合作旅游门店签约后使用分期惠游选购对应产品</p>
+            </li>
+            <li>完成首付，等待出发</li>
+            <li>每月按月支付剩余账单</li>
+        </ol>
+    </section>
+    <section class="pro">
+        <h2>3. 使用分期惠游有什么要求？</h2>
+        <p>a. 年龄在20—60周岁无不良信用记录的中国大陆公民。</p>
+        <p>b. 买人必须是出行人之一。</p>
+        <p>c. 准确提供您的姓名、身份证号、手机号、护照号以及电子邮箱，来确认您的身份，确保顺利出行。</p>
+    </section>
+    <section class="pro">
+        <h2>4. 如何获取分期惠游额度？</h2>
+        <p>
+            我们会基于您主动提交的信息、您在合作商户上的购买行为、多家征信平台的用户数据进行综合判断。您填写的信息仅作为我们对您信用额度的参考，我们将会对您的个人信息严格保密。
+        </p>
+    </section>
+    <section class="pro">
+        <h2>5. 如何还款？</h2>
+        <p>订单确认后，我们会在您的还款日期来临前，通过短信提示进行告知。您可以在分期旅游的“我的旅行”点击“月付账单”进行支付还款。</p>
+        <p>还款时可以当月账单完成支付，全部款项提前完成还款。目前，单笔支付的限额为2000元。</p>
+    </section>
+    <section class="pro">
+        <h2>6. 还款日期如何设定？</h2>
+        <p>账单日期是根据您的首付日期决定的，每月一次。</p>
+    </section>
+    <section class="pro">
+        <h2>7. 逾期还款会产生滞纳金吗？</h2>
+        <p>按照剩余未还本金的万分之五的比例收逾期费用。</p>
+    </section>
+    <section class="pro">
+        <h2>8. 我可以提前还款或自动还款吗？</h2>
+        <p>可以提前还款，自动还款目前不支持。</p>
+    </section>
+    <section class="pro">
+        <h2>9. 我该怎么查看和支付我的月付账单？</h2>
+        <p>订单确认后，我们会在您的还款日期来临前，通过短信提示进行告知。您可以在分期旅游的“我的旅行”点击“月付账单”进行支付还款。</p>
+        <p>还款时可以当月账单完成支付，全部款项提前完成还款。</p>
+    </section>
+    <section class="pro">
+        <h2>10. 订单是否可以变更？</h2>
+        <p>已首付订单不可变更。未首付订单可以联系客服取消订单后重新下单。</p>
+    </section>
+    <section class="pro pro_red">
+        <h2>11. 在分期惠游购买的商品如果退款如何计算？</h2>
+        <p>根据用户和旅行社签订的合同内容进行计算。</p>
+    </section>
+    <section class="pro pro_red">
+        <h2>12. 退款如何退还给我？</h2>
+        <p>转账至您绑定的银行卡。</p>
+    </section>
+    <section class="pro">
+        <h2>13. 没有按时还款的后果：</h2>
+        <p>截止到期还款日，如你未能支付全部订单款或者分期账款，将导致信用违约时，用户应支付逾期罚金，逾期罚金应按照剩余未还本金的万分之五的比例收逾期费用。</p>
+        <p>
+            如您还未按时还款，可能遭遇：
+            <p>1.系统将冻结您的账户，影响您的再次消费;</p>
+            <p>2.电话催收、上门催收消费款;</p>
+            <p>3.欠款记录将进入网络征信系统和中国信用网黑名单;</p>
+            <p>4.根据实际情况，将会进入司法程序进行追偿;</p>
+        </p>
+    </section>
+    <section class="pro">
+        <h2>14. 分期惠游服务费说明：</h2>
+        <div>分期服务费：</div>
+        <p>指用户选择分期服务时需承担的服务费用，按月收取，亦称“服务费”、“手续费”，每期分期服务费与当期本金一同收取；</p>
+        <div>计算公式：</div>
+        <p>每期分期服务费 = 本金╳分期服务费率（月）</p>
+        <p>总分期服务费 = 本金╳分期服务费率（月）╳分期期数</p>
+        <div>逾期违约金：</div>
+        <p>指用户未能在约定日期清偿全部到期款项而导致违约时需支付的费用，按日收取； </p>
+        <div>计算公式：</div>
+        <p>逾期违约金（日）= 应付但未付总额（所有未还本金+所有未还分期服务费）*违约金比例（日）</p>
+        <p>总逾期违约金 = 应付但未付总额（所有未还本金+所有未还分期服务费）*违约金比例（日）*违约天数 </p>
+        <table>
+            <tr>
+                <td>分期期数（月）</td>
+                <td>首付比例</td>
+                <td>分期服务费率（月）</td>
+                <td>违约金比例（日）</td>
+            </tr>
+            <tr>
+                <td>3期</td>
+                <td>20%</td>
+                <td>1.00%</td>
+                <td>0.05%</td>
+            </tr>
+            <tr>
+                <td>6期</td>
+                <td>20%</td>
+                <td>1.00%</td>
+                <td>0.05%</td>
+            </tr>
+            <tr>
+                <td>9期</td>
+                <td>20%</td>
+                <td>1.00%</td>
+                <td>0.05%</td>
+            </tr>
+            <tr>
+                <td>12期</td>
+                <td>20%</td>
+                <td>1.00%</td>
+                <td>0.05%</td>
+            </tr>
+        </table>
+    </section>
+    <section class="bottom"></section>
+</body>
+</html>

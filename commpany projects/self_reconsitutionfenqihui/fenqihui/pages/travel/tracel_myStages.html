@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>我的分期</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css?v={version}" />
+        <link rel="stylesheet" href="../../static/css/travel/travel_myStages.css?v={version}" />
+        <link rel="stylesheet" href="../../static/css/common/common_foot.css?v={version}" />
+    </head>
+    <body>
+        <header id="header">
+            <div class="header_title">
+                <p>我的分期</p>
+                <span class="header_install" onclick="myStagesObj.goAccountSet()"></span>
+            </div>
+            <div class="header_info">
+                <div class="my_info">
+                    <div class="title_img"><img src="../../static/bitmap/travel/title.gif" /></div>
+                    <div class="title_start">
+                        <div class="title_phone">16910586524</div>
+                        <div class="title_star">
+                            <i class="iconfont"></i>
+                            <i class="iconfont">&#xe683;</i>
+                            <i class="iconfont">&#xe683;</i>
+                            <i class="iconfont">&#xe683;</i>
+                            <i class="iconfont">&#xe683;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_lift" onclick="myStagesObj.goCredit()">
+                    <span class="iconfont" style="font-size: 0.9rem;">&#xe662;</span>
+                    <p>信用额度评估</p>
+                </div>
+            </div>
+        </header>
+        <div id="main">
+            <div class="main_tab">
+                <span class="mainDetails_chooseTwo selectedSpan">
+            <label  class="iconfont">&#xe66f;&nbsp;</label>
+            我的订单
+        </span>
+                <span class="mainDetails_chooseOne normalSpan">
+            <label  class="iconfont">&#xe6c7;&nbsp;</label>
+            月付订单
+        </span>
+
+            </div>
+
+            <div class="main">
+                <div class="mainPlace">
+                    <div class="mainList" style="display: block">
+                        <div class="dataList mydataList">
+
+                        </div>
+
+                    </div>
+
+                    <!--另一个tab-->
+                    <div class="mainList">
+
+                        <div class="dataList monthList">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bottom_nav" id="bottom-tab">
+            <ul>
+                <li id='nav_home' onClick="toIndex()">
+                    <a><img src="../../static/bitmap/foot/boutique travel.png" alt=""></a>
+                    <span class="foot_index"></span>
+                </li>
+                <li id='nav_dest' onClick="toDest()">
+                    <a><img src="../../static/bitmap/foot/dest.png" alt="">
+                        <p class="rec-fine-route"></p>
+                    </a>
+                </li>
+                <li id='nav_mine' onClick="toMine()">
+                    <a id="mine-btn">
+                        <img src="../../static/bitmap/foot/my_travel_access.png" alt="">
+                        <p class="tra-travel"></p>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        <script src="../../static/js/lib/jquery.min.js?v={version}"></script>
+        <script src="../../static/js/lib/common.js?v={version}"></script>
+        <script src="../../static/js/travel/travel_myStages.js?v={version}"></script>
+    </body>
+
+</html>

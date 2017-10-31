@@ -1,0 +1,276 @@
+
+body,html {
+    background: #f4f4f4;
+    
+}
+.order_content {
+    background: #FFFFFF;
+    width:17.25rem;
+    margin: 0.75rem auto;
+}
+
+.order_content>li {
+    height:2.6rem;
+    line-height: 2.6rem;
+    height:2.5rem;
+    line-height: 2.5rem;
+    background-size: .1rem .1rem;
+    margin-left: .7rem;
+    height:2.8rem;
+    line-height: 2.8rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.order_content>li>label {
+    font-size: .8rem;
+    color: #999999;
+}
+
+.order_content>li>span {
+    display: inline-block;
+    font-size: .9rem;
+    max-width: 10rem;
+    color: #fec229;
+    font-weight: 500;
+    text-align: right;
+    margin-right: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+}
+
+.iconfont {
+    color: #e3e3e3;
+    margin-left: .5rem;
+    vertical-align:middle;
+
+}
+
+.order_submit {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    background: -webkit-linear-gradient(right,#ffeb01,#fecc66);
+    background: linear-gradient(to right,#ffeb01,#fecc66);
+    text-align: center;
+    color: #a55f5a;
+    text-indent: 7rem;
+    
+}
+
+.input_installment {
+    border-bottom: 1px solid #d8d8d8;
+    width: 6.5rem;
+    text-align: right;
+    color: #333333;
+    font-size: .85rem;
+    display: block;
+    float: right;
+    margin-right:1rem;
+
+    margin-bottom: 1rem;
+
+    margin-top: 0.6rem;
+
+}
+
+.travel-head-nav {
+    height: 6rem;
+    background: url("../../bitmap/travel/order_banner.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*我的css*/
+.order_content  .submit_notice{
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url("../../bitmap/travel/submit_notice.gif");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0.5rem;
+    left: 7rem;
+}
+.order_content .submit_interest{
+    background: #ffc12a;
+    font-size: 0.7rem;
+    color: #ffffff;
+    width:2rem ;
+    height: 1.2rem;
+    border-radius: 0.4rem;
+    line-height: 1.2rem;
+    text-align: center;
+    position: absolute;
+	top: 0.7rem;
+	left: 7.5rem;
+	
+}
+.order_content .submit_explain{
+	height: 1.35rem;
+	max-width: 13rem;
+	color:red;
+	line-height: 1.35rem;
+	margin-top: 1.7rem;
+	position: absolute;
+	left: 1.5rem;
+	font-size: 0.6rem;
+	position: absolute;
+	left: 1.5rem;
+	font-size: 0.6rem;
+}
+
+ .submit_uploading{
+	font-size:0.8rem;
+	color: #333333;
+	position: relative;
+	left: 1rem;
+	
+}
+
+.submit_position{
+	position: relative;
+
+}
+#popup{
+	position: absolute;
+	top: 0;
+	left: 0;bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.5;
+	z-index: 99;
+}
+
+.swiper-containerBusiness,.swiper-containerProduce,.swiper-containerTime{
+    width: 100%;
+    height:12rem;
+    background:#FFFFFF;
+    position: fixed;
+    left: 0;
+    bottom:0rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    visibility: hidden;
+}
+.swiper-slide{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standard{
+	width: 100%;
+	height:3rem;
+	position: absolute;
+	top: 3rem;left: 0;
+	background: -webkit-linear-gradient(right,#ffeb01,#fecc66);
+    background: linear-gradient(to right,#ffeb01,#fecc66);
+}
+.popupSubmit{
+	visibility: hidden;
+	width: 100%;
+	height: 3rem;
+	position: fixed;
+	left: 0;bottom:0;
+	background: -webkit-linear-gradient(right,#ffeb01,#fecc66);
+    background: linear-gradient(to right,#ffeb01,#fecc66);
+	font-size: 0.85rem;
+	color: #ffc12a;
+	text-align: center;
+	line-height: 3rem;
+	z-index: 1000;
+	font-weight: 500;
+	color: #a55e5b;
+	z-index: 9999;
+}
+.stagesOrder{
+	width: 14.75rem;
+	background: #FFF;
+	position: absolute;
+	top: 5rem;left: 0.75rem;
+	margin: 0 auto;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction:column;
+	justify-content:space-around;
+	z-index: 100;
+	padding: 1.25rem;
+	border-radius: 0.3rem;
+	font-size:0.75rem ;
+	color: #777;
+	
+}
+ .stagesOrder i{
+	color:#e6381a ;
+	font-weight: 800;
+}
+.stagesOrder a{
+	color: #000000;
+	font-weight: 800;
+}
+.swiper-wrapper {
+  margin-top: -1.6rem;
+}
+.slide{
+	height: 2.5rem;
+	line-height: 2.5rem;
+	display: flex;
+	border-bottom: 1px solid #D8D8D8;
+	text-align: center;
+}
+.slide:last-child{
+	border:none;
+}
+.stagesOrderBorder{
+	
+	border-top:1px solid #D8D8D8 ;
+	border-bottom:1px solid #D8D8D8 ;
+	
+}
+.stages_interest{
+	background: #ffc12a;
+    font-size: 0.7rem;
+    color: #ffffff;
+    width:2rem ;
+    height: 1.2rem;
+    border-radius: 0.4rem;
+    line-height: 1.2rem;
+    text-align: center;
+    position: absolute;
+	top: 7.3rem;right: 4rem;
+}
+.warn{
+	position:absolute;
+	top: 1.5rem;
+    right:1.0rem;
+	color: red;
+	height: 0rem;
+}
+
+.line{
+	width: 15.25rem;
+    height: 1px;
+    background: #eee;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+
+.line{
+	width: 15.25rem;
+    height: 1px;
+    background: #eee;
+    margin: 0 auto;
+}
+

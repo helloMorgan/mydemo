@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="travelOrderStateDetails">
+
+<head>
+    <meta charset="utf-8">
+    <title>产品详情</title>
+    <link rel="stylesheet" href="../../static/css/recommended/recommended_index.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css" />
+    <link rel="stylesheet" href="../../static/css/travel/public.css">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+
+</head>
+
+<body ng-controller="travelOrderStateDetailsController">
+    <header class="travel-head-nav">
+        <h1>选择产品
+        </h1>
+        <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+        <div class="comments">
+            <a href="javascript:void(0)" class="evaluation">评价</a>
+            <a href="javascript:void(0)" class="complaints">投诉</a>
+        </div>
+    </header>
+    <div class="traver_detail_img" ng-if="imgUrl">
+        <img ng-src="{{OSS_IMG_URL+imgUrl}}">
+    </div>
+    <section id="fail_order_container">
+        <aside>
+            <div class="travel_myOrder_info m_top">
+                <div class="travel_myOrder_top">
+                    <p class="travel_myOrder_top_title" ng-bind="productItem.product.pTitle">上海/北京/成都 直飞普及岛6-7天自由行</p>
+                    <p class="travel_myOrder_top_second" ng-bind="productItem.product.titileSub">(入住5星酒店,专车接送)</p>
+                </div>
+                <div class="travel_myOrder_mid">
+                    <div class="travel_myOrder_mid_left">
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">分期惠游</span>
+                            <span class="travel_myOrder_mid_info">
+                            <label class="cmoneyIcon">¥</label><span ng-bind="productItem.order.oTotalFirstPrice"></span> + <label class="cmoneyIcon">¥</label><span ng-bind="productItem.order.durationMoney+'×'+productItem.order.totalDuration"></span>期
+
+                            </span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">选择产品</span>
+                            <span class="travel_myOrder_mid_info" ng-bind="productItem.meals.mName">产品1:[普及岛出] 6天机票</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出发日期</span>
+                            <span class="travel_myOrder_mid_info" ng-bind="productItem.meals.mDate">2019-10-17</span>
+                        </p>
+                        <p class="">
+                            <span class="travel_myOrder_mid_class">出发人数</span>
+                            <span class="travel_myOrder_mid_info">
+                            <label >老人</label><span ng-bind="productItem.order.ticketOldNum" class="ticketNum"></span>
+                            <label >,成人</label><span ng-bind="productItem.order.ticketYoungNum" class="ticketNum"></span>
+                            <label >,儿童</label><span ng-bind="productItem.order.ticketChildrenNum" class="ticketNum"></span>
+                        </span>
+                        </p>
+                    </div>
+                    <div class="travel_myOrder_info_box" ng-click="productInfo()">
+                        查看产品详情
+                    </div>
+                </div>
+            </div>
+            <div class="fail_order_tit set_position" ng-style="statusImg">
+            </div>
+        </aside>
+    </section>
+
+
+
+    <script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+
+    <script src="../../static/js/travel/travel_order_state_details.js"></script>
+
+</body>
+
+</html>

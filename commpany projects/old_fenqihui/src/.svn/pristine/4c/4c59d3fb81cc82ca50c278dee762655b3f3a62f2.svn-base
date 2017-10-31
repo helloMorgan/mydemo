@@ -1,0 +1,82 @@
+.travel-head-nav{
+    position: relative;
+    border-bottom: 1px solid #d1d9dc;
+}
+.travel-upload-btn{
+    position: absolute;
+    right: 1.125rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: .625rem;
+    color: #96adb3;
+}
+
+.travel-upload-content{
+    width: 17.25rem;
+    margin: 0 auto;
+}
+
+h2{
+    border-bottom: 1px solid #d1d9dc;
+    height: 1.8rem;
+    line-height: 2rem;
+    width: 100%;
+    color:#0C282D;
+    margin-top: .5rem;
+    font-size: .65rem;
+    margin-bottom: .35rem;
+}
+
+.travel-title-first{
+    margin-top: 0;
+}
+
+.travel-img-remove{
+    height: 1.2rem;
+    width: 1.2rem;
+    background: #000e1c;
+    border-radius: 1.2rem;
+    opacity: .7;
+    position: absolute;
+    right: .15rem;
+    top: .25rem;
+    text-align: center;
+    line-height: 1.2rem;
+
+}
+
+.travel-img-remove i{
+    font-size: .45rem;
+    color: white;
+    font-weight: bold;
+}
+
+h2>i{
+    color: #30B9AC;
+    margin-right: .22rem;
+    font-size: .7rem!important;
+}
+
+.travel-img-wrap{
+    width: 5.3rem;
+    height: 5.3rem;
+    border-radius: 12px;
+    margin-left: .3rem;
+    margin-bottom: .35rem;
+    position: relative;
+}
+
+.travel-upload-content img{
+    width: 100%;
+    height:100%;
+}
+
+.travel-upload-content img:nth-of-type(3n+1){
+    margin-left: 0;
+}
+
+.travel-img-content{
+    display: flex;
+    flex-wrap:wrap;
+}

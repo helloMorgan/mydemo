@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userBindBank">
+
+<head>
+    <meta charset="UTF-8">
+    <title>填写银行卡信息</title>
+    @@include("../../templates/head.inc")
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_mine_set.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_form_style.css">
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+</head>
+
+<body ng-controller="userBindBankController">
+    <header class="travel-head-nav">
+        <h1>填写银行卡信息</h1>
+        <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    </header>
+    <article>
+        <form action="javascript:void(0)" method="post" name="set_password" class="set_password">
+            <div class="mobile_id">
+                <div class="item">
+                    <label>卡类型&nbsp;</label>
+                    <select class="bankList">
+                        <option value="-1" name="-1">请选择银行</option>
+                    </select>
+                    <!--<span>储蓄银行</span>-->
+                </div>
+                <div class="item">
+                    <label>选择省份</label>
+                    <select class="proList">
+                        <option value="-1">请选择所在省</option>
+                    </select>
+                </div>
+
+                <div class="item">
+                    <label>选择所在地</label>
+                    <select class="cityList">
+                        <option value="-1">请选择地</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <label>手机号</label>
+                    <input type="tel" class="basic_phone" placeholder="请输入手机号码（11位）"  ng-model="phoneNum" maxlength="11" ng-blur="blurPhone()">
+                </div>
+                <div class="item">
+                    <label>验证码</label>
+                    <input type="tel" class="basic_msm"  placeholder="请输入验证码" number-converter ng-model="userCode" ng-blur="blurCode()" maxlength="6">
+                     <div class="register-get-code" ng-click="getCodeAccount()" disabled="disabled">
+                        <input type="button" value="获取验证码" id="getCode-button">
+                    </div>
+                </div>
+            </div>
+
+            <div class="account_banding_btns">
+                <button class="btn gray border_radi" ng-click="complete()" disabled>
+                    <!--<a href="javascript:location.href='./user_show_card.html';" id="save_btn" style="color:#fff" ng-click="getConfirm();">完成</a>-->
+                    完成
+                </button>
+            </div>
+        </form>
+
+        <!--<div id="code-state" ng-if="codestate">-->
+            <!--<span ng-bind="state"></span>-->
+        <!--</div>-->
+
+        <!--蒙层-->
+        <div class="popWindow">
+
+        </div>
+
+        <div class="prompt_for_no_updates">
+            <p>绑定银行卡失败 </p>
+            <div class="close_btn">
+                确定
+            </div>
+        </div>
+
+
+    </article>
+
+    <div id="layer">
+        <div class="prompt_box">
+            <p ng-bind="pro_text"></p>
+            <div class="close_btn ">确定</div>
+        </div>
+
+    </div>
+
+    <!--<div class="loader" ng-if="isLoader">-->
+
+    <!--</div>-->
+
+    <div class="load-wrap" ng-show="dialog">
+        <p class="load"></p>
+    </div>
+
+    <!--<div class="u-loader" style="display: none;">请稍候...</div>-->
+    <div class="ft next" id="zhegai" style="z-index: 9999;background-color: rgb(255, 255, 255);height: 600px;opacity: 0.5;/* display: none; */"></div>
+    <!--<script src="../../static/js/account/selector.js">-->
+    <!--</script>-->
+    <script src="../../static/js/account/user_bind_bank_card.js"></script>
+
+</body>
+
+</html>

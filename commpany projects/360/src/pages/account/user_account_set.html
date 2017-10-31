@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userAccountSet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>账号设置</title>
+    @@include('../../templates/head.inc')
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="../../static/css/travel/detail.css" />
+    <link rel="stylesheet" href="../../static/css/account/user_prompt.css">
+
+</head>
+
+<body ng-controller="userAccountSetController">
+    <header class="travel-head-nav">
+        <h1>账号设置</h1>
+        <i class="iconfont-back iconfont" ng-click='back()'>&#xe603;</i>
+    </header>
+    <section class="userset-wrap">
+
+        <ul>
+            <li ng-model='bank' class="set_authentication">
+                <a href="javascript:void(0)">
+                    <i class="iconfont">&#xe629;</i>
+                    <span >银行卡信息</span>
+                    <span class="bank_title"></span>
+                    <img ng-if="haveCard" ng-src="{{bankImg}}" style="width: 1.5rem; height: 1.5rem" ng-cloak/>
+                    <span ng-if="haveCard" class="bank_Code" ng-bind="bandCode" ng-cloak></span>
+                    <span ng-if="!haveCard" class="go_card" ng-click="goto_mod()" ng-cloak>去绑卡</span>
+                    <i  ng-if="!haveCard" class="iconfont  user_icon_reset" ng-click="goto_mod()" ng-cloak>&#xe607;</i>
+                </a>
+            </li>
+            <!--<li ng-model='setPass' class="setPay">-->
+                <!--<a ng-href="{{setPass}}"><i class="iconfont">&#xe6ab;</i><span>设置支付密码</span>-->
+            <!--<i class="iconfont  user_icon_reset">&#xe607;</i></a>-->
+            <!--</li>-->
+            <!--<li ng-model='setAccount'>-->
+                <!--<a ng-href="{{setAccount}}">-->
+                    <!--<i class="iconfont">&#xe657;</i>-->
+                    <!--<span>设置登录密码</span>-->
+                    <!--<span class="bank_title"></span>-->
+                    <!--<i class="iconfont user_icon_reset">&#xe607;</i>-->
+                <!--</a>-->
+            <!--</li>-->
+            <li>
+                <a ng-href="{{setName}}">
+                    <i class="iconfont">&#xe66b;</i>
+                    <span>设置用户名</span>
+                    <span class="bank_title"></span>
+                    <span ng-if="isName" class="bank_Code" ng-bind="userName" ng-cloak></span>
+                    <span ng-if="!isName" class="go_card"  ng-cloak>去设置</span>
+                    <i class="iconfont user_icon_reset">&#xe607;</i>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <div id="layer">
+        <div class="prompt_box">
+            <p ng-bind="pro_text"></p>
+            <div class="close_btn">确定</div>
+        </div>
+    </div>
+</body>
+
+<script src="../../static/js/account/account_set.js">
+</script>
+
+
+</html>

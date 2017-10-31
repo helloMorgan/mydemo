@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>分期惠游收银台</title>
+	@@include('../../templates/head.inc')
+	<link rel="stylesheet" href="../../static/css/travel/travel_home_order_detail.css">
+	<link rel="stylesheet" href="../../static/css/travel/travel_checkstand.css">
+
+</head>
+
+<body ng-app="checkStandApp" ng-controller="checkStandCtrl">
+	<header class="travel-head-nav">
+		<h1>分期惠游收银台</h1>
+		<i class="iconfont-back iconfont" ng-click='goBack()'>&#xe603;</i>
+	</header>
+	<div class="travel-pay-time">
+		<!--请在<span ng-bind="min">59</span>分<span ng-bind="second">59</span>秒内完成支付-->
+	</div>
+
+	<div class="travel-user-name">
+		<label ng-bind="firstPay.realName"></label>
+		<p>
+			支付：¥<span class="travel-user-name-price" ng-bind="showPrice(firstPay.amt)">0</span>
+		</p>
+	</div>
+
+	<div class="travel-pay-show">
+		<span class="iconfont">&#xe61b;</span><span class="">支付银行卡</span>
+	</div>
+	<div class="travel-pay-card">
+		<ul>
+			<li>
+				<div class="">
+					<img ng-src="{{bankImageUrl}}" >
+				</div>
+				<div class="travel-pay-card-des">
+					<span ng-bind="bankName">招商银行</span>（<span ng-bind="firstPay.bankNo"></span>）
+				</div>
+				<div class="travel-icon-wrap">
+					<!--<input type="radio" name="pay" checked="checked"/>-->
+					<span class="iconfont">&#xe7c8;</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--立即支付-->
+	<div class="tra-detail-submit" ng-click="orderPay()">
+		<!--<div>-->
+			<!--&lt;!&ndash;<p>&ndash;&gt;-->
+				<!--&lt;!&ndash;支付：¥<span ng-bind="showPrice(firstPay.amt)">0</span>&ndash;&gt;-->
+			<!--&lt;!&ndash;</p>&ndash;&gt;-->
+			<!--&lt;!&ndash;<p>&ndash;&gt;-->
+				<!--&lt;!&ndash;分期¥<span ng-bind="oDurationMoney">0</span><i id="chengIcon">×</i><span ng-bind="firstPay.oTotalDuration">0</span>期&ndash;&gt;-->
+			<!--&lt;!&ndash;</p>&ndash;&gt;-->
+		<!--</div>-->
+		<!--<a  class="tra-order-submit" ng-click="orderPay()">-->
+            <!--立即支付-->
+        <!--</a>-->
+		立即支付
+	</div>
+
+	<!--订单过期遮罩层-->
+	<section class="pays-container" ng-style="shelterShow">
+		<div class="pays-inner">
+			<div class="pays-title">
+				<div class="iconfont iconfont-failicon">&#xe636;</div>
+				<div>抱歉，由于支付已超时，您的订单已过期，请重新下单进行支付！</div>
+			</div>
+			<div class="pays-content">
+				<div class="pays-back" ng-click="backIndex()">去 首 页</div>
+				<div class="pays-continue" ng-click="backTravel()">我的订单</div>
+			</div>
+		</div>
+	</section>
+</body>
+	<script src="../../static/js/travel/travel_checkstand.js"></script>
+<script>
+
+</script>
+</html>

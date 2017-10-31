@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>还款计划</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+        <style>
+            body {
+                background: #f5f5f5;
+            }
+            
+            .info_title li:first-child {
+                height: 2.25rem;
+                line-height: 2.25rem;
+            }
+            
+            .info_title li {
+                margin: 0 0.75rem;
+                height: 2.9rem;
+                line-height: 1.7rem;
+                font-size: 0.55rem;
+                color: #293f46;
+                border-bottom: 1px dotted #ccc;
+            }
+            
+            .pays_container {
+                margin: .75rem;
+            }
+            
+            .info_title {
+                font-size: 0;
+            }
+            
+            #li_first {
+                background: #00d0b6;
+                color: #fff;
+                font-size: 0.75rem;
+                margin: 0;
+                border: none;
+                padding-left: .5rem;
+                box-sizing: border-box;
+            }
+            
+            .info_title li>span {
+                float: left;
+                text-align: left;
+                font-size: .72rem;
+                color: #333333;
+                height: 1.5rem;
+            }
+            
+            .info_title li>p {
+                height: 1rem;
+                float: right;
+                display: inline-block;
+                color: #FF0000;
+            }
+            
+            .info_title li:first-child>span {
+                color: #FFFFFF;
+            }
+            
+            .info_title li>span:first-child {
+                width: 4rem;
+            }
+            
+            .info_title li>span:nth-child(2) {
+                width: 4.3rem;
+            }
+            
+            .info_title li>span:nth-child(3) {
+                width: 3.2rem;
+                text-align: center;
+            }
+            
+            .info_title li:first-child>span:last-child {
+                width: 3.25rem;
+            }
+            
+            .info_title li>span:nth-child(4) {
+                width: 4.2rem;
+                text-align: right;
+            }
+        </style>
+    </head>
+
+    <body ng-app="payApp" ng-controller="payCtrl">
+        <header class="travel-head-nav">
+            <h1>还款计划</h1>
+            <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+        </header>
+        <div class="pays_container">
+            <ul class="info_title">
+                <li id="li_first"><span>付款项目</span><span>付款时间</span><span style="width: 5rem;">付款金额(￥)</span> <span>付款状态</span></li>
+                <!--<li ng-repeat="item in data">-->
+                <!--<span ng-bind="dateSet(item.payType)">1期/2期</span>-->
+                <!--<span ng-bind="item.payTime">2017.02.04 24:12</span>-->
+                <!--<span ng-bind="formatNum(item.payMoney)">3,0000</span>-->
+                <!--</li>-->
+
+                <li ng-repeat="item in data">
+                    <span ng-bind="dateSet(item.payType)">首付</span>
+                    <span ng-bind="item.dueDate | limitTo:10">2017.02.04</span>
+                    <span ng-bind="item.payMoney">3,0000</span>
+                    <span ng-bind="item.payStatusDesc">已付款</span>
+                    <p ng-bind="item.payTime">2017.01.01 16:00:00</p>
+                </li>
+            </ul>
+        </div>
+
+        <script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+        <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+        <script type="text/javascript" src="../../static/js/lib/jquery.min.js"></script>
+        <script src="../../static/js/lib/common.js"></script>
+        <script>
+            var app = controllerFunc('payApp', 'payCtrl', function($scope, $http, $timeout) {
+                $scope.dateSet = function(type) {
+                    if(type == 0) {
+                        return "首期";
+                    } else {
+                        return type + "期";
+                    }
+                }
+                $scope.formatNum = function(str) {
+                    var newStr = "";
+                    var count = 0;
+                    str = str.toString();
+                    if(str.indexOf(".") == -1) {
+                        for(var i = str.length - 1; i >= 0; i--) {
+                            if(count % 3 == 0 && count != 0) {
+                                newStr = str.charAt(i) + "," + newStr;
+                            } else {
+                                newStr = str.charAt(i) + newStr;
+                            }
+                            count++;
+                        }
+                        str = newStr + ".00"; //自动补小数点后两位
+
+                    } else {
+                        for(var i = str.indexOf(".") - 1; i >= 0; i--) {
+                            if(count % 3 == 0 && count != 0) {
+                                newStr = str.charAt(i) + "," + newStr;
+                            } else {
+                                newStr = str.charAt(i) + newStr; //逐个字符相接起来
+                            }
+                            count++;
+                        }
+                        str = newStr + (str + "00").substr((str + "00").indexOf("."), 3);
+                    }
+                    return str;
+                };
+
+                function interception() {
+                    return "11111";
+                }
+
+                $http({
+                    method: 'POST',
+                    url: BaseUrl + 'fqhrepayment/listFqhRepaymentPlan',
+                    params: {
+                        'token': getToken(),
+                        //                'oId': GetQueryString('oId')
+                        'oId': 1
+                    }
+                }).success(function(response) {
+                    console.log(response);
+                    if(response.result == SUCCESS_CODE) {
+                        $scope.data = response.data;
+                    }
+                }).error(function() {
+                    console.log("网络异常！")
+                })
+            })
+        </script>
+    </body>
+
+</html>

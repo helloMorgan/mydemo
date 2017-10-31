@@ -1,0 +1,89 @@
+.account-head-nav{
+    position: relative;
+    border-bottom: 1px solid #d1d9dc;
+}
+.account-upload-btn{
+    position: absolute;
+    right: 1.125rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: .625rem;
+    color: #8b9393;
+}
+
+.account-upload-content{
+    width: 17.25rem;
+    margin: 0 auto;
+}
+
+h2{
+    border-bottom: 1px solid #d1d9dc;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    width: 100%;
+    margin-top: .5rem;
+    font-size: .65rem;
+}
+
+.account-title-first{
+    margin-top: 0;
+}
+
+.account-img-remove{
+    height: 1.2rem;
+    width: 1.2rem;
+    background: #000e1c;
+    border-radius: 1.2rem;
+    opacity: .7;
+    position: absolute;
+    right: .15rem;
+    top: .25rem;
+    text-align: center;
+    line-height: 1.2rem;
+
+}
+
+.account-img-remove i{
+    font-size: .45rem;
+    color: white;
+    font-weight: bold;
+}
+.upload_des{
+    font-size:0.65rem;
+    color: #648685;
+    line-height: 1rem;
+    margin:0.6rem  0 0.5rem 0;
+}
+h2>i{
+    color: #42c9b6;
+    margin-right: .3rem;
+    font-size: 0.75rem!important;
+}
+
+.account-img-wrap{
+    width: 5.3rem;
+    height: 5.3rem;
+    border-radius: 12px;
+    margin-left: .3rem;
+    margin-bottom: .35rem;
+    position: relative;
+}
+
+.account-upload-content img{
+    width: 100%;
+    height:100%;
+}
+
+.account-upload-content img:nth-of-type(3n+1){
+    margin-left: 0;
+}
+
+.account-img-content{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.border_bottom {
+    border-bottom: 1px solid #edf0f0;
+}

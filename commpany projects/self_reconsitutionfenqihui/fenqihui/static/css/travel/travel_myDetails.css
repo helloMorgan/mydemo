@@ -1,0 +1,321 @@
+@charset "UTF-8";
+#mainOrder, .mainOrder_info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal
+}
+
+#mainDetails, .mainOrder_title {
+    border-radius: .2rem .2rem 0 0
+}
+
+#mainOrder, .mainDetails_tab, .mainOrder_info, .stagesOrder {
+    -webkit-box-direction: normal
+}
+
+body, html {
+    background: #f4f4f4;
+    width: 100%;
+    height: 100%
+}
+
+header {
+    height: 6.25rem;
+    background-size: 100% 100%
+}
+
+.iconfont-back {
+    top: .5rem;
+    left: .3rem
+}
+
+#mainOrder {
+    margin: .75rem auto;
+    height: 7.8rem;
+    width: 17.25rem;
+    background: #FFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: .2rem
+}
+
+.mainOrder_info div, .mainOrder_title {
+    display: -webkit-box;
+    -webkit-box-flex: 1
+}
+
+.mainOrder_title {
+    padding: 0 1rem;
+    width: 15.25rem;
+    background: #00ceb7;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    font-size: .75rem;
+    color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.mainOrder_info {
+    padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 4;
+    -ms-flex: 4;
+    flex: 4;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    font-size: .65rem;
+    color: #cdcdcd
+}
+
+.mainOrder_info div {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative
+}
+
+.mainOrder_info i, .mainOrder_info span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-flex: 1
+}
+
+.mainOrder_info span {
+    display: flex;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.mainOrder_info i {
+    color: #000;
+    text-align: center;
+    display: flex;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.mainDetails_tab, .mainOrder_info a {
+    display: -webkit-box;
+    display: -ms-flexbox
+}
+
+.mainOrder_info a {
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.select {
+    position: relative;
+    left: 1.5rem
+}
+
+.submit_notice {
+    width: .6rem;
+    height: .6rem;
+    background: url(../../bitmap/travel/submit_notice.gif);
+    background-size: 100% 100%;
+    position: absolute;
+    top: 1rem;
+    left: 14.3rem
+}
+
+#popup, footer {
+    position: fixed
+}
+
+footer {
+    width: 100%;
+    height: 3rem;
+    background: -webkit-linear-gradient(left, #ffeb01, #fecc66);
+    background: linear-gradient(to right, #ffeb01, #fecc66);
+    color: #a55e5b;
+    font-size: .9rem;
+    text-align: center;
+    line-height: 3rem;
+    z-index: 999999;
+    bottom: 0
+}
+
+#mainDetails {
+    margin: .75rem auto 0;
+    width: 17.25rem;
+    background: #FFF
+}
+
+.mainDetails_tab {
+    height: 2.5rem;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    font-size: .75rem;
+    border-bottom: 1px solid #CDCDCD
+}
+
+.mainDetails_tab span, .stagesOrder {
+    display: -webkit-box;
+    display: -ms-flexbox
+}
+
+.mainDetails_tab span {
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    line-height: 2.5rem;
+    height: 2.5rem
+}
+
+.mainDetails_article a, .mainDetails_title {
+    height: 2rem;
+    line-height: 2rem
+}
+
+.mainDetails_text {
+    padding: 0 1rem 2rem;
+    width: 15.25rem
+}
+
+.stagesOrderBorder:last-child {
+    border: none
+}
+
+.mainDetails_img {
+    background: url(../../bitmap/travel/myDetailsBanner.gif) no-repeat;
+    background-size: 100% 100%
+}
+
+.mainDetails_article a {
+    font-size: .75rem;
+    font-weight: 600
+}
+
+.mainDetails_article p {
+    padding-bottom: .75rem
+}
+
+#popup {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: 99
+}
+
+.stagesOrder {
+    width: 14.75rem;
+    background: #FFF;
+    position: absolute;
+    top: 5rem;
+    left: .75rem;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    z-index: 100;
+    padding: 1.25rem;
+    border-radius: .3rem;
+    font-size: .75rem;
+    color: #777
+}
+
+.stagesOrder i {
+    color: #e6381a;
+    font-weight: 800
+}
+
+.stagesOrder a {
+    color: #000;
+    font-weight: 800
+}
+
+.slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.stagesOrderBorder {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-bottom: 1px solid #D8D8D8
+}
+
+.stages_interest {
+    background: #ffc12a;
+    font-size: .7rem;
+    color: #fff;
+    width: 2rem;
+    height: 1.2rem;
+    border-radius: .4rem;
+    line-height: 1.2rem;
+    text-align: center;
+    position: absolute;
+    top: 7.3rem;
+    right: 4rem
+}
+
+#mainDetails_title img, #text img {
+    width: 15.25rem
+}
+
+.mainDetails_chooseOne {
+    border-bottom: 1px solid #a55e5b;
+    color: #a55e5b;
+}
+
+.mainDetails_chooseTwo {
+    border-bottom: 1px solid #D8D8D8;
+}
+
+#text img {
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+.mainDetails_tab .normalSpan {
+    border: none;
+    color: #000
+}
+
+.mainDetails_tab .selectedSpan {
+    border-bottom: 1px solid #a55e5b;
+    color: #a55e5b;
+}
+
+.mainDetails_content > div {
+    display: none
+}

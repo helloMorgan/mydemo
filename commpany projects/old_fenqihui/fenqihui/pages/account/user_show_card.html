@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userShowCard">
+
+<head>
+    <meta charset="UTF-8">
+    <title>银行卡</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="../../static/css/common/common_reset.css"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css"/>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.1/angular.min.js"></script>
+<script src="../../static/js/lib/common.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/common/common_foot.css"/>
+    <link rel="stylesheet" href="../../static/css/account/user_bank_card.css"/>
+</head>
+
+<body ng-controller="userShowCardController">
+<div class="container" ng-if="haveCard">
+    <header class="travel-head-nav" ng-if="isWap">
+        <h1>银行卡</h1>
+        <i class="iconfont-back iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+    </header>
+    <div class="bank_info">
+        <div class="bank_info_top">
+            <h1><img ng-src="{{bankImg}}" style="width: 1.5rem; height: 1.5rem"/></h1>
+            <div class="bank_info_font">
+                <p ng-bind="bankName">招商银行</p>
+                <p>储蓄卡</p>
+            </div>
+        </div>
+        <div class="bank_info_bottom" ng-model="bandCode">
+            <span class="bank_Code">****&nbsp;****&nbsp;****&nbsp; {{bandCode}}</span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="../../static/js/account/user_show_card.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>提交订单</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../../static/css/common/common_reset.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css?v={version}" />
+        <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.css?v={version}" />
+        <link rel="stylesheet" href="../../static/css/common/common_foot.css?v={version}"/>
+        <link rel="stylesheet" href="../../static/css/travel/decoration_order.css?v={version}" />
+    </head>
+
+    <body>
+        <header class="travel-head-nav">
+            <h1></h1>
+            <i class="iconfont-back_ss iconfont" onclick='javascript:history.go(-1)'>&#xe603;</i>
+        </header>
+        <div class="swiper-containerBusiness">
+            <div class="standard"></div>
+            <div class="swiper-wrapper">
+
+            </div>
+
+            <div class="popupSubmit" ng-click="popupSbumit(1)">确定</div>
+        </div>
+
+        <div class="swiper-containerProduce">
+            <div class="standard"></div>
+            <div class="swiper-wrapper">
+
+            </div>
+            <div class="popupSubmit" ng-click="popupSbumit(2)">确定</div>
+        </div>
+
+        <div class="swiper-containerTime">
+
+            <div class="standard"></div>
+            <div class="swiper-wrapper">
+
+            </div>
+            <div class="popupSubmit" ng-click="popupSbumit(3)">确定</div>
+        </div>
+
+        <div id="popup" style="display:none"></div>
+        <div class="stagesOrder" style="display:none"></div>
+
+        <div id="main">
+            <ul class="order_content">
+                <li>
+                    <label class="left"><a class="iconfont badge" >&#xe66c;</a>选择商家</label>
+                    <span class="right business"></span><i class="iconfont">&#xe630;</i>
+
+                </li>
+                <li>
+                    <label><a class="iconfont badge">&#xe66c;</a>选择产品</label>
+                    <span class="right produce"></span><i class="iconfont">&#xe630;</i>
+
+                </li>
+                <li>
+                    <label><a class="iconfont badge">&#xe66c;</a>首付金额（元）</label>
+                    <input type="number" class="input_installment firstPay" maxlength="7" required pattern="\d{1,7}">
+                </li>
+                <li>
+                    <label><a class="iconfont badge">&#xe66c;</a>预付款（元）</label>
+                    <input type="number" class="input_installment prepay" maxlength="7" required pattern="\d{1,7}">
+                </li>
+                <li>
+                    <label><a class="iconfont badge">&#xe66c;</a>分期金额（元）</label>
+                    <label style="float: right;text-align: center;margin-right: 1rem;" class="price"></label>
+                    <p class="warn warn3" style="display: none">请输入正确的金额</p>
+                </li>
+                <li ng-click="displayList()" class="submit_position">
+                    <label><a class="iconfont badge">&#xe66c;</a>分期期数（月） </label>
+                    <span class="submit_notice"></span>
+                    <span style="color: #333333;" class="timeChoose"></span>
+                    <i class="iconfont">&#xe630;</i>
+
+                </li>
+                <li class="submit_position">
+                    <label><a class="iconfont badge">&#xe66c;</a>每月应还（元） </label>
+                    <label style="float: right;text-align: center;margin-right: 1rem;height: 1rem;color: #333333;" class="shouldPay"></label>
+
+                    <div class="submit_explain" style="max-width: 13rem;">说明：申请金额不能大于合同金额</div>
+                </li>
+                <div class="line"></div>
+                <li>
+                    <u class="submit_uploading">上传合同资料</u>
+                </li>
+            </ul>
+        </div>
+        <input type="submit" class="order_submit" value="提交申请" />
+        <script src="../../static/js/lib/jquery.min.js?v={version}"></script>
+        <script src="../../static/js/lib/common.js?v={version}"></script>
+        <script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js?v={version}"></script>
+        <script src="../../static/js/travel/decoration_order.js?v={version}"></script>
+    </body>
+
+</html>
